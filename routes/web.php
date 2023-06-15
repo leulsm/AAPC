@@ -35,15 +35,20 @@ Route::middleware('auth', 'role:admin')->group(function () {
     Route::controller(DashboardController::class)->group(function () {
         Route::get('/admin/dashboard', 'Dashboard')->name('admin.dashboard');
         Route::get('/admin/messages', 'ContactMessage')->name('admin.message');
-        Route::get('/admin/create-category', 'CreateCategory')->name('admin.createcategory');
-        Route::get('/admin/all-category', 'AllCategory')->name('admin.allcategory');
-        Route::get('/admin/create-sub-category', 'CreateSubCategory')->name('admin.createsubcategory');
-        Route::get('/admin/all-sub-category', 'AllSubCategory')->name('admin.allsubcategory');
-        Route::get('/admin/create-brands', 'CreateBrands')->name('admin.createbrands');
-        Route::get('/admin/all-brands', 'AllBrands')->name('admin.allbrands');
+        // Route::get('/admin/create-category', 'CreateCategory')->name('admin.createcategory');
+        // Route::get('/admin/all-category', 'AllCategory')->name('admin.allcategory');
+        // Route::get('/admin/create-sub-category', 'CreateSubCategory')->name('admin.createsubcategory');
+        // Route::get('/admin/all-sub-category', 'AllSubCategory')->name('admin.allsubcategory');
+        // Route::get('/admin/create-brands', 'CreateBrands')->name('admin.createbrands');
+        // // Route::get('/admin/all-brands', 'AllBrands')->name('admin.allbrands');
         Route::get('/admin/director', 'Director')->name('admin.director');
         Route::get('/admin/employee', 'Employee')->name('admin.employee');
         Route::get('/admin/expert', 'Expert')->name('admin.expert');
+        Route::get('/admin/userforms', 'User')->name('admin.userforms');
+        Route::get('/admin/forgotpassword', 'ForgotPassword')->name('admin.forgotpassword');
+        Route::get('/admin/resetpassword', 'ResetPassword')->name('admin.resetpassword');
+        Route::get('/admin/staffinfotable', 'StaffInfoTable')->name('admin.staffinfotable');
+        Route::get('/admin/exporttable', 'ExportTable')->name('admin.exporttable');
     });
 
     Route::controller(ProductController::class)->group(function () {
