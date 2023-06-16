@@ -16,7 +16,7 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
                                     <div class="banner-img">
-                                        <img src="{{ asset('dashboard_asset/assets/img/banner/1.png') }}" alt="">
+                                        <img src="assets/img/banner/1.png" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
                                     <div class="banner-img">
-                                        <img src="{{ asset('dashboard_asset/assets/img/banner/2.png') }}" alt="">
+                                        <img src="assets/img/banner/2.png" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
                                     <div class="banner-img">
-                                        <img src="{{ asset('dashboard_asset/assets/img/banner/3.png') }}" alt="">
+                                        <img src="assets/img/banner/3.png" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +83,7 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
                                     <div class="banner-img">
-                                        <img src="{{ asset('dashboard_asset/assets/img/banner/4.png') }}" alt="">
+                                        <img src="assets/img/banner/4.png" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -266,16 +266,16 @@
                                     <td class="text-truncate">
                                         <ul class="list-unstyled order-list m-b-0 m-b-0">
                                             <li class="team-member team-member-sm"><img class="rounded-circle"
-                                                    src="{{ asset('dashboard_asset/assets/img/users/user-8.png') }}"
-                                                    alt="user" data-toggle="tooltip" title=""
+                                                    src="assets/img/users/user-8.png" alt="user"
+                                                    data-toggle="tooltip" title=""
                                                     data-original-title="Wildan Ahdian"></li>
                                             <li class="team-member team-member-sm"><img class="rounded-circle"
-                                                    src="{{ asset('dashboard_asset/assets/img/users/user-9.png') }}"
-                                                    alt="user" data-toggle="tooltip" title=""
-                                                    data-original-title="John Deo"></li>
+                                                    src="assets/img/users/user-9.png" alt="user"
+                                                    data-toggle="tooltip" title="" data-original-title="John Deo">
+                                            </li>
                                             <li class="team-member team-member-sm"><img class="rounded-circle"
-                                                    src="{{ asset('dashboard_asset/assets/img/users/user-10.png') }}"
-                                                    alt="user" data-toggle="tooltip" title=""
+                                                    src="assets/img/users/user-10.png" alt="user"
+                                                    data-toggle="tooltip" title=""
                                                     data-original-title="Sarah Smith"></li>
                                             <li class="avatar avatar-sm"><span class="badge badge-primary">+4</span>
                                             </li>
@@ -306,13 +306,13 @@
                                     <td class="text-truncate">
                                         <ul class="list-unstyled order-list m-b-0 m-b-0">
                                             <li class="team-member team-member-sm"><img class="rounded-circle"
-                                                    src="{{ asset('dashboard_asset/assets/img/users/user-1.png') }}"
-                                                    alt="user" data-toggle="tooltip" title=""
+                                                    src="assets/img/users/user-1.png" alt="user"
+                                                    data-toggle="tooltip" title=""
                                                     data-original-title="Wildan Ahdian"></li>
                                             <li class="team-member team-member-sm"><img class="rounded-circle"
-                                                    src="{{ asset('dashboard_asset/assets/img/users/user-2.png') }}"
-                                                    alt="user" data-toggle="tooltip" title=""
-                                                    data-original-title="John Deo"></li>
+                                                    src="assets/img/users/user-2.png" alt="user"
+                                                    data-toggle="tooltip" title="" data-original-title="John Deo">
+                                            </li>
                                             <li class="avatar avatar-sm"><span class="badge badge-primary">+2</span>
                                             </li>
                                         </ul>
@@ -342,16 +342,16 @@
                                     <td class="text-truncate">
                                         <ul class="list-unstyled order-list m-b-0 m-b-0">
                                             <li class="team-member team-member-sm"><img class="rounded-circle"
-                                                    src="{{ asset('dashboard_asset/assets/img/users/user-3.png') }}"
-                                                    alt="user" data-toggle="tooltip" title=""
+                                                    src="assets/img/users/user-3.png" alt="user"
+                                                    data-toggle="tooltip" title=""
                                                     data-original-title="Wildan Ahdian"></li>
                                             <li class="team-member team-member-sm"><img class="rounded-circle"
-                                                    src="{{ asset('dashboard_asset/assets/img/users/user-4.png') }}"
-                                                    alt="user" data-toggle="tooltip" title=""
-                                                    data-original-title="John Deo"></li>
+                                                    src="assets/img/users/user-4.png" alt="user"
+                                                    data-toggle="tooltip" title="" data-original-title="John Deo">
+                                            </li>
                                             <li class="team-member team-member-sm"><img class="rounded-circle"
-                                                    src="{{ asset('dashboard_asset/assets/img/users/user-5.png') }}"
-                                                    alt="user" data-toggle="tooltip" title=""
+                                                    src="assets/img/users/user-5.png" alt="user"
+                                                    data-toggle="tooltip" title=""
                                                     data-original-title="Sarah Smith"></li>
                                             <li class="avatar avatar-sm"><span class="badge badge-primary">+3</span>
                                             </li>
@@ -382,12 +382,12 @@
                                     <td class="text-truncate">
                                         <ul class="list-unstyled order-list m-b-0 m-b-0">
                                             <li class="team-member team-member-sm"><img class="rounded-circle"
-                                                    src="{{ asset('dashboard_asset/assets/img/users/user-7.png') }}"
-                                                    alt="user" data-toggle="tooltip" title=""
-                                                    data-original-title="John Deo"></li>
+                                                    src="assets/img/users/user-7.png" alt="user"
+                                                    data-toggle="tooltip" title="" data-original-title="John Deo">
+                                            </li>
                                             <li class="team-member team-member-sm"><img class="rounded-circle"
-                                                    src="{{ asset('dashboard_asset/assets/img/users/user-8.png') }}"
-                                                    alt="user" data-toggle="tooltip" title=""
+                                                    src="assets/img/users/user-8.png" alt="user"
+                                                    data-toggle="tooltip" title=""
                                                     data-original-title="Sarah Smith"></li>
                                             <li class="avatar avatar-sm"><span class="badge badge-primary">+4</span>
                                             </li>
@@ -418,16 +418,16 @@
                                     <td class="text-truncate">
                                         <ul class="list-unstyled order-list m-b-0 m-b-0">
                                             <li class="team-member team-member-sm"><img class="rounded-circle"
-                                                    src="{{ asset('dashboard_asset/assets/img/users/user-9.png') }}"
-                                                    alt="user" data-toggle="tooltip" title=""
+                                                    src="assets/img/users/user-9.png" alt="user"
+                                                    data-toggle="tooltip" title=""
                                                     data-original-title="Wildan Ahdian"></li>
                                             <li class="team-member team-member-sm"><img class="rounded-circle"
-                                                    src="{{ asset('dashboard_asset/assets/img/users/user-10.png') }}"
-                                                    alt="user" data-toggle="tooltip" title=""
-                                                    data-original-title="John Deo"></li>
+                                                    src="assets/img/users/user-10.png" alt="user"
+                                                    data-toggle="tooltip" title="" data-original-title="John Deo">
+                                            </li>
                                             <li class="team-member team-member-sm"><img class="rounded-circle"
-                                                    src="{{ asset('dashboard_asset/assets/img/users/user-2.png') }}"
-                                                    alt="user" data-toggle="tooltip" title=""
+                                                    src="assets/img/users/user-2.png" alt="user"
+                                                    data-toggle="tooltip" title=""
                                                     data-original-title="Sarah Smith"></li>
                                             <li class="avatar avatar-sm"><span class="badge badge-primary">+2</span>
                                             </li>
@@ -458,16 +458,16 @@
                                     <td class="text-truncate">
                                         <ul class="list-unstyled order-list m-b-0 m-b-0">
                                             <li class="team-member team-member-sm"><img class="rounded-circle"
-                                                    src="{{ asset('dashboard_asset/assets/img/users/user-8.png') }}"
-                                                    alt="user" data-toggle="tooltip" title=""
+                                                    src="assets/img/users/user-8.png" alt="user"
+                                                    data-toggle="tooltip" title=""
                                                     data-original-title="Wildan Ahdian"></li>
                                             <li class="team-member team-member-sm"><img class="rounded-circle"
-                                                    src="{{ asset('dashboard_asset/assets/img/users/user-9.png') }}"
-                                                    alt="user" data-toggle="tooltip" title=""
-                                                    data-original-title="John Deo"></li>
+                                                    src="assets/img/users/user-9.png" alt="user"
+                                                    data-toggle="tooltip" title="" data-original-title="John Deo">
+                                            </li>
                                             <li class="team-member team-member-sm"><img class="rounded-circle"
-                                                    src="{{ asset('dashboard_asset/assets/img/users/user-10.png') }}"
-                                                    alt="user" data-toggle="tooltip" title=""
+                                                    src="assets/img/users/user-10.png" alt="user"
+                                                    data-toggle="tooltip" title=""
                                                     data-original-title="Sarah Smith"></li>
                                             <li class="avatar avatar-sm"><span class="badge badge-primary">+4</span>
                                             </li>
@@ -504,8 +504,7 @@
                     </div>
                     <div class="card-body">
                         <div class="support-ticket media pb-1 mb-3">
-                            <img src="{{ asset('dashboard_asset/assets/img/users/user-1.png') }}" class="user-img mr-2"
-                                alt="">
+                            <img src="assets/img/users/user-1.png" class="user-img mr-2" alt="">
                             <div class="media-body ml-3">
                                 <div class="badge badge-pill badge-success mb-1 float-right">Feature</div>
                                 <span class="font-weight-bold">#89754</span>
@@ -517,8 +516,7 @@
                             </div>
                         </div>
                         <div class="support-ticket media pb-1 mb-3">
-                            <img src="{{ asset('dashboard_asset/assets/img/users/user-2.png') }}" class="user-img mr-2"
-                                alt="">
+                            <img src="assets/img/users/user-2.png" class="user-img mr-2" alt="">
                             <div class="media-body ml-3">
                                 <div class="badge badge-pill badge-warning mb-1 float-right">Bug</div>
                                 <span class="font-weight-bold">#57854</span>
@@ -530,8 +528,7 @@
                             </div>
                         </div>
                         <div class="support-ticket media pb-1 mb-3">
-                            <img src="{{ asset('dashboard_asset/assets/img/users/user-3.png') }}" class="user-img mr-2"
-                                alt="">
+                            <img src="assets/img/users/user-3.png" class="user-img mr-2" alt="">
                             <div class="media-body ml-3">
                                 <div class="badge badge-pill badge-primary mb-1 float-right">Query</div>
                                 <span class="font-weight-bold">#85784</span>
@@ -543,14 +540,12 @@
                             </div>
                         </div>
                         <div class="support-ticket media pb-1 mb-3">
-                            <img src="{{ asset('dashboard_asset/assets/img/users/user-6.png') }}" class="user-img mr-2"
-                                alt="">
+                            <img src="assets/img/users/user-6.png" class="user-img mr-2" alt="">
                             <div class="media-body ml-3">
                                 <div class="badge badge-pill badge-info mb-1 float-right">Enhancement</div>
                                 <span class="font-weight-bold">#25874</span>
                                 <a href="javascript:void(0)">About template page load speed</a>
-                                <p class="my-1">Hi, John, can you work on increase page speed of
-                                    template...</p>
+                                <p class="my-1">Hi, John, can you work on increase page speed of template...</p>
                                 <small class="text-muted">Created by <span class="font-weight-bold font-13">Hasan
                                         Basri</span>
                                     &nbsp;&nbsp; -3 day ago</small>
