@@ -426,7 +426,7 @@
                                 <li><a class="nav-link" href="posts.html">Posts</a></li>
                                 <li><a class="nav-link" href="profile.html">Profile</a></li>
                                 <li><a class="nav-link" href="contact.html">Contact</a></li>
-                                <li><a class="nav-link" href="invoice.html">Invoice</a></li>
+                                <li><a class="nav-link" href="{{ route('admin.report') }}">Report</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
