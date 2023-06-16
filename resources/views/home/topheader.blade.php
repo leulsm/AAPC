@@ -1,6 +1,9 @@
 <div class="container-fluid bg-light d-none d-lg-block">
     <div class="row align-items-center top-bar">
-        <div class="col-lg-3 col-md-12 text-center text-lg-start">
+        <div class="col-lg-3 col-md-12 text-center d-flex text-lg-start"> 
+            <a href="" class="navbar-brand me-3 p-0">
+                <img src="dashboard_asset/assets/img/Picsart_file.png" width="50">
+            </a>
             <a href="" class="navbar-brand m-0 p-0">
                 <h1 class="text-primary m-0">AAPC</h1>
             </a>

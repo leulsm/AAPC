@@ -12,4 +12,8 @@ class HomeController extends Controller
     {
         return view('home.userhomepage');
     }
+    public function Homenavbar()
+    {
+        return view('home.header');
+    }
 }

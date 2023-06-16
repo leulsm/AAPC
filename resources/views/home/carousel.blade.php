@@ -12,12 +12,12 @@
                             <h5
                                 class="text-white text-uppercase mb-3 animated slideInDown"
                             >
-                                Plumbing & Repairing Services
+                                Maintenance Request Services
                             </h5>
                             <h1
                                 class="display-3 text-white animated slideInDown mb-4"
                             >
-                                Efficient Residential Plumbing Services
+                                Efficient Maintenance Services
                             </h1>
                             <p
                                 class="fs-5 fw-medium text-white mb-4 pb-2"
@@ -54,7 +54,7 @@
                             <h5
                                 class="text-white text-uppercase mb-3 animated slideInDown"
                             >
-                                Plumbing & Repairing Services
+                            Maintenance Request Services
                             </h5>
                             <h1
                                 class="display-3 text-white animated slideInDown mb-4"
