@@ -72,4 +72,8 @@ class DashboardController extends Controller
     {
         return view('admin.exporttable');
     }
+    public function Report()
+    {
+        return view('admin.report');
+    }
 }

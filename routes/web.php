@@ -62,6 +62,7 @@ Route::middleware('auth', 'role:admin')->group(function () {
         Route::get('/admin/resetpassword', 'ResetPassword')->name('admin.resetpassword');
         Route::get('/admin/staffinfotable', 'StaffInfoTable')->name('admin.staffinfotable');
         Route::get('/admin/exporttable', 'ExportTable')->name('admin.exporttable');
+        Route::get('/admin/report', 'Report')->name('admin.report');
     });
 
     Route::controller(ProductController::class)->group(function () {
