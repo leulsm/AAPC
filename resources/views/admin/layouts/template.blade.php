@@ -200,7 +200,7 @@
                             {{-- <a href="auth-login.html" class="dropdown-item has-icon text-danger"> <i
                                     class="fas fa-sign-out-alt"></i>
                                 Logout
-                            </a> --}}
+                            </a>k --}}
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
     
