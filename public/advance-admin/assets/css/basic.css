@@ -88,7 +88,7 @@ body {
     display: flex;
     min-height: 140px;
     padding: 20px;
-    background-color: #4380b8;
+    background-color: #5d646b;
 }
 
 .user-img-div img {
@@ -233,7 +233,7 @@ a:focus {
     #page-wrapper {
         margin: 0 0 0 260px;
         padding: 15px 30px;
-        min-height: 1200px;
+        min-height: 800px;
     }
 
     .navbar-side {
