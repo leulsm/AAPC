@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{ asset('dashboard_asset/assets/css/components.css') }}">
     <!-- Custom style CSS -->
     <link rel="stylesheet" href="{{ asset('dashboard_asset/assets/css/custom.css') }}">
-    <link rel='shortcut icon' type='image/x-icon' href='{{ asset('dashboard_asset/assets/img/AA-police.ico') }}' />
+    <link rel='shortcut icon' type='image/x-icon' href='{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}' />
 </head>
 
 <body>
@@ -197,10 +197,19 @@
                                 Settings
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a href="auth-login.html" class="dropdown-item has-icon text-danger"> <i
+                            {{-- <a href="auth-login.html" class="dropdown-item has-icon text-danger"> <i
                                     class="fas fa-sign-out-alt"></i>
                                 Logout
-                            </a>
+                            </a>k --}}
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+    
+                                <x-dropdown-link :href="route('logout')"
+                                        onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                                    {{ __('Log Out') }}
+                                </x-dropdown-link>
+                            </form>
                         </div>
                     </li>
                 </ul>
@@ -208,8 +217,8 @@
             <div class="main-sidebar sidebar-style-2">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="index.html"> <img alt="image"
-                                src="{{ asset('dashboard_asset/assets/img/AA-police.jpg') }}" class="header-logo" />
+                        <a href="#"> <img alt="image"
+                                src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}" class="header-logo" />
                             <span class="logo-name">AAPC</span>
                         </a>
                     </div>

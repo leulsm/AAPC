@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StuffController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,16 +22,28 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/home/header', [HomeController::class, 'Homenavbar']);
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
+});
+// Route::middleware('auth', 'role:user')->group(function () {
+//     Route::controller(HomeController::class)->group(function () {
+//         Route::get('/home/header', 'Homenavbar')->name('home.header');
+//     });
+// });
+Route::middleware('auth')->group(function () {
+    Route::get('/priviousrequest', [StuffController::class, 'previous'])->name('stuff.priviousrequest');
+    Route::get('/stuffhome', [StuffController::class, 'stuffhome'])->name('stuff.stuffhome');
+});
 Route::middleware('auth', 'role:admin')->group(function () {
     Route::controller(DashboardController::class)->group(function () {
         Route::get('/admin/dashboard', 'Dashboard')->name('admin.dashboard');
