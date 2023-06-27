@@ -33,7 +33,7 @@ body {
     margin: 10px 20px 10px 0px;
     background-color: #fff !important;
     padding: 10px;
-    min-height: 1200px;
+    min-height: auto;
 }
 
 .page-head-line {
@@ -88,7 +88,7 @@ body {
     display: flex;
     min-height: 140px;
     padding: 20px;
-    background-color: #5d646b;
+    background-color: #343438;
 }
 
 .user-img-div img {
@@ -105,7 +105,7 @@ body {
 }
 
 .active-menu {
-    background-color: #00ca79 !important;
+    background-color: #9ca09f !important;
 }
 .active-menu-top {
     background-color: #000 !important;
