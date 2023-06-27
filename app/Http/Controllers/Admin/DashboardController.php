@@ -16,6 +16,18 @@ class DashboardController extends Controller
     {
         return view('admin.messages');
     }
+    public function ViewRequest()
+    {
+        return view('admin.viewrequest');
+    }
+    public function RequestNetwork()
+    {
+        return view('admin.requestsnetwork');
+    }
+    public function DatabaseRequests()
+    {
+        return view('admin.databaserequests');
+    }
     // public function CreateCategory()
     // {
     //     return view('admin.createcategory');
@@ -75,5 +87,13 @@ class DashboardController extends Controller
     public function Report()
     {
         return view('admin.report');
+    }
+    public function Chats()
+    {
+        return view('admin.chats');
+    }
+    public function Charts()
+    {
+        return view('admin.charts');
     }
 }

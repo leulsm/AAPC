@@ -8,7 +8,8 @@
                         <h4>Register a Director</h4>
                     </div>
                     <div class="card-body">
-                        <form method="POST">
+                        <form method="POST" action="{{ route('admin.directorr') }}">
+                            @csrf
                             <div class="row">
                                 <div class="form-group col-6">
                                     <label for="frist_name">First Name</label>
