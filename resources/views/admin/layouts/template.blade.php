@@ -187,11 +187,12 @@
                                 src="{{ asset('dashboard_asset/assets/img/user.png') }}"
                                 class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
                         <div class="dropdown-menu dropdown-menu-right pullDown">
-                            <div class="dropdown-title">Hello Sarah Smith</div>
-                            <a href="profile.html" class="dropdown-item has-icon"> <i
+                            <div class="dropdown-title">Hello Admin</div>
+                            <a href="{{ route('admin.profile') }}" class="dropdown-item has-icon"> <i
                                     class="far
 										fa-user"></i> Profile
-                            </a> <a href="timeline.html" class="dropdown-item has-icon"> <i class="fas fa-bolt"></i>
+                            </a> <a href="{{ route('admin.timeline') }}" class="dropdown-item has-icon"> <i
+                                    class="fas fa-bolt"></i>
                                 Activities
                             </a> <a href="#" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>
                                 Settings
@@ -203,11 +204,13 @@
                             </a>k --}}
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-    
+
                                 <x-dropdown-link :href="route('logout')"
-                                        onclick="event.preventDefault();
+                                    onclick="event.preventDefault();
                                                     this.closest('form').submit();">
                                     {{ __('Log Out') }}
+                                    <i class="fas fa-sign-out-alt"></i>
+
                                 </x-dropdown-link>
                             </form>
                         </div>
@@ -217,8 +220,9 @@
             <div class="main-sidebar sidebar-style-2">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="#"> <img alt="image"
-                                src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}" class="header-logo" />
+                        <a href="{{ route('admin.dashboard') }}"> <img alt="image"
+                                src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}"
+                                class="header-logo" />
                             <span class="logo-name">AAPC</span>
                         </a>
                     </div>
@@ -258,16 +262,16 @@
                                 <li><a class="nav-link" href="widget-data.html">Data Widgets</a></li>
                             </ul>
                         </li> --}}
-                        {{-- <li class="dropdown">
+                        <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                    data-feather="command"></i><span>Apps</span></a>
+                                    data-feather="command"></i><span>Chatting</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="chat.html">Chat</a></li>
-                                <li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                                <li><a class="nav-link" href="{{ route('admin.chats') }}">Chat</a></li>
+                                {{-- <li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
                                 <li><a class="nav-link" href="blog.html">Blog</a></li>
-                                <li><a class="nav-link" href="calendar.html">Calendar</a></li>
+                                <li><a class="nav-link" href="calendar.html">Calendar</a></li> --}}
                             </ul>
-                        </li> --}}
+                        </li>
                         {{-- <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="user-check"></i><span>Registration</span></a>
@@ -277,30 +281,32 @@
                                 <li><a class="nav-link" href="{{ route('admin.expert') }}">Expert</a></li>
                             </ul>
                         </li> --}}
-                        {{-- <li class="menu-header">UI Elements</li> --}}
-                        {{-- <li class="dropdown">
+                        <li class="menu-header">Requests</li>
+                        <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                    data-feather="copy"></i><span>Basic
-                                    Components</span></a>
+                                    data-feather="copy"></i><span>View Requests</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="alert.html">Alert</a></li>
-                                <li><a class="nav-link" href="badge.html">Badge</a></li>
-                                <li><a class="nav-link" href="breadcrumb.html">Breadcrumb</a></li>
-                                <li><a class="nav-link" href="buttons.html">Buttons</a></li>
-                                <li><a class="nav-link" href="collapse.html">Collapse</a></li>
-                                <li><a class="nav-link" href="dropdown.html">Dropdown</a></li>
-                                <li><a class="nav-link" href="checkbox-and-radio.html">Checkbox &amp; Radios</a></li>
-                                <li><a class="nav-link" href="list-group.html">List Group</a></li>
-                                <li><a class="nav-link" href="media-object.html">Media Object</a></li>
-                                <li><a class="nav-link" href="navbar.html">Navbar</a></li>
+                                {{-- <li><a class="nav-link" href="alert.html">Alert</a></li>
+                                <li><a class="nav-link" href="badge.html">Badge</a></li> --}}
+                                {{-- <li><a class="nav-link" href="breadcrumb.html">Breadcrumb</a></li> --}}
+                                <li><a class="nav-link" href="{{ route('admin.requestsnetwork') }}">Network
+                                        Division</a></li>
+                                <li><a class="nav-link" href="{{ route('admin.viewrequest') }}">Software &amp;
+                                        Hardware</a> </li>
+                                {{-- <li><a class="nav-link" href="dropdown.html">Dropdown</a></li> --}}
+                                <li><a class="nav-link" href="{{ route('admin.databaserequests') }}">Database</a>
+                                </li>
+                                {{-- <li><a class="nav-link" href="list-group.html">List Group</a></li> --}}
+                                {{-- <li><a class="nav-link" href="media-object.html">Media Object</a></li> --}}
+                                {{-- <li><a class="nav-link" href="navbar.html">Navbar</a></li>
                                 <li><a class="nav-link" href="pagination.html">Pagination</a></li>
                                 <li><a class="nav-link" href="popover.html">Popover</a></li>
                                 <li><a class="nav-link" href="progress.html">Progress</a></li>
                                 <li><a class="nav-link" href="tooltip.html">Tooltip</a></li>
                                 <li><a class="nav-link" href="flags.html">Flag</a></li>
-                                <li><a class="nav-link" href="typography.html">Typography</a></li>
+                                <li><a class="nav-link" href="typography.html">Typography</a></li> --}}
                             </ul>
-                        </li> --}}
+                        </li>
                         {{-- <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="shopping-bag"></i><span>Advanced</span></a>
@@ -335,25 +341,25 @@
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="grid"></i><span>Tables</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="basic-table.html">Basic Tables</a></li>
-                                <li><a class="nav-link" href="advance-table.html">Advanced Table</a></li>
-                                <li><a class="nav-link" href="datatables.html">Datatable</a></li>
+                                {{-- <li><a class="nav-link" href="basic-table.html">Basic Tables</a></li> --}}
+                                {{-- <li><a class="nav-link" href="advance-table.html">Advanced Table</a></li> --}}
+                                {{-- <li><a class="nav-link" href="datatables.html">Datatable</a></li> --}}
                                 <li><a class="nav-link" href="{{ route('admin.staffinfotable') }}">Staff Info
                                         table</a></li>
                                 <li><a class="nav-link" href="{{ route('admin.exporttable') }}">Export Table</a></li>
-                                <li><a class="nav-link" href="editable-table.html">Editable Table</a></li>
+                                {{-- <li><a class="nav-link" href="editable-table.html">Editable Table</a></li> --}}
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="pie-chart"></i><span>Charts</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="chart-amchart.html">amChart</a></li>
-                                <li><a class="nav-link" href="chart-apexchart.html">apexchart</a></li>
+                                <li><a class="nav-link" href="{{ route('admin.charts') }}">Chart Info</a></li>
+                                {{-- <li><a class="nav-link" href="chart-apexchart.html">apexchart</a></li>
                                 <li><a class="nav-link" href="chart-echart.html">eChart</a></li>
                                 <li><a class="nav-link" href="chart-chartjs.html">Chartjs</a></li>
                                 <li><a class="nav-link" href="chart-sparkline.html">Sparkline</a></li>
-                                <li><a class="nav-link" href="chart-morris.html">Morris</a></li>
+                                <li><a class="nav-link" href="chart-morris.html">Morris</a></li> --}}
                             </ul>
                         </li>
                         {{-- <li class="dropdown">
@@ -420,8 +426,8 @@
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="alert-triangle"></i><span>Errors</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="errors-503.html">503</a></li>
-                                <li><a class="nav-link" href="errors-403.html">403</a></li>
+                                {{-- <li><a class="nav-link" href="errors-503.html">503</a></li>
+                                <li><a class="nav-link" href="errors-403.html">403</a></li> --}}
                                 <li><a class="nav-link" href="errors-404.html">404</a></li>
                                 <li><a class="nav-link" href="errors-500.html">500</a></li>
                             </ul>
@@ -431,10 +437,10 @@
                                     data-feather="anchor"></i><span>Other
                                     Pages</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="create-post.html">Create Post</a></li>
+                                {{-- <li><a class="nav-link" href="create-post.html">Create Post</a></li>
                                 <li><a class="nav-link" href="posts.html">Posts</a></li>
                                 <li><a class="nav-link" href="profile.html">Profile</a></li>
-                                <li><a class="nav-link" href="contact.html">Contact</a></li>
+                                <li><a class="nav-link" href="contact.html">Contact</a></li> --}}
                                 <li><a class="nav-link" href="{{ route('admin.report') }}">Report</a></li>
                             </ul>
                         </li>

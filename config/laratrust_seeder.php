@@ -20,6 +20,14 @@ return [
         'user' => [
             'users' => 'c,r,u,d',
             'profile' => 'r,u',
+        ],
+        'director' => [
+            'users' => 'c,r,u,d',
+            'profile' => 'r,u',
+        ],
+        'expert' => [
+            'users' => 'c,r,u,d',
+            'profile' => 'r,u',
         ]
     ],
 
