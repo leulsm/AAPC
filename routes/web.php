@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\DirectorController;
+use App\Http\Controllers\ExpertController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StuffController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\DirectorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,18 +35,69 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
 });
+
 // Route::middleware('auth', 'role:user')->group(function () {
 //     Route::controller(HomeController::class)->group(function () {
 //         Route::get('/home/header', 'Homenavbar')->name('home.header');
 //     });
 // });
+
 Route::middleware('auth')->group(function () {
     Route::get('/priviousrequest', [StuffController::class, 'previous'])->name('stuff.priviousrequest');
     Route::get('/stuffhome', [StuffController::class, 'stuffhome'])->name('stuff.stuffhome');
+    Route::get('/stuffmessage', [StuffController::class, 'stuffmessage'])->name('stuff.stuffmessage');
 });
+
+// Route::middleware('auth')->group(function () {
+//     Route::get('/usertemplate', [UserController::class, 'userhome'])->name('user.layours.usertemplate');
+//     Route::get('/user/dashboard', 'Dashboard')->name('user.dashboard');
+//     Route::get('/user/messages', 'ContactMessage')->name('user.message');
+//     Route::get('/user/director', 'Director')->name('user.director');
+//     Route::get('/user/employee', 'Employee')->name('user.employee');
+//     Route::get('/user/expert', 'Expert')->name('user.expert');
+//     Route::get('/user/userforms', 'User')->name('user.userforms');
+//     Route::get('/user/forgotpassword', 'ForgotPassword')->name('user.forgotpassword');
+//     Route::get('/user/resetpassword', 'ResetPassword')->name('user.resetpassword');
+//     Route::get('/user/staffinfotable', 'StaffInfoTable')->name('user.staffinfotable');
+//     Route::get('/user/exporttable', 'ExportTable')->name('user.exporttable');
+//     Route::get('/user/report', 'Report')->name('user.report');
+// });
+Route::middleware('auth')->group(function () {
+    Route::get('/stuffuser/index', [UserController::class, 'staffuserindex'])->name('stuffuser');
+    Route::get('/stuffuser/statustable', [UserController::class, 'statustable'])->name('stuffuser.statustable');
+    Route::get('/stuffuser/request', [UserController::class, 'staffrequest'])->name('stuffuser.request');
+    // Route::get('/stuffmessage', [StuffController::class, 'stuffmessage'])->name('stuff.stuffmessage');
+});
+// Route::controller(UserController::class)->group(function () {
+Route::middleware('auth')->group(function () {
+    Route::get('/expertuser/index', [ExpertController::class, 'expertuserindex'])->name('expertuser');
+
+    // Route::get('/stuffmessage', [StuffController::class, 'stuffmessage'])->name('stuff.stuffmessage');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/directoruser/index', [DirectorController::class, 'directoruserindex'])->name('directoruser');
+
+    // Route::get('/stuffmessage', [StuffController::class, 'stuffmessage'])->name('stuff.stuffmessage');
+});
+//     Route::get('/user/layouts/usertemplate', 'userhome')->name('user.layouts.usertemplate');
+//     Route::get('/user/dashboard', 'Dashboard')->name('user.dashboard');
+//     Route::get('/user/messages', 'ContactMessage')->name('user.message');
+//     Route::get('/user/director', 'Director')->name('user.director');
+//     Route::get('/user/employee', 'Employee')->name('user.employee');
+//     Route::get('/user/expert', 'Expert')->name('user.expert');
+//     Route::get('/user/userforms', 'User')->name('user.userforms');
+//     Route::get('/user/forgotpassword', 'ForgotPassword')->name('user.forgotpassword');
+//     Route::get('/user/resetpassword', 'ResetPassword')->name('user.resetpassword');
+//     Route::get('/user/staffinfotable', 'StaffInfoTable')->name('user.staffinfotable');
+//     Route::get('/user/exporttable', 'ExportTable')->name('user.exporttable');
+//     Route::get('/user/report', 'Report')->name('user.report');
+// });
+
 Route::middleware('auth', 'role:admin')->group(function () {
     Route::controller(DashboardController::class)->group(function () {
         Route::get('/admin/dashboard', 'Dashboard')->name('admin.dashboard');

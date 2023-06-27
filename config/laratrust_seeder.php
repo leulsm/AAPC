@@ -21,11 +21,11 @@ return [
             'users' => 'c,r,u,d',
             'profile' => 'r,u',
         ],
-        'director' => [
+        'expert' => [
             'users' => 'c,r,u,d',
             'profile' => 'r,u',
         ],
-        'expert' => [
+        'director' => [
             'users' => 'c,r,u,d',
             'profile' => 'r,u',
         ]
