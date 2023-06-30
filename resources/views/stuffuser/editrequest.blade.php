@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Request</title>
+    <title>Edit Request</title>
     <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 10]>
@@ -291,7 +291,7 @@
 
                                 <div class="pcoded-navigation-label">Request</div>
                                 <ul class="pcoded-item pcoded-left-item">
-                                    <li class="active">
+                                    <li class="">
                                         <a href="{{ route('stuffuser.request') }}" class="waves-effect waves-dark">
                                             <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                             <span class="pcoded-mtext">Request Form</span>
@@ -309,7 +309,7 @@
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                         <ul class="pcoded-submenu">
-                                            <li class=" ">
+                                            <li class="active">
                                                 <a href="{{ route('stuffuser.viewrequest') }}"
                                                     class="waves-effect waves-dark">
                                                     <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
@@ -340,7 +340,7 @@
                                 <div class="row align-items-center">
                                     <div class="col-md-8">
                                         <div class="page-header-title">
-                                            <h5 class="m-b-10">Request Form Inputs</h5>
+                                            <h5 class="m-b-10">Edit Request Form Inputs</h5>
                                             <p class="m-b-0">Fill the form carfully.</p>
                                         </div>
                                     </div>
@@ -350,10 +350,11 @@
                                                 <a href="{{ route('stuffuser') }}"> <i class="fa fa-home"></i> </a>
                                             </li>
                                             <li class="breadcrumb-item"><a
-                                                    href="{{ route('stuffuser.request') }}">Request Form</a>
+                                                    href="{{ route('stuffuser.viewrequest') }}">View Request</a>
                                             </li>
-                                            {{-- <li class="breadcrumb-item"><a href="#!">Basic Form Inputs</a>
-                                            </li> --}}
+                                            <li class="breadcrumb-item"><a
+                                                    href="{{ route('stuffuser.editrequest') }}">Edit Request</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -525,7 +526,7 @@
                                                                 <div class="col-sm-2 col-form-label text-end">
                                                                     <button
                                                                         class="btn waves-effect waves-light btn-success btn-outline-success"><i
-                                                                            class="icofont icofont-check-circled"></i>SUBMIT</button>
+                                                                            class="icofont icofont-check-circled"></i>UPDATE</button>
 
                                                                 </div>
                                                                 {{-- <div class="col-sm-10">

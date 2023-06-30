@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Stuff</title>
+    <title>Setting</title>
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -177,7 +177,7 @@
                                 </a>
                                 <ul class="show-notification profile-notification">
                                     <li class="waves-effect waves-light">
-                                        <a href="{{ route('stuffuser.setting') }}">
+                                        <a href="#!">
                                             <i class="ti-settings"></i> Settings
                                         </a>
                                     </li>
@@ -235,7 +235,7 @@
                                     <ul>
                                         <li class="more-details">
                                             <a href="{{ route('stuffuser.userprofile') }}"><i class="ti-user"></i>View Profile</a>
-                                            <a href="{{ route('stuffuser.setting') }}"><i class="ti-settings"></i>Settings</a>
+                                            <a href="#!"><i class="ti-settings"></i>Settings</a>
                                                 <form method="POST" action="{{ route('logout') }}">
                                                     @csrf
                                                     <a href="route('logout')" onclick="event.preventDefault();this.closest('form').submit();" ><i class="ti-layout-sidebar-left"></i>Logout 
@@ -317,7 +317,7 @@
                             
                         </div>
                     </nav>
-                    @include('stuffuser.home');
+                    {{-- @include('stuffuser.home'); --}}
                 </div>
             </div>
         </div>

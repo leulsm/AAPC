@@ -10,6 +10,7 @@ use App\Http\Controllers\StuffController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DirectorController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\RegisteredUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,15 +23,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 Route::get('/', [HomeController::class, 'index']);
-// Route::get('/home/header', [HomeController::class, 'Homenavbar']);
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -41,63 +34,28 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
 });
 
-// Route::middleware('auth', 'role:user')->group(function () {
-//     Route::controller(HomeController::class)->group(function () {
-//         Route::get('/home/header', 'Homenavbar')->name('home.header');
-//     });
-// });
-
-Route::middleware('auth')->group(function () {
-    Route::get('/priviousrequest', [StuffController::class, 'previous'])->name('stuff.priviousrequest');
-    Route::get('/stuffhome', [StuffController::class, 'stuffhome'])->name('stuff.stuffhome');
-    Route::get('/stuffmessage', [StuffController::class, 'stuffmessage'])->name('stuff.stuffmessage');
-});
-
-// Route::middleware('auth')->group(function () {
-//     Route::get('/usertemplate', [UserController::class, 'userhome'])->name('user.layours.usertemplate');
-//     Route::get('/user/dashboard', 'Dashboard')->name('user.dashboard');
-//     Route::get('/user/messages', 'ContactMessage')->name('user.message');
-//     Route::get('/user/director', 'Director')->name('user.director');
-//     Route::get('/user/employee', 'Employee')->name('user.employee');
-//     Route::get('/user/expert', 'Expert')->name('user.expert');
-//     Route::get('/user/userforms', 'User')->name('user.userforms');
-//     Route::get('/user/forgotpassword', 'ForgotPassword')->name('user.forgotpassword');
-//     Route::get('/user/resetpassword', 'ResetPassword')->name('user.resetpassword');
-//     Route::get('/user/staffinfotable', 'StaffInfoTable')->name('user.staffinfotable');
-//     Route::get('/user/exporttable', 'ExportTable')->name('user.exporttable');
-//     Route::get('/user/report', 'Report')->name('user.report');
-// });
-Route::middleware('auth')->group(function () {
+Route::middleware('auth', 'role:user')->group(function () {
     Route::get('/stuffuser/index', [UserController::class, 'staffuserindex'])->name('stuffuser');
     Route::get('/stuffuser/statustable', [UserController::class, 'statustable'])->name('stuffuser.statustable');
     Route::get('/stuffuser/request', [UserController::class, 'staffrequest'])->name('stuffuser.request');
-    // Route::get('/stuffmessage', [StuffController::class, 'stuffmessage'])->name('stuff.stuffmessage');
+    Route::get('/stuffuser/singlerequestpage', [UserController::class, 'singlerequestpage'])->name('stuffuser.singlerequestpage');
+    Route::get('/stuffuser/viewrequest', [UserController::class, 'viewrequest'])->name('stuffuser.viewrequest');
+    Route::get('/stuffuser/editrequest', [UserController::class, 'editrequest'])->name('stuffuser.editrequest');
+    Route::get('/stuffuser/userprofile', [UserController::class, 'userprofile'])->name('stuffuser.userprofile');
+    Route::get('/stuffuser/setting', [UserController::class, 'setting'])->name('stuffuser.setting');
 });
-// Route::controller(UserController::class)->group(function () {
-Route::middleware('auth')->group(function () {
+Route::middleware('auth', 'role:expert')->group(function () {
     Route::get('/expertuser/index', [ExpertController::class, 'expertuserindex'])->name('expertuser');
-
-    // Route::get('/stuffmessage', [StuffController::class, 'stuffmessage'])->name('stuff.stuffmessage');
+    Route::get('/expertuser/assined', [ExpertController::class, 'assined'])->name('expertuser.assined');
+    Route::get('/expertuser/previousrequest', [ExpertController::class, 'previousrequest'])->name('expertuser.previousrequest');
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth', 'role:director')->group(function () {
     Route::get('/directoruser/index', [DirectorController::class, 'directoruserindex'])->name('directoruser');
-
-    // Route::get('/stuffmessage', [StuffController::class, 'stuffmessage'])->name('stuff.stuffmessage');
+    Route::get('/directoruser/softrequest', [DirectorController::class, 'softrequest'])->name('directoruser.softrequest');
+    Route::get('/directoruser/approve', [DirectorController::class, 'approve'])->name('directoruser.approve');
+    Route::get('/directoruser/oldrequests', [DirectorController::class, 'oldrequests'])->name('directoruser.oldrequests');
 });
-//     Route::get('/user/layouts/usertemplate', 'userhome')->name('user.layouts.usertemplate');
-//     Route::get('/user/dashboard', 'Dashboard')->name('user.dashboard');
-//     Route::get('/user/messages', 'ContactMessage')->name('user.message');
-//     Route::get('/user/director', 'Director')->name('user.director');
-//     Route::get('/user/employee', 'Employee')->name('user.employee');
-//     Route::get('/user/expert', 'Expert')->name('user.expert');
-//     Route::get('/user/userforms', 'User')->name('user.userforms');
-//     Route::get('/user/forgotpassword', 'ForgotPassword')->name('user.forgotpassword');
-//     Route::get('/user/resetpassword', 'ResetPassword')->name('user.resetpassword');
-//     Route::get('/user/staffinfotable', 'StaffInfoTable')->name('user.staffinfotable');
-//     Route::get('/user/exporttable', 'ExportTable')->name('user.exporttable');
-//     Route::get('/user/report', 'Report')->name('user.report');
-// });
 
 Route::middleware('auth', 'role:admin')->group(function () {
     Route::controller(DashboardController::class)->group(function () {
@@ -124,11 +82,5 @@ Route::middleware('auth', 'role:admin')->group(function () {
         Route::get('/admin/databaserequests', 'DatabaseRequests')->name('admin.databaserequests');
     });
 
-
-    // Route::controller(DirectorController::class)->group(function () {
-    //     // Route::get('/admin/add-product', 'AddProduct')->name('admin.addproduct');
-    //     // Route::get('/admin/all-product', 'ContactMessage')->name('admin.allproduct');
-    //     Route::post('/admin/director', 'register')->name('admin.directorr');
-    // });
 });
 require __DIR__ . '/auth.php';

@@ -21,4 +21,24 @@ class UserController extends Controller
     {
         return view('stuffuser.request');
     }
+    public function singlerequestpage()
+    {
+        return view('stuffuser.singlerequestpage');
+    }
+    public function viewrequest()
+    {
+        return view('stuffuser.viewrequest');
+    }
+    public function editrequest()
+    {
+        return view('stuffuser.editrequest');
+    }
+    public function userprofile()
+    {
+        return view('stuffuser.userprofile');
+    }
+    public function setting()
+    {
+        return view('stuffuser.setting');
+    }
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Expert</title>
+    <title>Stuff</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -32,6 +32,17 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('staffuser/assets/css/jquery.mCustomScrollbar.css') }}">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('staffuser/assets/css/style.css') }}">
+    <style>
+        .notificationupdatepassword {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -112,7 +123,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class=""><a href="#">AAPC
+                        <div class=""><a href="#" class="h5 ml-5 ">AAPC
                                 {{-- <img class="img-fluid" src="{{asset('staffuser/assets/images/logo.png')}}" alt="Theme-Logo" /> --}}
                             </a></div>
 
@@ -187,8 +198,8 @@
                             </li>
                             <li class="user-profile header-notification">
                                 <a href="#!" class="waves-effect waves-light">
-                                    <img src="{{ asset('staffuser/assets/images/avatar-4.jpg') }}" class="img-radius"
-                                        alt="User-Profile-Image">
+                                    <img src="{{ asset('staffuser/assets/images/profile-avatar-account-male.png') }}"
+                                        class="img-radius" alt="User-Profile-Image">
                                     <span>{{ Auth::user()->name }}</span>
                                     <i class="ti-angle-down"></i>
                                 </a>
@@ -199,7 +210,7 @@
                                         </a>
                                     </li>
                                     <li class="waves-effect waves-light">
-                                        <a href="user-profile.html">
+                                        <a href="{{ route('stuffuser.userprofile') }}">
                                             <i class="ti-user"></i> Profile
                                         </a>
                                     </li>
@@ -208,11 +219,11 @@
                                             <i class="ti-email"></i> My Messages
                                         </a>
                                     </li>
-                                    <li class="waves-effect waves-light">
+                                    {{-- <li class="waves-effect waves-light">
                                         <a href="auth-lock-screen.html">
                                             <i class="ti-lock"></i> Lock Screen
                                         </a>
-                                    </li>
+                                    </li> --}}
 
                                     <li class="waves-effect waves-light">
                                         <a href="auth-normal-sign-in.html">
@@ -244,7 +255,7 @@
                             <div class="">
                                 <div class="main-menu-header">
                                     <img class="img-80 img-radius"
-                                        src="{{ asset('staffuser/assets/images/avatar-4.jpg') }}"
+                                        src="{{ asset('staffuser/assets/images/profile-avatar-account-male.png') }}"
                                         alt="User-Profile-Image">
                                     <div class="user-details">
                                         <span id="more-details">{{ Auth::user()->name }}<i
@@ -254,7 +265,8 @@
                                 <div class="main-menu-content">
                                     <ul>
                                         <li class="more-details">
-                                            <a href="user-profile.html"><i class="ti-user"></i>View Profile</a>
+                                            <a href="{{ route('stuffuser.userprofile') }}"><i
+                                                    class="ti-user"></i>View Profile</a>
                                             <a href="#!"><i class="ti-settings"></i>Settings</a>
                                             <form method="POST" action="{{ route('logout') }}">
                                                 @csrf
@@ -269,11 +281,11 @@
                                     </ul>
                                 </div>
                             </div>
-                          
+
                             <div class="pcoded-navigation-label">Navigation</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="active">
-                                    <a href="{{ route('expertuser') }}" class="waves-effect waves-dark">
+                                    <a href="{{ route('stuffuser') }}" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                                         <span class="pcoded-mtext">Home</span>
                                         <span class="pcoded-mcaret"></span>
@@ -284,33 +296,224 @@
                             <div class="pcoded-navigation-label">Request</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="">
-                                    <a href="{{ route('expertuser.assined') }}" class="waves-effect waves-dark">
+                                    <a href="{{ route('stuffuser.request') }}" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext">Assigned Requests</span>
+                                        <span class="pcoded-mtext">Send Request</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                             </ul>
-
+                            <div class="pcoded-navigation-label">Sent Request</div>
                             <ul class="pcoded-item pcoded-left-item">
-                                <li class="">
-                                    <a href="{{ route('expertuser.previousrequest') }}" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext">Previous Requests</span>
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i><b>BC</b></span>
+                                        <span class="pcoded-mtext">Requests</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="{{ route('stuffuser.viewrequest') }}"
+                                                class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">View Requests</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="{{ route('stuffuser.statustable') }}"
+                                                class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">View Status</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
                                 </li>
                             </ul>
 
 
                         </div>
                     </nav>
-                    @include('expertuser.home');
+                    <div class="pcoded-content">
+                        <!-- Page-header start -->
+                        <div class="page-header">
+                            <div class="page-block">
+                                <div class="row align-items-center">
+                                    <div class="col-md-8">
+                                        <div class="page-header-title">
+                                            <h5 class="m-b-10">Profile</h5>
+                                            <p class="m-b-0">stuff profile page</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <ul class="breadcrumb">
+                                            <li class="breadcrumb-item">
+                                                <a href="{{ route('stuffuser') }}"> <i class="fa fa-home"></i> </a>
+                                            </li>
+                                            <li class="breadcrumb-item"><a href="{{ route('stuffuser') }}">Stuff</a>
+                                            </li>
+                                            <li class="breadcrumb-item"><a
+                                                    href="{{ route('stuffuser.userprofile') }}">Profile</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Page-header end -->
+                        <div class="pcoded-inner-content">
+                            <!-- Main-body start -->
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <!-- Page-body start -->
+                                    <div class="page-body">
+                                        <div class="row">
+
+                                            <div class="col-lg-4 col-xlg-3 col-md-5">
+                                                <div class="card">
+                                                    <div class="card-block">
+                                                        <center class="m-t-30"> <img
+                                                                src="{{ asset('staffuser/assets/images/profile-avatar-account-male.png') }}"
+                                                                class="img-circle" width="150" />
+                                                            <h4 class="card-title m-t-10">{{ Auth::user()->name }}
+                                                            </h4>
+                                                            <h6 class="card-subtitle">{{ Auth::user()->email }}</h6>
+
+                                                        </center>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Column -->
+                                            <!-- Column -->
+                                            <div class="col-lg-8 col-xlg-9 col-md-7">
+                                                <div class="card">
+                                                    <div class="card-block">
+                                                        <form class="form-horizontal form-material">
+                                                            <div class="form-group">
+                                                                <label class="col-md-12">Full Name</label>
+                                                                <div class="col-md-12">
+                                                                    <input type="text" placeholder="Johnathan Doe"
+                                                                        class="form-control form-control-line">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="example-email"
+                                                                    class="col-md-12">Email</label>
+                                                                <div class="col-md-12">
+                                                                    <input type="email"
+                                                                        placeholder="johnathan@admin.com"
+                                                                        class="form-control form-control-line"
+                                                                        name="example-email" id="example-email">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label class="col-md-12">Phone No</label>
+                                                                <div class="col-md-12">
+                                                                    <input type="text" placeholder="123 456 7890"
+                                                                        class="form-control form-control-line">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-12">
+                                                                    <button class="btn btn-success">Update
+                                                                        Profile</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="card">
+                                                    <div class="card-block">
+                                                        <h4 class="mb-4">Update Password</h4>
+                                                        <form class="form-horizontal form-material" method="post"
+                                                            action="{{ route('password.update') }}">
+                                                            @csrf
+                                                            @method('put')
+                                                            <div class="form-group">
+                                                                <label class="col-md-12">Old Password</label>
+                                                                <div class="col-md-12">
+                                                                    <input type="password" name="current_password"
+                                                                        id="current_password"
+                                                                        placeholder="old password"
+                                                                        class="form-control form-control-line">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-md-12">New
+                                                                    Password</label>
+                                                                <div class="col-md-12">
+                                                                    <input type="password" placeholder="new password"
+                                                                        class="form-control form-control-line"
+                                                                        name="password" id="password">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="col-md-12">Confirm New Password</label>
+                                                                <div class="col-md-12">
+                                                                    <input type="password" id="password_confirmation"
+                                                                        name="password_confirmation" value="password"
+                                                                        class="form-control form-control-line">
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-12">
+                                                                    <button class="btn btn-success"
+                                                                        type="submit">Update
+                                                                        Password</button>
+
+                                                                    @if (session('status') === 'password-updated')
+                                                                        {{-- <p x-data="{ show: true }" x-show="show"
+                                                                            x-transition x-init="setTimeout(() => show = false, 2000)"
+                                                                            class="text-sm text-gray-600 dark:text-gray-400">
+                                                                            {{ __('Saved.') }}</p> --}}
+                                                                        <div class="notificationupdatepassword">
+                                                                            UPDATED SUCCESSFULY
+                                                                        </div>
+                                    
+                                                                    @endif
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Page-body end -->
+                                </div>
+                                <div id="styleSelector"> </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Required Jquery -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var notificationupdatepassword = document.querySelector(".notificationupdatepassword");
+
+            if (notificationupdatepassword) {
+                notificationupdatepassword.style.display = "block";
+
+                setTimeout(function() {
+                    notificationupdatepassword.style.display = "none";
+                }, 3000); // Change duration (in milliseconds) as per your preference
+            }
+        });
+    </script>
     <script type="text/javascript" src="{{ asset('staffuser/assets/js/jquery/jquery.min.js ') }}"></script>
     <script type="text/javascript" src="{{ asset('staffuser/assets/js/jquery-ui/jquery-ui.min.js ') }}"></script>
     <script type="text/javascript" src="{{ asset('staffuser/assets/js/popper.js/popper.min.js') }}"></script>

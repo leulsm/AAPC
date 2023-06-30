@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Request</title>
+    <title>Single Request</title>
     <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 10]>
@@ -291,7 +291,7 @@
 
                                 <div class="pcoded-navigation-label">Request</div>
                                 <ul class="pcoded-item pcoded-left-item">
-                                    <li class="active">
+                                    <li class="">
                                         <a href="{{ route('stuffuser.request') }}" class="waves-effect waves-dark">
                                             <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                             <span class="pcoded-mtext">Request Form</span>
@@ -309,8 +309,8 @@
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                         <ul class="pcoded-submenu">
-                                            <li class=" ">
-                                                <a href="{{ route('stuffuser.viewrequest') }}"
+                                            <li class="active">
+                                                <a href="{{ route('stuffuser.viewrequest') }}""
                                                     class="waves-effect waves-dark">
                                                     <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                     <span class="pcoded-mtext">View Requests</span>
@@ -350,10 +350,11 @@
                                                 <a href="{{ route('stuffuser') }}"> <i class="fa fa-home"></i> </a>
                                             </li>
                                             <li class="breadcrumb-item"><a
-                                                    href="{{ route('stuffuser.request') }}">Request Form</a>
+                                                    href="{{ route('stuffuser.viewrequest') }}">View Request</a>
                                             </li>
-                                            {{-- <li class="breadcrumb-item"><a href="#!">Basic Form Inputs</a>
-                                            </li> --}}
+                                            <li class="breadcrumb-item"><a
+                                                    href="{{ route('stuffuser.singlerequestpage') }}">Detail</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -367,172 +368,181 @@
 
                                     <!-- Page body start -->
                                     <div class="page-body">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5>Perfonal Information</h5>
-                                                        <!--<span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>-->
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <form class="form-material">
-                                                            <div class="form-group form-default">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control" disabled>
-                                                                <span class="form-bar"></span>
-                                                                <label
-                                                                    class="float-label">{{ Auth::user()->name }}</label>
-                                                            </div>
 
-                                                            <div class="form-group form-default">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control">
-                                                                <span class="form-bar"></span>
-                                                                <label class="float-label">Email
-                                                                    (exa@gmail.com)</label>
-                                                            </div>
-                                                            <div class="form-group form-default">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control">
-                                                                <span class="form-bar"></span>
-                                                                <label class="float-label">Phone</label>
-                                                            </div>
-
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5>Work Information</h5>
-                                                        <!--<span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>-->
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <form class="form-material">
-                                                            <div class="form-group form-default form-static-label">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control" placeholder="Position">
-                                                                <span class="form-bar"></span>
-                                                                <label class="float-label">Position</label>
-                                                            </div>
-                                                            <div class="form-group form-default form-static-label">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control" placeholder="Department">
-                                                                <span class="form-bar"></span>
-                                                                <label class="float-label">Department</label>
-                                                            </div>
-                                                            <div class="form-group form-default form-static-label">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control" placeholder="Office No.">
-                                                                <span class="form-bar"></span>
-                                                                <label class="float-label">Office No.</label>
-                                                            </div>
-
-
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
 
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <!-- Basic Form Inputs card start -->
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>Maintenance Request Form</h5>
+                                                        <h5>Maintenance Request Detail</h5>
                                                     </div>
                                                     <div class="card-block">
-                                                        <h4 class="sub-title">Pleas Complite the Form</h4>
-                                                        <form>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Simple
-                                                                    Input</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control">
+                                                        <div class="section-body">
+                                                            <div class="invoice">
+                                                                <div class="invoice-print">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12">
+                                                                            <div class="invoice-title">
+                                                                                <h2>Maintenacne Request</h2>
+                                                                                <div class="invoice-number">Order
+                                                                                    #12345</div>
+                                                                            </div>
+                                                                            <hr>
+                                                                            <div class="row">
+                                                                                <div class="col-md-6">
+                                                                                    <address>
+                                                                                        <strong>Billed To:</strong><br>
+                                                                                        Sarah Smith<br>
+                                                                                        6404 Cut Glass Ct,<br>
+                                                                                        Wendell,<br>
+                                                                                        NC, 27591, USA
+                                                                                    </address>
+                                                                                </div>
+                                                                                <div class="col-md-6 text-md-right">
+                                                                                    <address>
+                                                                                        <strong>Shipped To:</strong><br>
+                                                                                        Keith Johnson<br>
+                                                                                        197 N 2000th E<br>
+                                                                                        Rexburg, ID,<br>
+                                                                                        Springfield Center, USA
+                                                                                    </address>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row">
+                                                                                <div class="col-md-6">
+                                                                                    <address>
+                                                                                        <strong>Payment
+                                                                                            Method:</strong><br>
+                                                                                        Visa ending **** 5687<br>
+                                                                                        test@example.com
+                                                                                    </address>
+                                                                                </div>
+                                                                                <div class="col-md-6 text-md-right">
+                                                                                    <address>
+                                                                                        <strong>Order Date:</strong><br>
+                                                                                        June 26, 2018<br><br>
+                                                                                    </address>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row mt-4">
+                                                                        <div class="col-md-12">
+                                                                            <div class="section-title">Order Summary
+                                                                            </div>
+                                                                            <p class="section-lead">All items here
+                                                                                cannot be deleted.</p>
+                                                                            <div class="table-responsive">
+                                                                                <table
+                                                                                    class="table table-striped table-hover table-md">
+                                                                                    <tr>
+                                                                                        <th data-width="40">#</th>
+                                                                                        <th>Item</th>
+                                                                                        <th class="text-center">Price
+                                                                                        </th>
+                                                                                        <th class="text-center">
+                                                                                            Quantity</th>
+                                                                                        <th class="text-right">Totals
+                                                                                        </th>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>1</td>
+                                                                                        <td>Mouse Wireless</td>
+                                                                                        <td class="text-center">$10.99
+                                                                                        </td>
+                                                                                        <td class="text-center">1</td>
+                                                                                        <td class="text-right">$10.99
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>2</td>
+                                                                                        <td>Keyboard Wireless</td>
+                                                                                        <td class="text-center">$20.00
+                                                                                        </td>
+                                                                                        <td class="text-center">3</td>
+                                                                                        <td class="text-right">$60.00
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>3</td>
+                                                                                        <td>Headphone Blitz TDR-3000
+                                                                                        </td>
+                                                                                        <td class="text-center">$600.00
+                                                                                        </td>
+                                                                                        <td class="text-center">1</td>
+                                                                                        <td class="text-right">$600.00
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </div>
+                                                                            {{-- <div class="row mt-4"> --}}
+                                                                            {{-- <div class="col-lg-8">
+                                                                                    <div class="section-title">Payment
+                                                                                        Method</div>
+                                                                                    <p class="section-lead">The payment
+                                                                                        method that we provide is to
+                                                                                        make it easier for you to
+                                                                                        pay
+                                                                                        invoices.</p>
+                                                                                    <div class="images">
+                                                                                        <img src="assets/img/cards/visa.png"
+                                                                                            alt="visa">
+                                                                                        <img src="assets/img/cards/jcb.png"
+                                                                                            alt="jcb">
+                                                                                        <img src="assets/img/cards/mastercard.png"
+                                                                                            alt="mastercard">
+                                                                                        <img src="assets/img/cards/paypal.png"
+                                                                                            alt="paypal">
+                                                                                    </div>
+                                                                                </div> --}}
+                                                                            {{-- <div class="col-lg-4 text-right">
+                                                                                    <div class="invoice-detail-item">
+                                                                                        <div
+                                                                                            class="invoice-detail-name">
+                                                                                            Subtotal</div>
+                                                                                        <div
+                                                                                            class="invoice-detail-value">
+                                                                                            $670.99</div>
+                                                                                    </div>
+                                                                                    <div class="invoice-detail-item">
+                                                                                        <div
+                                                                                            class="invoice-detail-name">
+                                                                                            Shipping</div>
+                                                                                        <div
+                                                                                            class="invoice-detail-value">
+                                                                                            $15</div>
+                                                                                    </div>
+                                                                                    <hr class="mt-2 mb-2">
+                                                                                    <div class="invoice-detail-item">
+                                                                                        <div
+                                                                                            class="invoice-detail-name">
+                                                                                            Total</div>
+                                                                                        <div
+                                                                                            class="invoice-detail-value invoice-detail-value-lg">
+                                                                                            $685.99</div>
+                                                                                    </div>
+                                                                                </div> --}}
+                                                                            {{-- </div> --}}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <hr>
+                                                                <div class="text-md-right">
+                                                                    {{-- <div class="float-lg-left mb-lg-0 mb-3">
+                                                                        <button
+                                                                            class="btn btn-primary btn-icon icon-left"><i
+                                                                                class="fas fa-credit-card"></i> Process
+                                                                            Payment</button>
+                                                                        <button
+                                                                            class="btn btn-danger btn-icon icon-left"><i
+                                                                                class="fas fa-times"></i>
+                                                                            Cancel</button>
+                                                                    </div> --}}
+                                                                    <button class="btn btn-warning">Print</button>
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group row">
-                                                                <label
-                                                                    class="col-sm-2 col-form-label">Placeholder</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control"
-                                                                        placeholder="Type your title in Placeholder">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Read
-                                                                    only</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control"
-                                                                        placeholder="You can't change me" readonly>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Disable
-                                                                    Input</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control"
-                                                                        placeholder="Disabled text" disabled>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Predefine
-                                                                    Input</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control"
-                                                                        value="Enter yout content after me">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Select
-                                                                    Box</label>
-                                                                <div class="col-sm-4">
-                                                                    <select name="select" class="form-control">
-                                                                        <option value="opt1">Select One Value Only
-                                                                        </option>
-                                                                        <option value="opt2">Type 2</option>
-                                                                        <option value="opt3">Type 3</option>
-                                                                        <option value="opt4">Type 4</option>
-                                                                        <option value="opt5">Type 5</option>
-                                                                        <option value="opt6">Type 6</option>
-                                                                        <option value="opt7">Type 7</option>
-                                                                        <option value="opt8">Type 8</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Upload
-                                                                    File</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="file" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Additional
-                                                                    Information</label>
-                                                                <div class="col-sm-10">
-                                                                    <textarea rows="5" cols="5" class="form-control" placeholder="Default textarea"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <div class="col-sm-10">
-
-                                                                </div>
-                                                                <div class="col-sm-2 col-form-label text-end">
-                                                                    <button
-                                                                        class="btn waves-effect waves-light btn-success btn-outline-success"><i
-                                                                            class="icofont icofont-check-circled"></i>SUBMIT</button>
-
-                                                                </div>
-                                                                {{-- <div class="col-sm-10">
-                                                                    <textarea rows="5" cols="5" class="form-control" placeholder="Default textarea"></textarea>
-                                                                </div> --}}
-                                                            </div>
-                                                        </form>
+                                                        </div>
 
                                                     </div>
                                                 </div>

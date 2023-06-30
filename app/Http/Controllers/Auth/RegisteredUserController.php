@@ -20,7 +20,7 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('admin.directorr');
+        return view('admin.director');
     }
 
     /**
@@ -41,15 +41,22 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-        $submit = $request->submitter;
 
-        $user->attachRole($submit);
+        $submiter = $request->submitter;
+
+        $user->attachRole($submiter);
 
         event(new Registered($user));
 
-        // Auth::login($user);
 
-        // return redirect(RouteServiceProvider::HOME);
+
+        // if ($submiter == 'admin') {
         return redirect(RouteServiceProvider::AHOME);
+        // } else {
+        //     Auth::login($user);
+        //     return redirect(RouteServiceProvider::HOME);
+        // }
+
+
     }
 }

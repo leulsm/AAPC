@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Expert</title>
+    <title>Approve</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -112,7 +112,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class=""><a href="#">AAPC
+                        <div class=""><a href="#" class="h4 pl-5">AAPC
                                 {{-- <img class="img-fluid" src="{{asset('staffuser/assets/images/logo.png')}}" alt="Theme-Logo" /> --}}
                             </a></div>
 
@@ -269,11 +269,19 @@
                                     </ul>
                                 </div>
                             </div>
-                          
+                            {{-- <div class="p-15 p-b-0">
+                                <form class="form-material">
+                                    <div class="form-group form-primary">
+                                        <input type="text" name="footer-email" class="form-control">
+                                        <span class="form-bar"></span>
+                                        <label class="float-label"><i class="fa fa-search m-r-10"></i>Search Friend</label>
+                                    </div>
+                                </form>
+                            </div> --}}
                             <div class="pcoded-navigation-label">Navigation</div>
                             <ul class="pcoded-item pcoded-left-item">
-                                <li class="active">
-                                    <a href="{{ route('expertuser') }}" class="waves-effect waves-dark">
+                                <li class="">
+                                    <a href="{{ route('directoruser') }}" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                                         <span class="pcoded-mtext">Home</span>
                                         <span class="pcoded-mcaret"></span>
@@ -281,31 +289,183 @@
                                 </li>
                             </ul>
 
+
                             <div class="pcoded-navigation-label">Request</div>
                             <ul class="pcoded-item pcoded-left-item">
-                                <li class="">
-                                    <a href="{{ route('expertuser.assined') }}" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext">Assigned Requests</span>
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i><b>BC</b></span>
+                                        <span class="pcoded-mtext">New Requests</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class="active">
+                                            <a href="{{route('directoruser.softrequest')}}" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Software Department</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="button.html" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Hardware Department</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        {{-- doctor telaye asfaw book telayen kedmkut--}}
+                                        <li class="">
+                                            <a href="accordion.html" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Network Department</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
+
 
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="">
-                                    <a href="{{ route('expertuser.previousrequest') }}" class="waves-effect waves-dark">
+                                    <a href="{{ route('directoruser.oldrequests') }}" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext">Previous Requests</span>
+                                        <span class="pcoded-mtext">Old Request</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                             </ul>
-
-
                         </div>
                     </nav>
-                    @include('expertuser.home');
+                    {{-- @include('directoruser.home'); --}}
+                    <div class="pcoded-content">
+                        <!-- Page-header start -->
+                        <div class="page-header">
+                            <div class="page-block">
+                                <div class="row align-items-center">
+                                    <div class="col-md-8">
+                                        <div class="page-header-title">
+                                            <h5 class="m-b-10">New Maintenance Request</h5>
+                                            <p class="m-b-0">Software Department.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <ul class="breadcrumb">
+                                            <li class="breadcrumb-item">
+                                                <a href="index.html"> <i class="fa fa-home"></i> </a>
+                                            </li>
+                                            <li class="breadcrumb-item"><a href="#!">New Request</a>
+                                            </li>
+                                            <li class="breadcrumb-item"><a href="#!">Software Department</a>
+                                            </li>
+                                            <li class="breadcrumb-item"><a href="#!">Approve</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Page-header end -->
+                        <div class="pcoded-inner-content">
+                            <!-- Main-body start -->
+                            <div class="main-body">
+                                <div class="page-wrapper">
+
+                                    <!-- Page body start -->
+                                    <div class="page-body">
+
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <!-- Basic Form Inputs card start -->
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h5>Assign Technician</h5>
+                                                        {{-- <h5>Maintenance Request's</h5> --}}
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <address>
+                                                                            <strong>Billed To:</strong><br>
+                                                                            Sarah Smith<br>
+                                                                            6404 Cut Glass Ct,<br>
+                                                                            Wendell,<br>
+                                                                            NC, 27591, USA
+                                                                        </address>
+                                                                    </div>
+                                                                    <div class="col-md-6 text-md-right">
+                                                                        <address>
+                                                                            <strong>Shipped To:</strong><br>
+                                                                            Keith Johnson<br>
+                                                                            197 N 2000th E<br>
+                                                                            Rexburg, ID,<br>
+                                                                            Springfield Center, USA
+                                                                        </address>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <address>
+                                                                            <strong>Payment
+                                                                                Method:</strong><br>
+                                                                            Visa ending **** 5687<br>
+                                                                            test@example.com
+                                                                        </address>
+                                                                    </div>
+                                                                    <div class="col-md-6 text-md-right">
+                                                                        <address>
+                                                                            <strong>Order Date:</strong><br>
+                                                                            June 26, 2018<br><br>
+                                                                        </address>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="section-title">Select Technician</div>
+                                                        <div class="row">
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <select class="form-control select2">
+                                                                        <option>Technician 1</option>
+                                                                        <option>Technician 2</option>
+                                                                        <option>Technician 3</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-2"></div>
+                                                            <div class="col-sm-6 card">
+                                                                <div class="card-body">
+                                                                    <label for="">Name:</label>
+                                                                    <label for="">Technician 1    </label>
+                                                                    <label for="">work assigned on:</label>
+                                                                    <label for="">1</label>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {{-- <div class="row"> --}}
+                                                    <div class="text-md-right">
+                                                        <button class="btn btn-success">Confirm</button>
+                                                    </div>
+                                                    {{-- </div> --}}
+                                                </div>
+                                                <!-- Basic Form Inputs card end -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Page body end -->
+                                </div>
+                            </div>
+                            <!-- Main-body end -->
+                            <div id="styleSelector">
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -329,6 +489,25 @@
     <script src="{{ asset('staffuser/assets/js/vertical/vertical-layout.min.js ') }}"></script>
 
     <script type="text/javascript" src="{{ asset('staffuser/assets/js/script.js') }} "></script>
+
+    {{-- ------------ --}}
+    {{-- <script src="{{ asset('Admin_template/assets/js/app.min.js')}}"></script>
+    <!-- JS Libraies -->
+    <script src="{{ asset('Admin_template/assets/bundles/cleave-js/dist/cleave.min.js')}}"></script>
+    <script src="{{ asset('Admin_template/assets/bundles/cleave-js/dist/addons/cleave-phone.us.js')}}"></script>
+    <script src="{{ asset('Admin_template/assets/bundles/jquery-pwstrength/jquery.pwstrength.min.js')}}"></script>
+    <script src="{{ asset('Admin_template/assets/bundles/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
+    <script src="{{ asset('Admin_template/assets/bundles/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js')}}"></script>
+    <script src="{{ asset('Admin_template/assets/bundles/bootstrap-timepicker/js/bootstrap-timepicker.min.js')}}"></script>
+    <script src="{{ asset('Admin_template/assets/bundles/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js')}}"></script>
+    <script src="{{ asset('Admin_template/assets/bundles/select2/dist/js/select2.full.min.js')}}"></script>
+    <script src="{{ asset('Admin_template/assets/bundles/jquery-selectric/jquery.selectric.min.js')}}"></script>
+    <!-- Page Specific JS File -->
+    <script src="{{ asset('Admin_template/assets/js/page/forms-advanced-forms.js')}}"></script>
+    <!-- Template JS File -->
+    <script src="{{ asset('Admin_template/assets/js/scripts.js')}}"></script>
+    <!-- Custom JS File -->
+    <script src="{{ asset('Admin_template/assets/js/custom.js')}}"></script> --}}
 </body>
 
 </html>

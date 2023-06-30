@@ -3,31 +3,35 @@
 
 <head>
     <title>Stuff</title>
-  
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <meta name="keywords" content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
+    <meta name="keywords"
+        content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
     <meta name="author" content="Codedthemes" />
     <!-- Favicon icon -->
-    <link rel="icon" href="{{asset('staffuser/assets/images/favicon.ico')}}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('staffuser/assets/images/favicon.ico') }}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
     <!-- waves.css -->
-    <link rel="stylesheet" href="{{asset('staffuser/assets/pages/waves/css/waves.min.css')}}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ asset('staffuser/assets/pages/waves/css/waves.min.css') }}" type="text/css"
+        media="all">
     <!-- Required Fremwork -->
-    <link rel="stylesheet" type="text/css" href="{{asset('staffuser/assets/css/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('staffuser/assets/css/bootstrap/css/bootstrap.min.css') }}">
     <!-- waves.css -->
-    <link rel="stylesheet" href="{{asset('staffuser/assets/pages/waves/css/waves.min.css')}}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ asset('staffuser/assets/pages/waves/css/waves.min.css') }}" type="text/css"
+        media="all">
     <!-- themify-icons line icon -->
-    <link rel="stylesheet" type="text/css" href="{{asset('staffuser/assets/icon/themify-icons/themify-icons.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('staffuser/assets/icon/themify-icons/themify-icons.css') }}">
     <!-- Font Awesome -->
-    <link rel="stylesheet" type="text/css" href="{{asset('staffuser/assets/icon/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('staffuser/assets/icon/font-awesome/css/font-awesome.min.css') }}">
     <!-- ico font -->
-    <link rel="stylesheet" type="text/css" href="{{asset('staffuser/assets/icon/icofont/css/icofont.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('staffuser/assets/icon/icofont/css/icofont.css') }}">
     <!-- Style.css -->
-    <link rel="stylesheet" type="text/css" href="{{asset('staffuser/assets/css/style.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('staffuser/assets/css/jquery.mCustomScrollbar.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('staffuser/assets/css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('staffuser/assets/css/jquery.mCustomScrollbar.css') }}">
 </head>
 
 <body>
@@ -98,16 +102,17 @@
                             <div class="header-search">
                                 <div class="main-search morphsearch-search">
                                     <div class="input-group">
-                                        <span class="input-group-prepend search-close"><i class="ti-close input-group-text"></i></span>
+                                        <span class="input-group-prepend search-close"><i
+                                                class="ti-close input-group-text"></i></span>
                                         <input type="text" class="form-control" placeholder="Enter Keyword">
-                                        <span class="input-group-append search-btn"><i class="ti-search input-group-text"></i></span>
+                                        <span class="input-group-append search-btn"><i
+                                                class="ti-search input-group-text"></i></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <a href="index.html">
-                            <img class="img-fluid" src="{{asset('staffuser/assets/images/logo.png')}}" alt="Theme-Logo" />
-                        </a>
+                        <div class=""><a href="#" class="h5 ml-5 ">AAPC
+                            </a></div>
                         <a class="mobile-options waves-effect waves-light">
                             <i class="ti-more"></i>
                         </a>
@@ -115,10 +120,12 @@
                     <div class="navbar-container container-fluid">
                         <ul class="nav-left">
                             <li>
-                                <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
+                                <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a>
+                                </div>
                             </li>
                             <li>
-                                <a href="#!" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
+                                <a href="#!" onclick="javascript:toggleFullScreen()"
+                                    class="waves-effect waves-light">
                                     <i class="ti-fullscreen"></i>
                                 </a>
                             </li>
@@ -136,30 +143,39 @@
                                     </li>
                                     <li class="waves-effect waves-light">
                                         <div class="media">
-                                            <img class="d-flex align-self-center img-radius" src="{{asset('staffuser/assets/images/avatar-2.jpg')}}" alt="Generic placeholder image">
+                                            <img class="d-flex align-self-center img-radius"
+                                                src="{{ asset('staffuser/assets/images/avatar-2.jpg') }}"
+                                                alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">John Doe</h5>
-                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
+                                                    elit.</p>
                                                 <span class="notification-time">30 minutes ago</span>
                                             </div>
                                         </div>
                                     </li>
                                     <li class="waves-effect waves-light">
                                         <div class="media">
-                                            <img class="d-flex align-self-center img-radius" src="{{asset('staffuser/assets/images/avatar-4.jpg')}}" alt="Generic placeholder image">
+                                            <img class="d-flex align-self-center img-radius"
+                                                src="{{ asset('staffuser/assets/images/avatar-4.jpg') }}"
+                                                alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">Joseph William</h5>
-                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
+                                                    elit.</p>
                                                 <span class="notification-time">30 minutes ago</span>
                                             </div>
                                         </div>
                                     </li>
                                     <li class="waves-effect waves-light">
                                         <div class="media">
-                                            <img class="d-flex align-self-center img-radius" src="{{asset('staffuser/assets/images/avatar-3.jpg')}}" alt="Generic placeholder image">
+                                            <img class="d-flex align-self-center img-radius"
+                                                src="{{ asset('staffuser/assets/images/avatar-3.jpg') }}"
+                                                alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">Sara Soudein</h5>
-                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
+                                                    elit.</p>
                                                 <span class="notification-time">30 minutes ago</span>
                                             </div>
                                         </div>
@@ -168,7 +184,8 @@
                             </li>
                             <li class="user-profile header-notification">
                                 <a href="#!" class="waves-effect waves-light">
-                                    <img src="{{asset('staffuser/assets/images/avatar-4.jpg')}}" class="img-radius" alt="User-Profile-Image">
+                                    <img src="{{ asset('staffuser/assets/images/profile-avatar-account-male.png') }}"
+                                        class="img-radius" alt="User-Profile-Image">
                                     <span>{{ Auth::user()->name }}</span>
                                     <i class="ti-angle-down"></i>
                                 </a>
@@ -188,21 +205,21 @@
                                             <i class="ti-email"></i> My Messages
                                         </a>
                                     </li>
-                                    <li class="waves-effect waves-light">
+                                    {{-- <li class="waves-effect waves-light">
                                         <a href="auth-lock-screen.html">
                                             <i class="ti-lock"></i> Lock Screen
                                         </a>
-                                    </li>
+                                    </li> --}}
                                     <li class="waves-effect waves-light">
                                         <a href="auth-normal-sign-in.html">
                                             <i class="ti-layout-sidebar-left"></i> Logout
                                             <form method="POST" action="{{ route('logout') }}">
                                                 @csrf
-                    
+
                                                 <x-dropdown-link :href="route('logout')"
-                                                        onclick="event.preventDefault();
+                                                    onclick="event.preventDefault();
                                                                     this.closest('form').submit();">
-                                                    
+
                                                 </x-dropdown-link>
                                             </form>
                                         </a>
@@ -221,9 +238,12 @@
                         <div class="pcoded-inner-navbar main-menu">
                             <div class="">
                                 <div class="main-menu-header">
-                                    <img class="img-80 img-radius" src="{{asset('staffuser/assets/images/avatar-4.jpg')}}" alt="User-Profile-Image">
+                                    <img class="img-80 img-radius"
+                                        src="{{ asset('staffuser/assets/images/profile-avatar-account-male.png') }}"
+                                        alt="User-Profile-Image">
                                     <div class="user-details">
-                                        <span id="more-details">{{ Auth::user()->name }}<i class="fa fa-caret-down"></i></span>
+                                        <span id="more-details">{{ Auth::user()->name }}<i
+                                                class="fa fa-caret-down"></i></span>
                                     </div>
                                 </div>
                                 <div class="main-menu-content">
@@ -234,9 +254,11 @@
                                             {{-- <a href="auth-normal-sign-in.html"><i class="ti-layout-sidebar-left"></i>Logout</a> --}}
                                             <form method="POST" action="{{ route('logout') }}">
                                                 @csrf
-                                                <a href="route('logout')" onclick="event.preventDefault();this.closest('form').submit();" ><i class="ti-layout-sidebar-left"></i>Logout 
-                    
-                                                {{-- <x-dropdown-link :href="route('logout')"
+                                                <a href="route('logout')"
+                                                    onclick="event.preventDefault();this.closest('form').submit();"><i
+                                                        class="ti-layout-sidebar-left"></i>Logout
+
+                                                    {{-- <x-dropdown-link :href="route('logout')"
                                                         onclick="event.preventDefault();
                                                                     this.closest('form').submit();">
                                                     
@@ -246,7 +268,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="p-15 p-b-0">
+                            {{-- <div class="p-15 p-b-0">
                                 <form class="form-material">
                                     <div class="form-group form-primary">
                                         <input type="text" name="footer-email" class="form-control">
@@ -254,7 +276,7 @@
                                         <label class="float-label"><i class="fa fa-search m-r-10"></i>Search Friend</label>
                                     </div>
                                 </form>
-                            </div>
+                            </div> --}}
                             <div class="pcoded-navigation-label">Navigation</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="">
@@ -265,7 +287,7 @@
                                     </a>
                                 </li>
                             </ul>
-                          
+
                             <div class="pcoded-navigation-label">Forms</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="">
@@ -276,16 +298,35 @@
                                     </a>
                                 </li>
                             </ul>
-                            <div class="pcoded-navigation-label">sent Request</div>
+                            <div class="pcoded-navigation-label">Sent Request</div>
                             <ul class="pcoded-item pcoded-left-item">
-                                <li class="active">
-                                    <a href="{{ route('stuffuser.statustable') }}" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-receipt"></i><b>B</b></span>
-                                        <span class="pcoded-mtext">Status</span>
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i><b>BC</b></span>
+                                        <span class="pcoded-mtext">Requests</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="{{ route('stuffuser.viewrequest') }}"
+                                                class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">View Requests</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="{{ route('stuffuser.statustable') }}"
+                                                class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">View Status</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
                                 </li>
-                            </ul>                      
+                            </ul>
                         </div>
                     </nav>
                     <div class="pcoded-content">
@@ -302,11 +343,12 @@
                                     <div class="col-md-4">
                                         <ul class="breadcrumb">
                                             <li class="breadcrumb-item">
-                                                <a href="index.html"> <i class="fa fa-home"></i> </a>
+                                                <a href="{{ route('stuffuser') }}"> <i class="fa fa-home"></i> </a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!">Bootstrap Tables</a>
+                                            <li class="breadcrumb-item"><a
+                                                    href="{{ route('stuffuser.statustable') }}">Status</a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!">Basic Tables</a>
+                                            {{-- <li class="breadcrumb-item"><a href="#!">Basic Tables</a> --}}
                                             </li>
                                         </ul>
                                     </div>
@@ -358,14 +400,27 @@
                                                                 <td>@mdo</td>
                                                                 <td>@mdo</td>
                                                                 <td>@mdo</td>
-                                                                <td><div class="dropdown-inverse dropdown open">
-                                                                    <button class="btn btn-inverse dropdown-toggle waves-effect waves-light " type="button" id="dropdown-7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Approve</button>
-                                                                    <div class="dropdown-menu" aria-labelledby="dropdown-7" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                                                                        <a class="dropdown-item waves-light waves-effect" href="#">Action</a>
-                                                                        <a class="dropdown-item waves-light waves-effect" href="#">Another action</a>
-                                                                        <a class="dropdown-item waves-light waves-effect" href="#">Something else</a>
+                                                                <td>
+                                                                    <div class="dropdown-inverse dropdown open">
+                                                                        <button
+                                                                            class="btn btn-inverse dropdown-toggle waves-effect waves-light "
+                                                                            type="button" id="dropdown-7"
+                                                                            data-toggle="dropdown"
+                                                                            aria-haspopup="true"
+                                                                            aria-expanded="true">Approve</button>
+                                                                        <div class="dropdown-menu"
+                                                                            aria-labelledby="dropdown-7"
+                                                                            data-dropdown-in="fadeIn"
+                                                                            data-dropdown-out="fadeOut">
+                                                                            <a class="dropdown-item waves-light waves-effect"
+                                                                                href="#">Maintained</a>
+                                                                            <a class="dropdown-item waves-light waves-effect"
+                                                                                href="#">In progress</a>
+                                                                            <a class="dropdown-item waves-light waves-effect"
+                                                                                href="#">Not Maintained</a>
+                                                                        </div>
                                                                     </div>
-                                                                </div></td>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <th scope="row">2</th>
@@ -374,14 +429,27 @@
                                                                 <td>@mdo</td>
                                                                 <td>@mdo</td>
                                                                 <td>@fat</td>
-                                                                <td><div class="dropdown-inverse dropdown open">
-                                                                    <button class="btn btn-inverse dropdown-toggle waves-effect waves-light " type="button" id="dropdown-7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Approve</button>
-                                                                    <div class="dropdown-menu" aria-labelledby="dropdown-7" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                                                                        <a class="dropdown-item waves-light waves-effect" href="#">Maintained</a>
-                                                                        <a class="dropdown-item waves-light waves-effect" href="#">In progress</a>
-                                                                        <a class="dropdown-item waves-light waves-effect" href="#"></a>
+                                                                <td>
+                                                                    <div class="dropdown-inverse dropdown open">
+                                                                        <button
+                                                                            class="btn btn-inverse dropdown-toggle waves-effect waves-light "
+                                                                            type="button" id="dropdown-7"
+                                                                            data-toggle="dropdown"
+                                                                            aria-haspopup="true"
+                                                                            aria-expanded="true">Approve</button>
+                                                                        <div class="dropdown-menu"
+                                                                            aria-labelledby="dropdown-7"
+                                                                            data-dropdown-in="fadeIn"
+                                                                            data-dropdown-out="fadeOut">
+                                                                            <a class="dropdown-item waves-light waves-effect"
+                                                                                href="#">Maintained</a>
+                                                                            <a class="dropdown-item waves-light waves-effect"
+                                                                                href="#">In progress</a>
+                                                                            <a class="dropdown-item waves-light waves-effect"
+                                                                                href="#">Not Maintained</a>
+                                                                        </div>
                                                                     </div>
-                                                                </div></td>
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <th scope="row">3</th>
@@ -390,14 +458,27 @@
                                                                 <td>@mdo</td>
                                                                 <td>@mdo</td>
                                                                 <td>@twitter</td>
-                                                                <td><div class="dropdown-inverse dropdown open">
-                                                                    <button class="btn btn-inverse dropdown-toggle waves-effect waves-light " type="button" id="dropdown-7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Approve</button>
-                                                                    <div class="dropdown-menu" aria-labelledby="dropdown-7" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                                                                        <a class="dropdown-item waves-light waves-effect" href="#">Action</a>
-                                                                        <a class="dropdown-item waves-light waves-effect" href="#">Another action</a>
-                                                                        <a class="dropdown-item waves-light waves-effect" href="#">Something else</a>
+                                                                <td>
+                                                                    <div class="dropdown-inverse dropdown open">
+                                                                        <button
+                                                                            class="btn btn-inverse dropdown-toggle waves-effect waves-light "
+                                                                            type="button" id="dropdown-7"
+                                                                            data-toggle="dropdown"
+                                                                            aria-haspopup="true"
+                                                                            aria-expanded="true">Approve</button>
+                                                                        <div class="dropdown-menu"
+                                                                            aria-labelledby="dropdown-7"
+                                                                            data-dropdown-in="fadeIn"
+                                                                            data-dropdown-out="fadeOut">
+                                                                            <a class="dropdown-item waves-light waves-effect"
+                                                                                href="#">Maintained</a>
+                                                                            <a class="dropdown-item waves-light waves-effect"
+                                                                                href="#">In progress</a>
+                                                                            <a class="dropdown-item waves-light waves-effect"
+                                                                                href="#">Not Maintained</a>
+                                                                        </div>
                                                                     </div>
-                                                                </div></td>
+                                                                </td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -406,7 +487,7 @@
                                         </div>
                                         <!-- Basic table card end -->
                                         <!-- Inverse table card start -->
-                                       
+
                                         <!-- Inverse table card end -->
                                         <!-- Hover table card start -->
                                         <div class="card">
@@ -486,7 +567,7 @@
                                                                 <th>Request Date</th>
                                                                 <th>Reason</th>
                                                                 <th>Date</th>
-                                                           
+
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -497,7 +578,7 @@
                                                                 <td>Otto</td>
                                                                 <td>@mdo</td>
                                                                 <td>@mdo</td>
-                                                                
+
                                                             </tr>
                                                             <tr>
                                                                 <th scope="row">2</th>
@@ -506,7 +587,7 @@
                                                                 <td>@fat</td>
                                                                 <td>@fat</td>
                                                                 <td>@fat</td>
-                                                           
+
                                                             </tr>
                                                             <tr>
                                                                 <th scope="row">3</th>
@@ -515,7 +596,7 @@
                                                                 <td>the Bird</td>
                                                                 <td>@fat</td>
                                                                 <td>@fat</td>
-                                                          
+
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -524,7 +605,7 @@
                                         </div>
                                         <!-- Contextual classes table ends -->
                                         <!-- Background Utilities table start -->
-                                      
+
                                         <!-- Background Utilities table end -->
                                     </div>
                                     <!-- Page-body end -->
@@ -542,22 +623,23 @@
         </div>
     </div>
 
-  
-    
+
+
     <!-- Required Jquery -->
-    <script type="text/javascript" src="{{asset('staffuser/assets/js/jquery/jquery.min.js ')}}"></script>
-    <script type="text/javascript" src="{{asset('staffuser/assets/js/jquery-ui/jquery-ui.min.js')}} "></script>
-    <script type="text/javascript" src="{{asset('staffuser/assets/js/popper.js/popper.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('staffuser/assets/js/bootstrap/js/bootstrap.min.js')}} "></script>
+    <script type="text/javascript" src="{{ asset('staffuser/assets/js/jquery/jquery.min.js ') }}"></script>
+    <script type="text/javascript" src="{{ asset('staffuser/assets/js/jquery-ui/jquery-ui.min.js') }} "></script>
+    <script type="text/javascript" src="{{ asset('staffuser/assets/js/popper.js/popper.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('staffuser/assets/js/bootstrap/js/bootstrap.min.js') }} "></script>
     <!-- waves js -->
-    <script src="{{asset('staffuser/assets/pages/waves/js/waves.min.js')}}"></script>
+    <script src="{{ asset('staffuser/assets/pages/waves/js/waves.min.js') }}"></script>
     <!-- jquery slimscroll js -->
-    <script type="text/javascript" src="{{asset('staffuser/assets/js/jquery-slimscroll/jquery.slimscroll.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('staffuser/assets/js/jquery-slimscroll/jquery.slimscroll.js') }}">
+    </script>
     <!-- Custom js -->
-    <script src="{{asset('staffuser/assets/js/pcoded.min.js')}}"></script>
-    <script src="{{asset('staffuser/assets/js/vertical/vertical-layout.min.js')}}"></script>
-    <script src="{{asset('staffuser/assets/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('staffuser/assets/js/script.js')}}"></script>
+    <script src="{{ asset('staffuser/assets/js/pcoded.min.js') }}"></script>
+    <script src="{{ asset('staffuser/assets/js/vertical/vertical-layout.min.js') }}"></script>
+    <script src="{{ asset('staffuser/assets/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('staffuser/assets/js/script.js') }}"></script>
 </body>
 
 </html>
