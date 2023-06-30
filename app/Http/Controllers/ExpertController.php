@@ -11,4 +11,12 @@ class ExpertController extends Controller
     {
         return view('expertuser.index');
     }
+    public function assined()
+    {
+        return view('expertuser.assined');
+    }
+    public function previousrequest()
+    {
+        return view('expertuser.previousrequest');
+    }
 }

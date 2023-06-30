@@ -247,19 +247,11 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="p-15 p-b-0">
-                                <form class="form-material">
-                                    <div class="form-group form-primary">
-                                        <input type="text" name="footer-email" class="form-control">
-                                        <span class="form-bar"></span>
-                                        <label class="float-label"><i class="fa fa-search m-r-10"></i>Search Friend</label>
-                                    </div>
-                                </form>
-                            </div>
+                           
                             <div class="pcoded-navigation-label">Navigation</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="active">
-                                    <a href="{{ route('stuffuser') }}" class="waves-effect waves-dark">
+                                    <a href="{{ route('directoruser') }}" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                                         <span class="pcoded-mtext">Home</span>
                                         <span class="pcoded-mcaret"></span>
@@ -278,7 +270,7 @@
                                     </a>
                                     <ul class="pcoded-submenu">
                                         <li class=" ">
-                                            <a href="breadcrumb.html" class="waves-effect waves-dark">
+                                            <a href="{{route('directoruser.softrequest')}}" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext">Software Department</span>
                                                 <span class="pcoded-mcaret"></span>
@@ -305,7 +297,7 @@
                           
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="">
-                                    <a href="{{ route('stuffuser.request') }}" class="waves-effect waves-dark">
+                                    <a href="{{ route('directoruser.oldrequests') }}" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                         <span class="pcoded-mtext">Old Request</span>
                                         <span class="pcoded-mcaret"></span>

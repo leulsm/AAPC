@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Request</title>
+    <title>Single Request</title>
     <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 10]>
@@ -291,7 +291,7 @@
 
                                 <div class="pcoded-navigation-label">Request</div>
                                 <ul class="pcoded-item pcoded-left-item">
-                                    <li class="active">
+                                    <li class="">
                                         <a href="{{ route('stuffuser.request') }}" class="waves-effect waves-dark">
                                             <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                             <span class="pcoded-mtext">Request Form</span>
@@ -302,14 +302,14 @@
                                 <div class="pcoded-navigation-label">Sent Request</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li class="pcoded-hasmenu">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                        <a href="javascript:void(1)" class="waves-effect waves-dark">
                                             <span class="pcoded-micon"><i
                                                     class="ti-layout-grid2-alt"></i><b>BC</b></span>
                                             <span class="pcoded-mtext">Requests</span>
-                                            <span class="pcoded-mcaret"></span>
+                                            {{-- <span class="pcoded-mcaret"></span> --}}
                                         </a>
                                         <ul class="pcoded-submenu">
-                                            <li class=" ">
+                                            <li class="active">
                                                 <a href="{{ route('stuffuser.viewrequest') }}"
                                                     class="waves-effect waves-dark">
                                                     <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
@@ -317,7 +317,7 @@
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
                                             </li>
-                                            <li class=" ">
+                                            <li class="">
                                                 <a href="{{ route('stuffuser.statustable') }}"
                                                     class="waves-effect waves-dark">
                                                     <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
@@ -347,13 +347,13 @@
                                     <div class="col-md-4">
                                         <ul class="breadcrumb">
                                             <li class="breadcrumb-item">
-                                                <a href="{{ route('stuffuser') }}"> <i class="fa fa-home"></i> </a>
+                                                <a href="index.html"> <i class="fa fa-home"></i> </a>
                                             </li>
                                             <li class="breadcrumb-item"><a
-                                                    href="{{ route('stuffuser.request') }}">Request Form</a>
+                                                    href="{{ route('stuffuser.viewrequest') }}">View Request</a>
                                             </li>
-                                            {{-- <li class="breadcrumb-item"><a href="#!">Basic Form Inputs</a>
-                                            </li> --}}
+                                            {{-- <li class="breadcrumb-item"><a href="#!">Basic Form Inputs</a> --}}
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -367,173 +367,187 @@
 
                                     <!-- Page body start -->
                                     <div class="page-body">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5>Perfonal Information</h5>
-                                                        <!--<span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>-->
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <form class="form-material">
-                                                            <div class="form-group form-default">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control" disabled>
-                                                                <span class="form-bar"></span>
-                                                                <label
-                                                                    class="float-label">{{ Auth::user()->name }}</label>
-                                                            </div>
 
-                                                            <div class="form-group form-default">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control">
-                                                                <span class="form-bar"></span>
-                                                                <label class="float-label">Email
-                                                                    (exa@gmail.com)</label>
-                                                            </div>
-                                                            <div class="form-group form-default">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control">
-                                                                <span class="form-bar"></span>
-                                                                <label class="float-label">Phone</label>
-                                                            </div>
-
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5>Work Information</h5>
-                                                        <!--<span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>-->
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <form class="form-material">
-                                                            <div class="form-group form-default form-static-label">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control" placeholder="Position">
-                                                                <span class="form-bar"></span>
-                                                                <label class="float-label">Position</label>
-                                                            </div>
-                                                            <div class="form-group form-default form-static-label">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control" placeholder="Department">
-                                                                <span class="form-bar"></span>
-                                                                <label class="float-label">Department</label>
-                                                            </div>
-                                                            <div class="form-group form-default form-static-label">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control" placeholder="Office No.">
-                                                                <span class="form-bar"></span>
-                                                                <label class="float-label">Office No.</label>
-                                                            </div>
-
-
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
 
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <!-- Basic Form Inputs card start -->
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>Maintenance Request Form</h5>
+                                                        <h5>Maintenance Request's</h5>
                                                     </div>
-                                                    <div class="card-block">
-                                                        <h4 class="sub-title">Pleas Complite the Form</h4>
-                                                        <form>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Simple
-                                                                    Input</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label
-                                                                    class="col-sm-2 col-form-label">Placeholder</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control"
-                                                                        placeholder="Type your title in Placeholder">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Read
-                                                                    only</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control"
-                                                                        placeholder="You can't change me" readonly>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Disable
-                                                                    Input</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control"
-                                                                        placeholder="Disabled text" disabled>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Predefine
-                                                                    Input</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control"
-                                                                        value="Enter yout content after me">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Select
-                                                                    Box</label>
-                                                                <div class="col-sm-4">
-                                                                    <select name="select" class="form-control">
-                                                                        <option value="opt1">Select One Value Only
-                                                                        </option>
-                                                                        <option value="opt2">Type 2</option>
-                                                                        <option value="opt3">Type 3</option>
-                                                                        <option value="opt4">Type 4</option>
-                                                                        <option value="opt5">Type 5</option>
-                                                                        <option value="opt6">Type 6</option>
-                                                                        <option value="opt7">Type 7</option>
-                                                                        <option value="opt8">Type 8</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Upload
-                                                                    File</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="file" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Additional
-                                                                    Information</label>
-                                                                <div class="col-sm-10">
-                                                                    <textarea rows="5" cols="5" class="form-control" placeholder="Default textarea"></textarea>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <div class="col-sm-10">
-
-                                                                </div>
-                                                                <div class="col-sm-2 col-form-label text-end">
-                                                                    <button
-                                                                        class="btn waves-effect waves-light btn-success btn-outline-success"><i
-                                                                            class="icofont icofont-check-circled"></i>SUBMIT</button>
-
-                                                                </div>
-                                                                {{-- <div class="col-sm-10">
-                                                                    <textarea rows="5" cols="5" class="form-control" placeholder="Default textarea"></textarea>
-                                                                </div> --}}
-                                                            </div>
-                                                        </form>
-
+                                                    <div class="card-body">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-striped" id="table-2">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="text-center pt-3">
+                                                                            <div
+                                                                                class="custom-checkbox custom-checkbox-table custom-control">
+                                                                                <input type="checkbox"
+                                                                                    data-checkboxes="mygroup"
+                                                                                    data-checkbox-role="dad"
+                                                                                    class="custom-control-input"
+                                                                                    id="checkbox-all">
+                                                                                <label for="checkbox-all"
+                                                                                    class="custom-control-label">&nbsp;</label>
+                                                                            </div>
+                                                                        </th>
+                                                                        <th>First Name</th>
+                                                                        <th>Last Name</th>
+                                                                        <th>Position</th>
+                                                                        <th>Registered Date</th>
+                                                                        <th>Detail</th>
+                                                                        <th>Edit</th>
+                                                                        <th>Delete</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="text-center pt-2">
+                                                                            <div
+                                                                                class="custom-checkbox custom-control">
+                                                                                <input type="checkbox"
+                                                                                    data-checkboxes="mygroup"
+                                                                                    class="custom-control-input"
+                                                                                    id="checkbox-1">
+                                                                                <label for="checkbox-1"
+                                                                                    class="custom-control-label">&nbsp;</label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>User 1</td>
+                                                                        <td class="align-middle">
+                                                                            dddd
+                                                                            {{-- <div class="progress progress-xs">
+                                                                                <div class="progress-bar width-per-70"></div>
+                                                                            </div> --}}
+                                                                        </td>
+                                                                        <td>
+                                                                            {{-- <img alt="image" src="assets/img/users/user-5.png" width="35"> --}}
+                                                                            Expert
+                                                                        </td>
+                                                                        <td>2018-01-20</td>
+                                                                        {{-- <td>
+                                                                            <div class="badge badge-success badge-shadow">Active</div>
+                                                                        </td> --}}
+                                                                        <td><a href="{{ route('stuffuser.singlerequestpage') }}"
+                                                                                class="btn btn-primary">Detail</a></td>
+                                                                        <td><a href="{{ route('stuffuser.editrequest') }}"
+                                                                                class="btn btn-success">Edit</a></td>
+                                                                        <td><a href="#"
+                                                                                class="btn btn-danger">Delete</a></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-center pt-2">
+                                                                            <div
+                                                                                class="custom-checkbox custom-control">
+                                                                                <input type="checkbox"
+                                                                                    data-checkboxes="mygroup"
+                                                                                    class="custom-control-input"
+                                                                                    id="checkbox-2">
+                                                                                <label for="checkbox-2"
+                                                                                    class="custom-control-label">&nbsp;</label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>User 2</td>
+                                                                        <td class="align-middle">
+                                                                            eeee
+                                                                            {{-- <div class="progress progress-xs">
+                                                                                <div class="progress-bar width-per-60"></div>
+                                                                            </div> --}}
+                                                                        </td>
+                                                                        <td>
+                                                                            Director
+                                                                            {{-- <img alt="image" src="assets/img/users/user-1.png" width="35">
+                                                                            <img alt="image" src="assets/img/users/user-3.png" width="35">
+                                                                            <img alt="image" src="assets/img/users/user-4.png" width="35"> --}}
+                                                                        </td>
+                                                                        <td>2018-04-10</td>
+                                                                        {{-- <td>
+                                                                            <div class="badge badge-info badge-shadow">Verified</div>
+                                                                        </td> --}}
+                                                                        <td><a href="#"
+                                                                                class="btn btn-primary">Detail</a></td>
+                                                                        <td><a href="#"
+                                                                                class="btn btn-success">Edit</a></td>
+                                                                        <td><a href="#"
+                                                                                class="btn btn-danger">Delete</a></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-center pt-2">
+                                                                            <div
+                                                                                class="custom-checkbox custom-control">
+                                                                                <input type="checkbox"
+                                                                                    data-checkboxes="mygroup"
+                                                                                    class="custom-control-input"
+                                                                                    id="checkbox-3">
+                                                                                <label for="checkbox-3"
+                                                                                    class="custom-control-label">&nbsp;</label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>User 3</td>
+                                                                        <td class="align-middle">
+                                                                            fffff
+                                                                            {{-- <div class="progress progress-xs">
+                                                                                <div class="progress-bar bg-warning width-per-70"></div>
+                                                                            </div> --}}
+                                                                        </td>
+                                                                        <td>
+                                                                            Employee
+                                                                            {{-- <img alt="image" src="assets/img/users/user-1.png" width="35">
+                                                                            <img alt="image" src="assets/img/users/user-2.png" width="35"> --}}
+                                                                        </td>
+                                                                        <td>2018-01-29</td>
+                                                                        {{-- <td>
+                                                                            <div class="badge badge-warning badge-shadow">Inactive</div>
+                                                                        </td> --}}
+                                                                        <td><a href="#"
+                                                                                class="btn btn-primary">Detail</a></td>
+                                                                        <td><a href="#"
+                                                                                class="btn btn-success">Edit</a></td>
+                                                                        <td><a href="#"
+                                                                                class="btn btn-danger">Delete</a></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-center pt-2">
+                                                                            <div
+                                                                                class="custom-checkbox custom-control">
+                                                                                <input type="checkbox"
+                                                                                    data-checkboxes="mygroup"
+                                                                                    class="custom-control-input"
+                                                                                    id="checkbox-4">
+                                                                                <label for="checkbox-4"
+                                                                                    class="custom-control-label">&nbsp;</label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>User 4</td>
+                                                                        <td class="align-middle">
+                                                                            gggg
+                                                                            {{-- <div class="progress progress-xs">
+                                                                                <div class="progress-bar bg-success width-per-40"></div>
+                                                                            </div> --}}
+                                                                        </td>
+                                                                        <td>
+                                                                            Expert
+                                                                            {{-- <img alt="image" src="assets/img/users/user-2.png" width="35">
+                                                                            <img alt="image" src="assets/img/users/user-5.png" width="35">
+                                                                            <img alt="image" src="assets/img/users/user-4.png" width="35">
+                                                                            <img alt="image" src="assets/img/users/user-1.png" width="35"> --}}
+                                                                        </td>
+                                                                        <td>2018-01-16</td>
+                                                                        {{-- <td>
+                                                                            <div class="badge badge-success badge-shadow">Active</div>
+                                                                        </td> --}}
+                                                                        <td><a href="#"
+                                                                                class="btn btn-primary">Detail</a></td>
+                                                                        <td><a href="#"
+                                                                                class="btn btn-success">Edit</a></td>
+                                                                        <td><a href="#"
+                                                                                class="btn btn-danger">Delete</a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <!-- Basic Form Inputs card end -->

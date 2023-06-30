@@ -11,4 +11,16 @@ class DirectorController extends Controller
     {
         return view('directoruser.index');
     }
+    public function softrequest()
+    {
+        return view('directoruser.softrequest');
+    }
+    public function approve()
+    {
+        return view('directoruser.approve');
+    }
+    public function oldrequests()
+    {
+        return view('directoruser.oldrequests');
+    }
 }

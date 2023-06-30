@@ -96,4 +96,8 @@ class DashboardController extends Controller
     {
         return view('admin.charts');
     }
+    public function register()
+    {
+        return view('admin.director');
+    }
 }
