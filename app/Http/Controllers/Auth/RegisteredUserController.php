@@ -41,6 +41,7 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+
         $submiter = $request->submitter;
 
         $user->attachRole($submiter);
@@ -55,5 +56,7 @@ class RegisteredUserController extends Controller
         //     Auth::login($user);
         //     return redirect(RouteServiceProvider::HOME);
         // }
+
+
     }
 }

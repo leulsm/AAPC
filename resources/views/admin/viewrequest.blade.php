@@ -3,14 +3,14 @@
     <div class="col-12 col-md-6 col-lg-6">
         <div class="card">
             <div class="card-header">
-                <h4>Accordion</h4>
+                <h4>Requests of S.W &AMP; H.W</h4>
             </div>
             <div class="card-body">
                 <div id="accordion">
                     <div class="accordion">
                         <div class="accordion-header" role="button" data-toggle="collapse" data-target="#panel-body-1"
                             aria-expanded="true">
-                            <h4>Panel 1</h4>
+                            <h4>Request 1</h4>
                         </div>
                         <div class="accordion-body collapse show" id="panel-body-1" data-parent="#accordion">
                             <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -23,7 +23,7 @@
                     </div>
                     <div class="accordion">
                         <div class="accordion-header" role="button" data-toggle="collapse" data-target="#panel-body-2">
-                            <h4>Panel 2</h4>
+                            <h4>Request 2</h4>
                         </div>
                         <div class="accordion-body collapse" id="panel-body-2" data-parent="#accordion">
                             <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -36,7 +36,7 @@
                     </div>
                     <div class="accordion">
                         <div class="accordion-header" role="button" data-toggle="collapse" data-target="#panel-body-3">
-                            <h4>Panel 3</h4>
+                            <h4>Request 3</h4>
                         </div>
                         <div class="accordion-body collapse" id="panel-body-3" data-parent="#accordion">
                             <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

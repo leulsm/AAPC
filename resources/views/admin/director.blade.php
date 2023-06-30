@@ -13,6 +13,7 @@
                             <div class="row">
                                 <div class="form-group col-6">
                                     <label for="frist_name">First Name</label>
+
                                     <input id="name" type="text" class="form-control" name="name" autofocus>
                                     <x-input-error :messages="$errors->get('name')" class="mt-2" />
 
@@ -23,6 +24,7 @@
                                     <label for="last_name">Last Name</label>
                                     <input id="last_name" type="text" class="form-control" name="last_name">
                                 </div> --}}
+
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
@@ -37,11 +39,14 @@
                                     <label for="password" class="d-block">Password</label>
                                     <input id="password" type="password" class="form-control pwstrength"
                                         data-indicator="pwindicator" name="password">
+                                    <input id="submitter" type="hidden" class="form-control" name="submitter"
+                                        value="director">
                                     <div id="pwindicator" class="pwindicator">
                                         <div class="bar"></div>
                                         <div class="label"></div>
                                     </div>
                                     <x-input-error :messages="$errors->get('password')" class="mt-2" />
+
 
                                 </div>
                                 <div class="form-group col-6">
@@ -49,8 +54,8 @@
                                     <input id="password_confirmation" type="password" class="form-control"
                                         name="password_confirmation">
                                     <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-
                                 </div>
+                              
                             </div>
                             <div class="form-group">
                                 <div class="custom-control custom-checkbox">
@@ -59,29 +64,17 @@
                                         conditions</label>
                                 </div>
                             </div>
-                            <div class="flex items-center justify-end mt-4">
-                                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                                    {{ __('Already registered?') }}
-                                </a>
-                    
-                                <x-primary-button class="ml-4">
-                                    {{ __('Register') }}
-                                </x-primary-button>
-                            </div>
-                            {{-- <div class="form-group">
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">
-                                    Register
-                                </button>
-                            </div>
-                            <div class="flex items-center justify-end mt-4">
-                                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                                    {{ __('Already registered?') }}
-                                </a>
-                    
-                                {{-- <x-primary-button class="ml-4">
-                                    {{ __('Register') }}
-                                </x-primary-button> --}}
-                            {{-- </div> --}}
+                                <div class="flex items-center justify-end mt-4">
+                                    {{-- <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
+                                        href="{{ route('login') }}">
+                                        {{ __('Already registered?') }}
+                                    </a> --}}
+
+                                    <x-primary-button class="ml-4">
+                                        {{ __('Register') }}
+                                    </x-primary-button>
+                                </div>
+                                
                         </form>
                     </div>
                     {{-- <div class="mb-4 text-muted text-center">

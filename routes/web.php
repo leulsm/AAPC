@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ExpertController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -62,10 +63,10 @@ Route::middleware('auth', 'role:admin')->group(function () {
         Route::get('/admin/messages', 'ContactMessage')->name('admin.message');
         Route::get('/admin/director', 'Director')->name('admin.director');
         Route::post('/admin/director', [RegisteredUserController::class, 'store'])->name('admin.directorr');
-
-        Route::post('/admin/employee', [RegisteredUserController::class, 'store'])->name('admin.employee');
         Route::get('/admin/employee', 'Employee')->name('admin.employee');
+        Route::post('/admin/employee', [RegisteredUserController::class, 'store'])->name('admin.employee');
         Route::get('/admin/expert', 'Expert')->name('admin.expert');
+        Route::post('/admin/expert', [RegisteredUserController::class, 'store'])->name('admin.expert');
         Route::get('/admin/userforms', 'User')->name('admin.userforms');
         Route::get('/admin/forgotpassword', 'ForgotPassword')->name('admin.forgotpassword');
         Route::get('/admin/resetpassword', 'ResetPassword')->name('admin.resetpassword');
@@ -80,5 +81,6 @@ Route::middleware('auth', 'role:admin')->group(function () {
         Route::get('/admin/requestsnetwork', 'RequestNetwork')->name('admin.requestsnetwork');
         Route::get('/admin/databaserequests', 'DatabaseRequests')->name('admin.databaserequests');
     });
+
 });
 require __DIR__ . '/auth.php';

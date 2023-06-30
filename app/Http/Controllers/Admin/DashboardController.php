@@ -28,30 +28,6 @@ class DashboardController extends Controller
     {
         return view('admin.databaserequests');
     }
-    // public function CreateCategory()
-    // {
-    //     return view('admin.createcategory');
-    // }
-    // public function AllCategory()
-    // {
-    //     return view('admin.allcategory');
-    // }
-    // public function CreateSubCategory()
-    // {
-    //     return view('admin.createsubcategory');
-    // }
-    // public function AllSubCategory()
-    // {
-    //     return view('admin.allsubcategory');
-    // }
-    // public function CreateBrands()
-    // {
-    //     return view('admin.createbrands');
-    // }
-    // public function AllBrands()
-    // {
-    //     return view('admin.allbrands');
-    // }
     public function Director()
     {
         return view('admin.director');
@@ -99,5 +75,9 @@ class DashboardController extends Controller
     public function register()
     {
         return view('admin.director');
+    }
+    public function Profile()
+    {
+        return view('admin.profile');
     }
 }
