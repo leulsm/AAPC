@@ -13,7 +13,8 @@
                                 <div id="chat-scroll">
                                     <ul class="chat-list list-unstyled m-b-0">
                                         <li class="clearfix active">
-                                            <img src="assets/img/users/user-4.png" alt="avatar">
+                                            <img src="{{ asset('dashboard_asset/assets/img/users/user-4.png') }}"
+                                                alt="avatar">
                                             <div class="about">
                                                 <div class="name">William Smith</div>
                                                 <div class="status">
@@ -23,7 +24,8 @@
                                             </div>
                                         </li>
                                         <li class="clearfix ">
-                                            <img src="assets/img/users/user-1.png" alt="avatar">
+                                            <img src="{{ asset('dashboard_asset/assets/img/users/user-1.png') }}"
+                                                alt="avatar">
                                             <div class="about">
                                                 <div class="name">Martha Williams</div>
                                                 <div class="status">
@@ -33,7 +35,8 @@
                                             </div>
                                         </li>
                                         <li class="clearfix">
-                                            <img src="assets/img/users/user-2.png" alt="avatar">
+                                            <img src="{{ asset('dashboard_asset/assets/img/users/user-2.png') }}"
+                                                alt="avatar">
                                             <div class="about">
                                                 <div class="name">Joseph Clark</div>
                                                 <div class="status">
@@ -43,7 +46,8 @@
                                             </div>
                                         </li>
                                         <li class="clearfix">
-                                            <img src="assets/img/users/user-3.png" alt="avatar">
+                                            <img src="{{ asset('dashboard_asset/assets/img/users/user-3.png') }}"
+                                                alt="avatar">
                                             <div class="about">
                                                 <div class="name">Nancy Taylor</div>
                                                 <div class="status">
@@ -53,7 +57,8 @@
                                             </div>
                                         </li>
                                         <li class="clearfix">
-                                            <img src="assets/img/users/user-4.png" alt="avatar">
+                                            <img src="{{ asset('dashboard_asset/assets/img/users/user-4.png') }}"
+                                                alt="avatar">
                                             <div class="about">
                                                 <div class="name">Margaret Wilson</div>
                                                 <div class="status">
@@ -63,7 +68,8 @@
                                             </div>
                                         </li>
                                         <li class="clearfix">
-                                            <img src="assets/img/users/user-5.png" alt="avatar">
+                                            <img src="{{ asset('dashboard_asset/assets/img/users/user-5.png') }}"
+                                                alt="avatar">
                                             <div class="about">
                                                 <div class="name">Joseph Jones</div>
                                                 <div class="status">
@@ -73,7 +79,8 @@
                                             </div>
                                         </li>
                                         <li class="clearfix">
-                                            <img src="assets/img/users/user-1.png" alt="avatar">
+                                            <img src="{{ asset('dashboard_asset/assets/img/users/user-1.png') }}"
+                                                alt="avatar">
                                             <div class="about">
                                                 <div class="name">Jane Brown</div>
                                                 <div class="status">
@@ -83,7 +90,8 @@
                                             </div>
                                         </li>
                                         <li class="clearfix">
-                                            <img src="assets/img/users/user-2.png" alt="avatar">
+                                            <img src="{{ asset('dashboard_asset/assets/img/users/user-2.png') }}"
+                                                alt="avatar">
                                             <div class="about">
                                                 <div class="name">Eliza Johnson</div>
                                                 <div class="status">
@@ -103,7 +111,7 @@
                 <div class="card">
                     <div class="chat">
                         <div class="chat-header clearfix">
-                            <img src="assets/img/users/user-1.png" alt="avatar">
+                            <img src="{{ asset('dashboard_asset/assets/img/users/user-1.png') }}" alt="avatar">
                             <div class="chat-about">
                                 <div class="chat-with">Maria Smith</div>
                                 <div class="chat-num-messages">2 new messages</div>

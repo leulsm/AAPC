@@ -14,7 +14,7 @@ class DashboardController extends Controller
         if (Auth::user()->hasRole('user')) {
             return view('stuffuser.index');
         } else if (Auth::user()->hasRole('admin')) {
-            return view('Admin.layouts.template');
+            return view('admin.dashboard');
         } else if (Auth::user()->hasRole('expert')) {
             return view('expertuser.index');
         } else if (Auth::user()->hasRole('director')) {

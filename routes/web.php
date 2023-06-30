@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ExpertController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -102,16 +103,12 @@ Route::middleware('auth', 'role:admin')->group(function () {
     Route::controller(DashboardController::class)->group(function () {
         Route::get('/admin/dashboard', 'Dashboard')->name('admin.dashboard');
         Route::get('/admin/messages', 'ContactMessage')->name('admin.message');
-        // Route::get('/admin/create-category', 'CreateCategory')->name('admin.createcategory');
-        // Route::get('/admin/all-category', 'AllCategory')->name('admin.allcategory');
-        // Route::get('/admin/create-sub-category', 'CreateSubCategory')->name('admin.createsubcategory');
-        // Route::get('/admin/all-sub-category', 'AllSubCategory')->name('admin.allsubcategory');
-        // Route::get('/admin/create-brands', 'CreateBrands')->name('admin.createbrands');
-        // // Route::get('/admin/all-brands', 'AllBrands')->name('admin.allbrands');
         Route::get('/admin/director', 'Director')->name('admin.director');
-        // Route::post('/admin/director', 'Director')->name('admin.director');
+        Route::post('/admin/director', [RegisteredUserController::class, 'store'])->name('admin.directorr');
         Route::get('/admin/employee', 'Employee')->name('admin.employee');
+        Route::post('/admin/employee', [RegisteredUserController::class, 'store'])->name('admin.employee');
         Route::get('/admin/expert', 'Expert')->name('admin.expert');
+        Route::post('/admin/expert', [RegisteredUserController::class, 'store'])->name('admin.expert');
         Route::get('/admin/userforms', 'User')->name('admin.userforms');
         Route::get('/admin/forgotpassword', 'ForgotPassword')->name('admin.forgotpassword');
         Route::get('/admin/resetpassword', 'ResetPassword')->name('admin.resetpassword');
@@ -125,20 +122,13 @@ Route::middleware('auth', 'role:admin')->group(function () {
         Route::get('/admin/viewrequests', 'ViewRequest')->name('admin.viewrequest');
         Route::get('/admin/requestsnetwork', 'RequestNetwork')->name('admin.requestsnetwork');
         Route::get('/admin/databaserequests', 'DatabaseRequests')->name('admin.databaserequests');
-        // Route::post('/register-director', 'DirectorController@register');
-        // Route::post('/director/register', 'register')->name('director.register');
-        // Route::post('/register-director', 'DirectorRegister');
     });
 
-    Route::controller(ProductController::class)->group(function () {
-        Route::get('/admin/add-product', 'AddProduct')->name('admin.addproduct');
-        Route::get('/admin/all-product', 'ContactMessage')->name('admin.allproduct');
-    });
 
-    Route::controller(DirectorController::class)->group(function () {
-        // Route::get('/admin/add-product', 'AddProduct')->name('admin.addproduct');
-        // Route::get('/admin/all-product', 'ContactMessage')->name('admin.allproduct');
-        Route::post('/admin/director', 'register')->name('admin.directorr');
-    });
+    // Route::controller(DirectorController::class)->group(function () {
+    //     // Route::get('/admin/add-product', 'AddProduct')->name('admin.addproduct');
+    //     // Route::get('/admin/all-product', 'ContactMessage')->name('admin.allproduct');
+    //     Route::post('/admin/director', 'register')->name('admin.directorr');
+    // });
 });
 require __DIR__ . '/auth.php';
