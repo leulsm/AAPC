@@ -339,14 +339,14 @@
                         </li> --}}
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                    data-feather="grid"></i><span>Tables</span></a>
+                                    data-feather="users"></i><span>Users Table</span></a>
                             <ul class="dropdown-menu">
                                 {{-- <li><a class="nav-link" href="basic-table.html">Basic Tables</a></li> --}}
                                 {{-- <li><a class="nav-link" href="advance-table.html">Advanced Table</a></li> --}}
                                 {{-- <li><a class="nav-link" href="datatables.html">Datatable</a></li> --}}
                                 <li><a class="nav-link" href="{{ route('admin.staffinfotable') }}">Staff Info
                                         table</a></li>
-                                <li><a class="nav-link" href="{{ route('admin.exporttable') }}">Export Table</a></li>
+                                <li><a class="nav-link" href="{{ route('admin.index') }}">Users</a></li>
                                 {{-- <li><a class="nav-link" href="editable-table.html">Editable Table</a></li> --}}
                             </ul>
                         </li>

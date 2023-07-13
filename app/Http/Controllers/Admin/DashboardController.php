@@ -80,4 +80,8 @@ class DashboardController extends Controller
     {
         return view('admin.profile');
     }
+    public function index()
+    {
+        return view('admin.index');
+    }
 }

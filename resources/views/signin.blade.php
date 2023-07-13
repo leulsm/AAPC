@@ -110,12 +110,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group form-primary">
-                                    <input type="text" name="email" class="form-control">
+                                    <input type="text" name="email" placeholder="E-mail" class="form-control">
                                     <span class="form-bar"></span>
                                     {{-- <label class="float-label">Your Email Address</label> --}}
                                 </div>
                                 <div class="form-group form-primary">
-                                    <input type="password" name="password" class="form-control">
+                                    <input type="password" name="password" placeholder="Password" class="form-control">
                                     <span class="form-bar"></span>
                                     {{-- <label class="float-label">Password</label> --}}
                                 </div>
@@ -137,8 +137,8 @@
                                                         {{ __('Forgot your password?') }}
                                                     </a>
                                                 @endif
-    
-                                               
+
+
                                                 {{-- <x-primary-button class="ml-3">
                                                     {{ __('Log in') }}
                                                 </x-primary-button> --}}
@@ -149,11 +149,11 @@
                                 <div class="row m-t-30">
                                     {{-- <div class=""> --}}
 
-                                       
-                                        <div class="col-md-12 mt-4">
-                                            <button type="submit"
-                                                class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Login</button>
-                                        </div>
+
+                                    <div class="col-md-12 mt-4">
+                                        <button type="submit"
+                                            class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Login</button>
+                                    </div>
                                     {{-- </div> --}}
                                 </div>
                                 <hr />

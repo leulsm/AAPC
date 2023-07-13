@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -48,15 +49,6 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-
-
-        // if ($submiter == 'admin') {
-        return redirect(RouteServiceProvider::AHOME);
-        // } else {
-        //     Auth::login($user);
-        //     return redirect(RouteServiceProvider::HOME);
-        // }
-
-
+        return redirect(RouteServiceProvider::AHOME)->with('success', 'User successfully registered!');
     }
 }

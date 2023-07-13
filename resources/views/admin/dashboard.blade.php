@@ -6,6 +6,11 @@
                 <div class="col-12">
                     <div class="card mb-0">
                         <div class="card-body">
+                            @if (session('success'))
+                                <div class="alert alert-success">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
                             <ul class="nav nav-pills">
                                 <li class="nav-item">
                                     <a class="nav-link active" href="#">All <span
@@ -30,7 +35,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>All Posts</h4>
+                            <h4>All Tasks</h4>
                         </div>
                         <div class="card-body">
                             <div class="float-left">
@@ -281,234 +286,6 @@
     {{-- ********************************************** --}}
     <section class="section">
         <div class="section-body">
-            {{-- <div class="row">
-                <div class="col-xl-8 col-md-12 col-lg-8">
-                    {{-- <div class="card">
-                        <div class="card-header">
-                            <h4>Revenue Chart</h4>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-inline text-center">
-                                <li class="list-inline-item p-r-30"><i data-feather="arrow-up-circle"
-                                        class="col-green"></i>
-                                    <h5 class="m-b-0">$675</h5>
-                                    <p class="text-muted font-14 m-b-0">Weekly Earnings</p>
-                                </li>
-                                <li class="list-inline-item p-r-30"><i data-feather="arrow-down-circle"
-                                        class="col-orange"></i>
-                                    <h5 class="m-b-0">$1,587</h5>
-                                    <p class="text-muted font-14 m-b-0">Monthly Earnings</p>
-                                </li>
-                                <li class="list-inline-item p-r-30"><i data-feather="arrow-up-circle"
-                                        class="col-green"></i>
-                                    <h5 class="mb-0 m-b-0">$45,965</h5>
-                                    <p class="text-muted font-14 m-b-0">Yearly Earnings</p>
-                                </li>
-                            </ul>
-                            <div id="revenue"></div>
-                        </div>
-                    </div> --}}
-            {{-- </div> --}}
-            {{-- <div class="col-xl-4 col-md-12 col-lg-4">
-                    <div class="card l-bg-orange">
-                        <div class="card-body">
-                            <div class="text-white">
-                                <div class="row">
-                                    <div class="col-md-6 col-lg-5">
-                                        <h4 class="mb-0 font-26">$1,235</h4>
-                                        <p class="mb-2">Avg Sales Per Month</p>
-                                        <p class="mb-0">
-                                            <span class="font-20">+11.25% </span>Increase
-                                        </p>
-                                    </div>
-                                    <div class="col-md-6 col-lg-7">
-                                        <div class="sparkline-bar p-t-50"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card l-bg-cyan">
-                        <div class="card-body">
-                            <div class="text-white">
-                                <div class="row">
-                                    <div class="col-md-6 col-lg-5">
-                                        <h4 class="mb-0 font-26">758</h4>
-                                        <p class="mb-2">Avg new Cust Per Month</p>
-                                        <p class="mb-0">
-                                            <span class="font-20">+25.11%</span> Increase
-                                        </p>
-                                    </div>
-                                    <div class="col-md-6 col-lg-7">
-                                        <div class="sparkline-line-chart2 p-t-50"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-            </div> --}}
-            {{-- <div class="row">
-                <div class="col-12 col-sm-12 col-lg-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Summary</h4>
-                            <div class="card-header-action">
-                                <a href="#summary-chart" data-tab="summary-tab" class="btn active">Chart</a>
-                                <a href="#summary-text" data-tab="summary-tab" class="btn">Text</a>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="summary">
-                                <div class="summary-info" data-tab-group="summary-tab" id="summary-text">
-                                    <h4>$3,157</h4>
-                                    <div class="text-muted">Total Earning Today</div>
-                                    <div class="d-block mt-2">
-                                        <a href="#">View All</a>
-                                    </div>
-                                </div>
-                                <div class="summary-chart active" data-tab-group="summary-tab" id="summary-chart">
-                                    <canvas id="myChart" height="180"></canvas>
-                                </div>
-                                <div class="summary-item">
-                                    <h6 class="mt-3">Recent Purchase <span class="text-muted">(4 Items)</span></h6>
-                                    <ul class="list-unstyled list-unstyled-border">
-                                        <li class="media">
-                                            <img alt="image" src="assets/img/users/user-1.png"
-                                                class="mr-3 user-img-radious-style user-list-img" width="40">
-                                            <div class="media-body">
-                                                <div class="media-right">$112</div>
-                                                <div class="media-title"><a href="#">Sarah Smith</a></div>
-                                                <div class="text-small text-muted">From <a href="#">London</a>
-                                                    <div class="bullet"></div> Monday
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="media">
-                                            <a href="#">
-                                                <img alt="image" src="assets/img/users/user-2.png"
-                                                    class="mr-3 user-img-radious-style user-list-img" width="40">
-                                            </a>
-                                            <div class="media-body">
-                                                <div class="media-right">$225</div>
-                                                <div class="media-title"><a href="#">Ashton Cox</a></div>
-                                                <div class="text-small text-muted">From <a href="#">India</a>
-                                                    <div class="bullet"></div> Sunday
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="media">
-                                            <a href="#">
-                                                <img alt="image" src="assets/img/users/user-3.png"
-                                                    class="mr-3 user-img-radious-style user-list-img" width="40">
-                                            </a>
-                                            <div class="media-body">
-                                                <div class="media-right">$479</div>
-                                                <div class="media-title"><a href="#">John Doe</a></div>
-                                                <div class="text-muted text-small">From <a href="#">China</a>
-                                                    <div class="bullet"></div> Friday
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="media">
-                                            <a href="#">
-                                                <img alt="image" src="assets/img/users/user-4.png"
-                                                    class="mr-3 user-img-radious-style user-list-img" width="40">
-                                            </a>
-                                            <div class="media-body">
-                                                <div class="media-right">$669</div>
-                                                <div class="media-title"><a href="#">Airi Satou</a></div>
-                                                <div class="text-small text-muted">From <a href="#">Shilanka</a>
-                                                    <div class="bullet"></div> Tuesday
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-lg-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Statistics</h4>
-                            <div class="card-header-action">
-                                <a href="#" class="btn active">Week</a>
-                                <a href="#" class="btn">Month</a>
-                                <a href="#" class="btn">Year</a>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <canvas id="myChart2" height="180"></canvas>
-                            <div class="statistic-details mt-1">
-                                <div class="statistic-details-item">
-                                    <div class="text-small text-muted"><span class="text-primary"><i
-                                                class="fas fa-caret-up"></i></span> 12%</div>
-                                    <div class="detail-value">$125</div>
-                                    <div class="detail-name">Today</div>
-                                </div>
-                                <div class="statistic-details-item">
-                                    <div class="text-small text-muted"><span class="text-danger"><i
-                                                class="fas fa-caret-down"></i></span> 33%</div>
-                                    <div class="detail-value">$3,564</div>
-                                    <div class="detail-name">This Week</div>
-                                </div>
-                                <div class="statistic-details-item">
-                                    <div class="text-small text-muted"><span class="text-primary"><i
-                                                class="fas fa-caret-up"></i></span>19%</div>
-                                    <div class="detail-value">$14,687</div>
-                                    <div class="detail-name">This Month</div>
-                                </div>
-                                <div class="statistic-details-item">
-                                    <div class="text-small text-muted"><span class="text-primary"><i
-                                                class="fas fa-caret-up"></i></span>29%</div>
-                                    <div class="detail-value">$88,568</div>
-                                    <div class="detail-name">This Year</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card mt-4">
-                        <div class="card-header">
-                            <h4>Popular Browser</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col mb-4 mb-lg-0 text-center">
-                                    <div class="browser browser-chrome"></div>
-                                    <div class="mt-2 font-weight-bold">Chrome</div>
-                                    <div class="text-small text-muted"><span class="text-primary"><i
-                                                class="fas fa-caret-up"></i></span> 38%</div>
-                                </div>
-                                <div class="col mb-4 mb-lg-0 text-center">
-                                    <div class="browser browser-firefox"></div>
-                                    <div class="mt-2 font-weight-bold">Firefox</div>
-                                    <div class="text-small text-muted"><span class="text-primary"><i
-                                                class="fas fa-caret-up"></i></span> 22%</div>
-                                </div>
-                                <div class="col mb-4 mb-lg-0 text-center">
-                                    <div class="browser browser-safari"></div>
-                                    <div class="mt-2 font-weight-bold">Safari</div>
-                                    <div class="text-small text-muted"><span class="text-danger"><i
-                                                class="fas fa-caret-down"></i></span> 27%</div>
-                                </div>
-                                <div class="col mb-4 mb-lg-0 text-center">
-                                    <div class="browser browser-opera"></div>
-                                    <div class="mt-2 font-weight-bold">Opera</div>
-                                    <div class="text-small text-muted">9%</div>
-                                </div>
-                                <div class="col mb-4 mb-lg-0 text-center">
-                                    <div class="browser browser-internet-explorer"></div>
-                                    <div class="mt-2 font-weight-bold">IE</div>
-                                    <div class="text-small text-muted"><span class="text-primary"><i
-                                                class="fas fa-caret-up"></i></span> 4%</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="card card-statistic-2">
@@ -604,10 +381,20 @@
                                     </div>
                                     <div class="carousel-item">
                                         <img class="d-block w-100"
-                                            src="{{ asset('dashboard_asset/assets/img/datacenter_service.jpeg') }}"
+                                            src="{{ asset('dashboard_asset/assets/img/software_maintenance.png') }}"
                                             alt="Third slide">
                                         <div class="carousel-caption d-none d-md-block">
                                             <h5>Software</h5>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua.</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100"
+                                            src="{{ asset('dashboard_asset/assets/img/datacenter_service.jpeg') }}"
+                                            alt="Fourth slide">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Database</h5>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                                                 tempor incididunt ut labore et dolore magna aliqua.</p>
                                         </div>
@@ -628,7 +415,6 @@
                     </div>
                 </div>
 
-                {{-- here --}}
                 <div class="col-4 col-md-4 col-lg-5">
                     <div class="card">
                         <div class="card-header">
@@ -648,7 +434,7 @@
                                     </div>
                                     <div class="carousel-item">
                                         <img class="d-block w-100"
-                                            src="{{ asset('dashboard_asset/assets/img/hardware_service.jpeg') }}"
+                                            src="{{ asset('dashboard_asset/assets/img/software_maintenance.png') }}"
                                             alt="Third slide">
                                     </div>
                                 </div>
@@ -669,7 +455,7 @@
             </div>
         </div>
 
-        {{-- **************** --}}
+
 
 
         <div class="row">
@@ -1142,55 +928,6 @@
             </div>
         </div>
         <div class="row">
-            {{-- <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Who's Online?</h4>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-unstyled list-unstyled-border">
-                                <li class="media">
-                                    <img alt="image" class="mr-3 rounded-circle" width="50"
-                                        src="assets/img/users/user-1.png">
-                                    <div class="media-body">
-                                        <div class="mt-0 mb-1 font-weight-bold">Cara Stevens</div>
-                                        <div class="text-success text-small font-600-bold"><i class="fas fa-circle"></i>
-                                            Online</div>
-                                    </div>
-                                </li>
-                                <li class="media">
-                                    <img alt="image" class="mr-3 rounded-circle" width="50"
-                                        src="assets/img/users/user-2.png">
-                                    <div class="media-body">
-                                        <div class="mt-0 mb-1 font-weight-bold">Airi Satou</div>
-                                        <div class="text-small font-weight-600 text-muted"><i class="fas fa-circle"></i>
-                                            Offline</div>
-                                    </div>
-                                </li>
-                                <li class="media">
-                                    <img alt="image" class="mr-3 rounded-circle" width="50"
-                                        src="assets/img/users/user-3.png">
-                                    <div class="media-body">
-                                        <div class="mt-0 mb-1 font-weight-bold">Ashton Cox</div>
-                                        <div class="text-small font-weight-600 text-success"><i
-                                                class="fas fa-circle"></i> Online
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="media">
-                                    <img alt="image" class="mr-3 rounded-circle" width="50"
-                                        src="assets/img/users/user-4.png">
-                                    <div class="media-body">
-                                        <div class="mt-0 mb-1 font-weight-bold">Cara Stevens</div>
-                                        <div class="text-small font-weight-600 text-success"><i
-                                                class="fas fa-circle"></i> Online
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div> --}}
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="card gradient-bottom">
                     <div class="card-header">
@@ -1380,5 +1117,12 @@
         </div>
         </div>
     </section>
-    {{-- ************* --}}
 @endsection
+
+@if (session('success'))
+    <script>
+        setTimeout(function() {
+            $('.alert-success').fadeOut('slow');
+        }, 3000); // 5000 milliseconds = 5 seconds
+    </script>
+@endif

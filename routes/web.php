@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\RegisteredController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ExpertController;
@@ -10,7 +11,7 @@ use App\Http\Controllers\StuffController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DirectorController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\RegisteredUserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -80,7 +81,12 @@ Route::middleware('auth', 'role:admin')->group(function () {
         Route::get('/admin/viewrequests', 'ViewRequest')->name('admin.viewrequest');
         Route::get('/admin/requestsnetwork', 'RequestNetwork')->name('admin.requestsnetwork');
         Route::get('/admin/databaserequests', 'DatabaseRequests')->name('admin.databaserequests');
+        Route::get('/admin/registered-user', [RegisteredController::class, 'index'])->name('admin.index');
+        //Route::get('/registered-user2', [RegisteredController::class, 'role']);
     });
-
+    // Route::middleware(['UserMiddleware'])->get('/admin/registered-user', [RegisteredController::class, 'index'])->name('admin.index');
+    Route::get('role-edit/{id}', [RegisteredController::class, 'edit']);
+    Route::put('role-update/{id}', [RegisteredController::class, 'updaterole']);
+    Route::delete('/user-delete/{id}', [RegisteredController::class, 'delete'])->name('user.delete');
 });
 require __DIR__ . '/auth.php';
