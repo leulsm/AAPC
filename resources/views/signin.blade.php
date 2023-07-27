@@ -13,7 +13,11 @@
     <meta name="author" content="Codedthemes" />
     <!-- Favicon icon -->
 
+<<<<<<< Updated upstream
     <link rel="icon" href="{{ asset('dashboard_asset\assets\img\aapc.ico') }}" type="image/x-icon">
+=======
+    <link rel="icon" href="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}" type="image/x-icon">
+>>>>>>> Stashed changes
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
     <!-- Required Fremwork -->
@@ -144,7 +148,13 @@
                                                 @endif
 
 
+<<<<<<< Updated upstream
 
+=======
+                                                {{-- <x-primary-button class="ml-3">
+                                                    {{ __('Log in') }}
+                                                </x-primary-button> --}}
+>>>>>>> Stashed changes
                                             </div>
                                         </div>
                                     </div>
@@ -152,12 +162,19 @@
                                 <div class="row m-t-30">
 
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
                                     <div class="col-md-12 mt-4">
                                         <button type="submit"
                                             class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Login</button>
                                     </div>
+<<<<<<< Updated upstream
 
+=======
+                                    {{-- </div> --}}
+>>>>>>> Stashed changes
                                 </div>
                                 <hr />
                                 <div class="row">

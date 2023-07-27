@@ -11,7 +11,7 @@
     <meta name="keywords" content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
     <meta name="author" content="Codedthemes" />
     <!-- Favicon icon -->
-    <link rel="icon" href="{{asset('staffuser/assets/images/favicon.ico')}}" type="image/x-icon">
+    <link rel="icon" href="{{asset('dashboard_asset/assets/img/Picsart_file.png')}}" type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
     <!-- waves.css -->

@@ -18,7 +18,7 @@
         content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
     <meta name="author" content="Codedthemes" />
     <!-- Favicon icon -->
-    <link rel="icon" href="staffuser/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}" type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
     <!-- waves.css -->
@@ -201,7 +201,7 @@
                                         </a>
                                     </li>
                                     <li class="waves-effect waves-light">
-                                        <a href="user-profile.html">
+                                        <a href="{{ route('stuffuser.userprofile') }}">
                                             <i class="ti-user"></i> Profile
                                         </a>
                                     </li>
@@ -254,7 +254,7 @@
                                 <div class="main-menu-content">
                                     <ul>
                                         <li class="more-details">
-                                            <a href="user-profile.html"><i class="ti-user"></i>View Profile</a>
+                                            <a href="{{ route('stuffuser.userprofile') }}"><i class="ti-user"></i>View Profile</a>
                                             <a href="#!"><i class="ti-settings"></i>Settings</a>
                                             {{-- <a href="auth-normal-sign-in.html"><i class="ti-layout-sidebar-left"></i>Logout</a> --}}
                                             <form method="POST" action="{{ route('logout') }}">
@@ -347,7 +347,7 @@
                                     <div class="col-md-4">
                                         <ul class="breadcrumb">
                                             <li class="breadcrumb-item">
-                                                <a href="index.html"> <i class="fa fa-home"></i> </a>
+                                                <a href="{{ route('stuffuser') }}"> <i class="fa fa-home"></i> </a>
                                             </li>
                                             <li class="breadcrumb-item"><a
                                                     href="{{ route('stuffuser.viewrequest') }}">View Request</a>
@@ -433,9 +433,9 @@
                                                                         <td><a href="{{ route('stuffuser.singlerequestpage') }}"
                                                                                 class="btn btn-primary">Detail</a></td>
                                                                         <td><a href="{{ route('stuffuser.editrequest') }}"
-                                                                                class="btn btn-success">Edit</a></td>
+                                                                                class="btn btn-success"><i class="fa fa-pencil fa-fw"></i>Edit</a></td>
                                                                         <td><a href="#"
-                                                                                class="btn btn-danger">Delete</a></td>
+                                                                                class="btn btn-danger"><i class="fa fa-trash-o fa-lg"></i>Delete</a></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="text-center pt-2">
@@ -469,9 +469,9 @@
                                                                         <td><a href="#"
                                                                                 class="btn btn-primary">Detail</a></td>
                                                                         <td><a href="#"
-                                                                                class="btn btn-success">Edit</a></td>
+                                                                                class="btn btn-success"><i class="fa fa-pencil fa-fw"></i>Edit</a></td>
                                                                         <td><a href="#"
-                                                                                class="btn btn-danger">Delete</a></td>
+                                                                                class="btn btn-danger"><i class="fa fa-trash-o fa-lg"></i>Delete</a></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="text-center pt-2">
@@ -504,9 +504,9 @@
                                                                         <td><a href="#"
                                                                                 class="btn btn-primary">Detail</a></td>
                                                                         <td><a href="#"
-                                                                                class="btn btn-success">Edit</a></td>
+                                                                                class="btn btn-success"><i class="fa fa-pencil fa-fw"></i>Edit</a></td>
                                                                         <td><a href="#"
-                                                                                class="btn btn-danger">Delete</a></td>
+                                                                                class="btn btn-danger"><i class="fa fa-trash-o fa-lg"></i>Delete</a></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="text-center pt-2">
@@ -541,9 +541,9 @@
                                                                         <td><a href="#"
                                                                                 class="btn btn-primary">Detail</a></td>
                                                                         <td><a href="#"
-                                                                                class="btn btn-success">Edit</a></td>
+                                                                                class="btn btn-success"><i class="fa fa-pencil fa-fw"></i>Edit</a></td>
                                                                         <td><a href="#"
-                                                                                class="btn btn-danger">Delete</a></td>
+                                                                                class="btn btn-danger"><i class="fa fa-trash-o fa-lg"></i>Delete</a></td>
                                                                     </tr>
                                                                 </tbody>
                                                             </table>

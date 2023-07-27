@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="owl-carousel-item position-relative">
-            <img class="img-fluid" src="home/img/carousel-2.jpg" alt="" />
+            <img class="img-fluid" src="staffuser\assets\images\blacknetwork.jpg" alt="" />
             <div
                 class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
                 style="background: rgba(0, 0, 0, 0.4)"
@@ -59,7 +59,7 @@
                             <h1
                                 class="display-3 text-white animated slideInDown mb-4"
                             >
-                                Efficient Commercial Plumbing Services
+                                Efficient Services
                             </h1>
                             <p
                                 class="fs-5 fw-medium text-white mb-4 pb-2"

@@ -18,6 +18,37 @@
                                         <input id="name" type="text" class="form-control" name="name" autofocus>
                                         <x-input-error :messages="$errors->get('name')" class="mt-2" />
 
+<<<<<<< Updated upstream
+=======
+                                </div>
+
+                                <input id="submitter" type="hidden" class="form-control" name="submitter" value="user" utofocus>
+                                {{-- <div class="form-group col-6">
+                                    <label for="last_name">Last Name</label>
+                                    <input id="last_name" type="text" class="form-control" name="last_name">
+                                </div> --}}
+
+
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input id="email" type="email" class="form-control" name="email">
+                                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+
+                                <div class="invalid-feedback">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-6">
+                                    <label for="password" class="d-block">Password</label>
+                                    <input id="password" type="password" class="form-control pwstrength"
+                                        data-indicator="pwindicator" name="password">
+                                    <input id="submitter" type="hidden" class="form-control" name="submitter"
+                                        value="user">
+                                    <div id="pwindicator" class="pwindicator">
+                                        <div class="bar"></div>
+                                        <div class="label"></div>
+>>>>>>> Stashed changes
                                     </div>
 
 

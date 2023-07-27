@@ -11,7 +11,10 @@ use App\Http\Controllers\StuffController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DirectorController;
 use Illuminate\Support\Facades\Route;
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +28,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index']);
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -45,6 +49,7 @@ Route::middleware('auth', 'role:user')->group(function () {
     Route::get('/stuffuser/userprofile', [UserController::class, 'userprofile'])->name('stuffuser.userprofile');
     Route::get('/stuffuser/setting', [UserController::class, 'setting'])->name('stuffuser.setting');
 });
+
 Route::middleware('auth', 'role:expert')->group(function () {
     Route::get('/expertuser/index', [ExpertController::class, 'expertuserindex'])->name('expertuser');
     Route::get('/expertuser/assined', [ExpertController::class, 'assined'])->name('expertuser.assined');
@@ -84,9 +89,12 @@ Route::middleware('auth', 'role:admin')->group(function () {
         Route::get('/admin/registered-user', [RegisteredController::class, 'index'])->name('admin.index');
         Route::get('/admin/status', [UserController::class, 'userOnlineStatus'])->name('admin.status');
     });
+<<<<<<< Updated upstream
 
     Route::get('role-edit/{id}', [RegisteredController::class, 'edit']);
     Route::put('role-update/{id}', [RegisteredController::class, 'updaterole']);
     Route::delete('/user-delete/{id}', [RegisteredController::class, 'delete'])->name('user.delete');
+=======
+>>>>>>> Stashed changes
 });
 require __DIR__ . '/auth.php';
