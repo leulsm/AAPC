@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class UserController extends Controller
 {
@@ -40,5 +42,10 @@ class UserController extends Controller
     public function setting()
     {
         return view('stuffuser.setting');
+    }
+    public function userOnlineStatus()
+    {
+        $users = User::all();
+        return view('admin.index', compact('users'));
     }
 }

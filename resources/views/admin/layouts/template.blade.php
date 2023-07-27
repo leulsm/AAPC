@@ -238,16 +238,18 @@
                                     data-feather="user-check"></i><span>Auth</span></a>
                             <ul class="dropdown-menu">
                                 {{-- <li><a href="auth-login.html">Login</a></li> --}}
-                                <li class="dropdown"> <a class="menu-toggle nav-link has-dropdown"
-                                        href="auth-register.html">Register</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="{{ route('admin.director') }}">Director</a></li>
-                                        <li><a href="{{ route('admin.employee') }}">Employee</a></li>
-                                        <li><a href="{{ route('admin.expert') }}">Expert</a></li>
-                                        {{-- <li><a href="{{ route('admin.userforms') }}">Forgot Password</a></li>
+                                <li class="dropdown"> <a href="{{ route('admin.director') }}">Register</a>
+
+                                    {{-- <li><a href="{{ route('admin.director') }}">Register User</a></li> --}}
+
+                                    {{-- <ul class="dropdown-menu">
+                                        <li><a href="{{ route('admin.director') }}">Register User</a></li>
+                                        {{-- <li><a href="{{ route('admin.employee') }}">Employee</a></li> --}}
+                                    {{-- <li><a href="{{ route('admin.expert') }}">Expert</a></li> --}}
+                                    {{-- <li><a href="{{ route('admin.userforms') }}">Forgot Password</a></li>
                                         <li><a href="auth-reset-password.html">Reset Password</a></li> --}}
-                                        {{-- <li><a href="subscribe.html">Subscribe</a></li> --}}
-                                    </ul>
+                                    {{-- <li><a href="subscribe.html">Subscribe</a></li> --}}
+                                    {{-- </ul>  --}}
                                 </li>
                                 <li><a href="{{ route('admin.forgotpassword') }}">Forgot Password</a></li>
                                 <li><a href="{{ route('admin.resetpassword') }}">Reset Password</a></li>
@@ -339,13 +341,13 @@
                         </li> --}}
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                    data-feather="users"></i><span>Users Table</span></a>
+                                    data-feather="users"></i><span>Users Management</span></a>
                             <ul class="dropdown-menu">
                                 {{-- <li><a class="nav-link" href="basic-table.html">Basic Tables</a></li> --}}
                                 {{-- <li><a class="nav-link" href="advance-table.html">Advanced Table</a></li> --}}
                                 {{-- <li><a class="nav-link" href="datatables.html">Datatable</a></li> --}}
-                                <li><a class="nav-link" href="{{ route('admin.staffinfotable') }}">Staff Info
-                                        table</a></li>
+                                {{-- <li><a class="nav-link" href="{{ route('admin.staffinfotable') }}">Staff Info
+                                        table</a></li> --}}
                                 <li><a class="nav-link" href="{{ route('admin.index') }}">Users</a></li>
                                 {{-- <li><a class="nav-link" href="editable-table.html">Editable Table</a></li> --}}
                             </ul>

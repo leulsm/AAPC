@@ -30,8 +30,8 @@
                                     <label for="password" class="d-block">Password</label>
                                     <input id="password" type="password" class="form-control pwstrength"
                                         data-indicator="pwindicator" name="password">
-                                    <input id="submitter" type="hidden" class="form-control" name="submitter"
-                                        value="expert">
+                                    {{-- <input id="submitter" type="hidden" class="form-control" name="submitter"
+                                        value="expert"> --}}
                                     <div id="pwindicator" class="pwindicator">
                                         <div class="bar"></div>
                                         <div class="label"></div>

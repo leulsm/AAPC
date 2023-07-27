@@ -2,7 +2,7 @@
 @section('content')
     <section class="section">
         <div class="section-body">
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-12">
                     <div class="card mb-0">
                         <div class="card-body">
@@ -30,22 +30,22 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="row mt-4">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>All Tasks</h4>
+                            <h4>All Users</h4>
                         </div>
                         <div class="card-body">
-                            <div class="float-left">
+                            {{-- <div class="float-left">
                                 <select class="form-control selectric">
                                     <option>Action For Selected</option>
                                     <option>Move to Draft</option>
                                     <option>Move to Pending</option>
                                     <option>Delete Permanently</option>
                                 </select>
-                            </div>
+                            </div> --}}
                             <div class="float-right">
                                 <form>
                                     <div class="input-group">
@@ -59,8 +59,8 @@
                             <div class="clearfix mb-3"></div>
                             <div class="table-responsive">
                                 <table class="table table-striped">
-                                    <tr>
-                                        <th class="pt-2">
+                                    {{-- <tr> --}}
+                                    {{-- <th class="pt-2">
                                             <div class="custom-checkbox custom-checkbox-table custom-control">
                                                 <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad"
                                                     class="custom-control-input" id="checkbox-all">
@@ -72,182 +72,233 @@
                                         <th>Category</th>
                                         <th>Created At</th>
                                         <th>Views</th>
-                                        <th>Status</th>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="custom-checkbox custom-control">
-                                                <input type="checkbox" data-checkboxes="mygroup"
-                                                    class="custom-control-input" id="checkbox-2">
-                                                <label for="checkbox-2" class="custom-control-label">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="#">
-                                                <img alt="image"
-                                                    src="{{ asset('dashboard_asset/assets/img/users/user-3.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="title"
-                                                    title="">
-                                                <span class="d-inline-block ml-1">Cara Stevens</span>
-                                            </a>
-                                        </td>
-                                        <td>Post Title 1
-                                            <div class="table-links">
-                                                <a href="#">View</a>
-                                                <div class="bullet"></div>
-                                                <a href="#">Edit</a>
-                                                <div class="bullet"></div>
-                                                <a href="#" class="text-danger">Trash</a>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="#">Science</a>
-                                        </td>
-                                        <td>10-02-2019</td>
-                                        <td>3,587</td>
-                                        <td>
-                                            <div class="badge badge-warning">Pending</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="custom-checkbox custom-control">
-                                                <input type="checkbox" data-checkboxes="mygroup"
-                                                    class="custom-control-input" id="checkbox-3">
-                                                <label for="checkbox-3" class="custom-control-label">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="#">
-                                                <img alt="image" src="{{ asset('dashboard_asset/assets/img/user.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="title"
-                                                    title="">
-                                                <span class="d-inline-block ml-1">Sarah Smith</span>
-                                            </a>
-                                        </td>
-                                        <td>Post Title 2
-                                            <div class="table-links">
-                                                <a href="#">View</a>
-                                                <div class="bullet"></div>
-                                                <a href="#">Edit</a>
-                                                <div class="bullet"></div>
-                                                <a href="#" class="text-danger">Trash</a>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="#">Software Developer</a>
-                                        </td>
-                                        <td>10-05-2018</td>
-                                        <td>4,785</td>
-                                        <td>
-                                            <div class="badge badge-primary">Published</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="custom-checkbox custom-control">
-                                                <input type="checkbox" data-checkboxes="mygroup"
-                                                    class="custom-control-input" id="checkbox-4">
-                                                <label for="checkbox-4" class="custom-control-label">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="#">
-                                                <img alt="image"
-                                                    src="{{ asset('dashboard_asset/assets/img/users/user-3.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="title"
-                                                    title="">
-                                                <span class="d-inline-block ml-1">Rizal Fakhri</span>
-                                            </a>
-                                        </td>
-                                        <td>Post Title 3
-                                            <div class="table-links">
-                                                <a href="#">View</a>
-                                                <div class="bullet"></div>
-                                                <a href="#">Edit</a>
-                                                <div class="bullet"></div>
-                                                <a href="#" class="text-danger">Trash</a>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="#">Web Developer</a>
-                                        </td>
-                                        <td>25-06-2018</td>
-                                        <td>1,458</td>
-                                        <td>
-                                            <div class="badge badge-primary">Published</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="custom-checkbox custom-control">
-                                                <input type="checkbox" data-checkboxes="mygroup"
-                                                    class="custom-control-input" id="checkbox-5">
-                                                <label for="checkbox-5" class="custom-control-label">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="#">
-                                                <img alt="image"
-                                                    src="{{ asset('dashboard_asset/assets/img/users/user-4.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="title"
-                                                    title="">
-                                                <span class="d-inline-block ml-1">Hasan Basri</span>
-                                            </a>
-                                        </td>
-                                        <td>Post Title 4
-                                            <div class="table-links">
-                                                <a href="#">View</a>
-                                                <div class="bullet"></div>
-                                                <a href="#">Edit</a>
-                                                <div class="bullet"></div>
-                                                <a href="#" class="text-danger">Trash</a>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="#">Social Service</a>
-                                        </td>
-                                        <td>11-02-2017</td>
-                                        <td>5,250</td>
-                                        <td>
-                                            <div class="badge badge-danger">Draft</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="custom-checkbox custom-control">
-                                                <input type="checkbox" data-checkboxes="mygroup"
-                                                    class="custom-control-input" id="checkbox-1">
-                                                <label for="checkbox-1" class="custom-control-label">&nbsp;</label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="#">
-                                                <img alt="image"
-                                                    src="{{ asset('dashboard_asset/assets/img/users/user-5.png') }}"
-                                                    class="rounded-circle" width="35" data-toggle="title"
-                                                    title="">
-                                                <span class="d-inline-block ml-1">Hasan Basri</span>
-                                            </a>
-                                        </td>
-                                        <td>Post Title 5
-                                            <div class="table-links">
-                                                <a href="#">View</a>
-                                                <div class="bullet"></div>
-                                                <a href="#">Edit</a>
-                                                <div class="bullet"></div>
-                                                <a href="#" class="text-danger">Trash</a>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="#">Politics</a>
-                                        </td>
-                                        <td>25-05-2018</td>
-                                        <td>952</td>
-                                        <td>
-                                            <div class="badge badge-warning">Pending</div>
-                                        </td>
-                                    </tr>
+                                        <th>Status</th> --}}
+                                    {{-- <th>Id</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Roles</th>
+                                        <th>created date</th>
+                                        <th>status</th>
+                                        <th>last seen</th>
+                                        <th class="text-center">Banned/UnBanned</th>
+                                        <th>Action</th> --}}
+                                    {{-- </tr> --}}
+                                    {{-- @foreach ($paginatedUsers as $item)
+                                        <tr>
+                                            <td>{{ $item->id }}</td>
+                                            <td>{{ $item->name }}</td>
+                                            <td>{{ $item->email }}</td>
+                                            <td>
+                                                @foreach ($item->roles as $role)
+                                                    {{ $role->name }}
+                                                @endforeach
+                                            </td>
+                                            <td>{{ $item->created_at->format('d-m-Y') }}</td>
+                                            <td>
+                                                @if (Cache::has('is_online' . $item->id))
+                                                    <span class="py-2 px-3 badge btn-success">Online</span>
+                                                @else
+                                                    <span class="py-2 px-3 badge btn-warning">Offline</span>
+                                                @endif
+                                            </td>
+                                            <td>{{ \Carbon\Carbon::parse($item->last_seen)->diffForHumans() }}</td>
+                                            <td class="text-center">
+                                                @if ($item->isban == '0')
+                                                    <label class="py-2 px-3 badge btn-primary">Not Banned</label>
+                                                @elseif ($item->isban == '1')
+                                                    <label class="py-2 px-3 badge btn-danger"> Banned</label>
+                                                @endif
+
+
+                                            </td>
+                                            <td>
+                                                <form action="{{ url('user-delete/' . $item->id) }}" method="POST"
+                                                    onsubmit="return confirm('Are you sure you want to delete this user?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <a href="{{ url('role-edit/' . $item->id) }}"
+                                                        class="badge badge-pill btn-primary px-3 py-2">Edit</a>
+                                                    <button type="submit"
+                                                        class="badge badge-pill btn-danger px-3 py-2">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr> --}}
+                                    {{-- <tr>
+                                            <td>
+                                                <div class="custom-checkbox custom-control">
+                                                    <input type="checkbox" data-checkboxes="mygroup"
+                                                        class="custom-control-input" id="checkbox-2">
+                                                    <label for="checkbox-2" class="custom-control-label">&nbsp;</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#">
+                                                    <img alt="image"
+                                                        src="{{ asset('dashboard_asset/assets/img/users/user-3.png') }}"
+                                                        class="rounded-circle" width="35" data-toggle="title"
+                                                        title="">
+                                                    <span class="d-inline-block ml-1">Cara Stevens</span>
+                                                </a>
+                                            </td>
+                                            <td>Post Title 1
+                                                <div class="table-links">
+                                                    <a href="#">View</a>
+                                                    <div class="bullet"></div>
+                                                    <a href="#">Edit</a>
+                                                    <div class="bullet"></div>
+                                                    <a href="#" class="text-danger">Trash</a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#">Science</a>
+                                            </td>
+                                            <td>10-02-2019</td>
+                                            <td>3,587</td>
+                                            <td>
+                                                <div class="badge badge-warning">Pending</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="custom-checkbox custom-control">
+                                                    <input type="checkbox" data-checkboxes="mygroup"
+                                                        class="custom-control-input" id="checkbox-3">
+                                                    <label for="checkbox-3" class="custom-control-label">&nbsp;</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#">
+                                                    <img alt="image"
+                                                        src="{{ asset('dashboard_asset/assets/img/user.png') }}"
+                                                        class="rounded-circle" width="35" data-toggle="title"
+                                                        title="">
+                                                    <span class="d-inline-block ml-1">Sarah Smith</span>
+                                                </a>
+                                            </td>
+                                            <td>Post Title 2
+                                                <div class="table-links">
+                                                    <a href="#">View</a>
+                                                    <div class="bullet"></div>
+                                                    <a href="#">Edit</a>
+                                                    <div class="bullet"></div>
+                                                    <a href="#" class="text-danger">Trash</a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#">Software Developer</a>
+                                            </td>
+                                            <td>10-05-2018</td>
+                                            <td>4,785</td>
+                                            <td>
+                                                <div class="badge badge-primary">Published</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="custom-checkbox custom-control">
+                                                    <input type="checkbox" data-checkboxes="mygroup"
+                                                        class="custom-control-input" id="checkbox-4">
+                                                    <label for="checkbox-4" class="custom-control-label">&nbsp;</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#">
+                                                    <img alt="image"
+                                                        src="{{ asset('dashboard_asset/assets/img/users/user-3.png') }}"
+                                                        class="rounded-circle" width="35" data-toggle="title"
+                                                        title="">
+                                                    <span class="d-inline-block ml-1">Rizal Fakhri</span>
+                                                </a>
+                                            </td>
+                                            <td>Post Title 3
+                                                <div class="table-links">
+                                                    <a href="#">View</a>
+                                                    <div class="bullet"></div>
+                                                    <a href="#">Edit</a>
+                                                    <div class="bullet"></div>
+                                                    <a href="#" class="text-danger">Trash</a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#">Web Developer</a>
+                                            </td>
+                                            <td>25-06-2018</td>
+                                            <td>1,458</td>
+                                            <td>
+                                                <div class="badge badge-primary">Published</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="custom-checkbox custom-control">
+                                                    <input type="checkbox" data-checkboxes="mygroup"
+                                                        class="custom-control-input" id="checkbox-5">
+                                                    <label for="checkbox-5" class="custom-control-label">&nbsp;</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#">
+                                                    <img alt="image"
+                                                        src="{{ asset('dashboard_asset/assets/img/users/user-4.png') }}"
+                                                        class="rounded-circle" width="35" data-toggle="title"
+                                                        title="">
+                                                    <span class="d-inline-block ml-1">Hasan Basri</span>
+                                                </a>
+                                            </td>
+                                            <td>Post Title 4
+                                                <div class="table-links">
+                                                    <a href="#">View</a>
+                                                    <div class="bullet"></div>
+                                                    <a href="#">Edit</a>
+                                                    <div class="bullet"></div>
+                                                    <a href="#" class="text-danger">Trash</a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#">Social Service</a>
+                                            </td>
+                                            <td>11-02-2017</td>
+                                            <td>5,250</td>
+                                            <td>
+                                                <div class="badge badge-danger">Draft</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="custom-checkbox custom-control">
+                                                    <input type="checkbox" data-checkboxes="mygroup"
+                                                        class="custom-control-input" id="checkbox-1">
+                                                    <label for="checkbox-1" class="custom-control-label">&nbsp;</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#">
+                                                    <img alt="image"
+                                                        src="{{ asset('dashboard_asset/assets/img/users/user-5.png') }}"
+                                                        class="rounded-circle" width="35" data-toggle="title"
+                                                        title="">
+                                                    <span class="d-inline-block ml-1">Hasan Basri</span>
+                                                </a>
+                                            </td>
+                                            <td>Post Title 5
+                                                <div class="table-links">
+                                                    <a href="#">View</a>
+                                                    <div class="bullet"></div>
+                                                    <a href="#">Edit</a>
+                                                    <div class="bullet"></div>
+                                                    <a href="#" class="text-danger">Trash</a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#">Politics</a>
+                                            </td>
+                                            <td>25-05-2018</td>
+                                            <td>952</td>
+                                            <td>
+                                                <div class="badge badge-warning">Pending</div>
+                                            </td>
+                                        </tr> --}}
+                                    {{-- @endforeach --}}
                                 </table>
                             </div>
                             <div class="float-right">
@@ -947,8 +998,7 @@
                         <ul class="list-unstyled list-unstyled-border">
                             <li class="media">
                                 <img class="mr-3 rounded" width="55"
-                                    src="{{ asset('dashboard_asset/assets/img/products/product-3.png') }}"
-                                    alt="product">
+                                    src="{{ asset('dashboard_asset/assets/img/products/product-3.png') }}" alt="product">
                                 <div class="media-body">
                                     <div class="float-right">
                                         <div class="font-weight-600 text-muted text-small">112 Sales</div>
@@ -968,8 +1018,7 @@
                             </li>
                             <li class="media">
                                 <img class="mr-3 rounded" width="55"
-                                    src="{{ asset('dashboard_asset/assets/img/products/product-4.png') }}"
-                                    alt="product">
+                                    src="{{ asset('dashboard_asset/assets/img/products/product-4.png') }}" alt="product">
                                 <div class="media-body">
                                     <div class="float-right">
                                         <div class="font-weight-600 text-muted text-small">49 Sales</div>

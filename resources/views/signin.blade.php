@@ -13,7 +13,7 @@
     <meta name="author" content="Codedthemes" />
     <!-- Favicon icon -->
 
-    <link rel="icon" href="{{ asset('staffuser/assets/images/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('dashboard_asset\assets\img\aapc.ico') }}" type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
     <!-- Required Fremwork -->
@@ -109,6 +109,11 @@
                                         <h3 class="text-center">Sign In</h3>
                                     </div>
                                 </div>
+                                @if (session('error'))
+                                    <div class="alert alert-danger">
+                                        {{ session('error') }}
+                                    </div>
+                                @endif
                                 <div class="form-group form-primary">
                                     <input type="text" name="email" placeholder="E-mail" class="form-control">
                                     <span class="form-bar"></span>
@@ -139,22 +144,20 @@
                                                 @endif
 
 
-                                                {{-- <x-primary-button class="ml-3">
-                                                    {{ __('Log in') }}
-                                                </x-primary-button> --}}
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row m-t-30">
-                                    {{-- <div class=""> --}}
+
 
 
                                     <div class="col-md-12 mt-4">
                                         <button type="submit"
                                             class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Login</button>
                                     </div>
-                                    {{-- </div> --}}
+
                                 </div>
                                 <hr />
                                 <div class="row">

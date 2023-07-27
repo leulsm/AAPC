@@ -20,6 +20,7 @@ class RegisteredController extends Controller
         $paginatedUsers = User::paginate(10);
         return view('admin.index', compact('users', 'roleNames', 'paginatedUsers'));
     }
+
     public function edit($id)
     {
         $user = User::with('roles')->find($id);

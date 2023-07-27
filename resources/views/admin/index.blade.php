@@ -22,12 +22,15 @@
                                         <th>Email</th>
                                         <th>Roles</th>
                                         <th>created date</th>
-                                        <th class="text-center">Online/Offline</th>
+                                        <th>status</th>
+                                        <th>last seen</th>
                                         <th class="text-center">Banned/UnBanned</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+
+
                                     @foreach ($paginatedUsers as $item)
                                         <tr>
                                             <td>{{ $item->id }}</td>
@@ -40,12 +43,13 @@
                                             </td>
                                             <td>{{ $item->created_at->format('d-m-Y') }}</td>
                                             <td>
-                                                @if ($item->isUserOnline())
-                                                    <label class="py-2 px-3 badge btn-success"> Online</label>
+                                                @if (Cache::has('is_online' . $item->id))
+                                                    <span class="py-2 px-3 badge btn-success">Online</span>
                                                 @else
-                                                    <label class="py-2 px-3 badge btn-warning"> Offline</label>
+                                                    <span class="py-2 px-3 badge btn-warning">Offline</span>
                                                 @endif
                                             </td>
+                                            <td>{{ \Carbon\Carbon::parse($item->last_seen)->diffForHumans() }}</td>
                                             <td class="text-center">
                                                 @if ($item->isban == '0')
                                                     <label class="py-2 px-3 badge btn-primary">Not Banned</label>

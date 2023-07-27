@@ -65,9 +65,9 @@ Route::middleware('auth', 'role:admin')->group(function () {
         Route::get('/admin/director', 'Director')->name('admin.director');
         Route::post('/admin/director', [RegisteredUserController::class, 'store'])->name('admin.directorr');
         Route::get('/admin/employee', 'Employee')->name('admin.employee');
-        Route::post('/admin/employee', [RegisteredUserController::class, 'store'])->name('admin.employee');
+        Route::post('/admin/employee', [RegisteredUserController::class, 'store'])->name('admin.employeee');
         Route::get('/admin/expert', 'Expert')->name('admin.expert');
-        Route::post('/admin/expert', [RegisteredUserController::class, 'store'])->name('admin.expert');
+        Route::post('/admin/expert', [RegisteredUserController::class, 'store'])->name('admin.expertt');
         Route::get('/admin/userforms', 'User')->name('admin.userforms');
         Route::get('/admin/forgotpassword', 'ForgotPassword')->name('admin.forgotpassword');
         Route::get('/admin/resetpassword', 'ResetPassword')->name('admin.resetpassword');
@@ -82,9 +82,9 @@ Route::middleware('auth', 'role:admin')->group(function () {
         Route::get('/admin/requestsnetwork', 'RequestNetwork')->name('admin.requestsnetwork');
         Route::get('/admin/databaserequests', 'DatabaseRequests')->name('admin.databaserequests');
         Route::get('/admin/registered-user', [RegisteredController::class, 'index'])->name('admin.index');
-        //Route::get('/registered-user2', [RegisteredController::class, 'role']);
+        Route::get('/admin/status', [UserController::class, 'userOnlineStatus'])->name('admin.status');
     });
-    // Route::middleware(['UserMiddleware'])->get('/admin/registered-user', [RegisteredController::class, 'index'])->name('admin.index');
+
     Route::get('role-edit/{id}', [RegisteredController::class, 'edit']);
     Route::put('role-update/{id}', [RegisteredController::class, 'updaterole']);
     Route::delete('/user-delete/{id}', [RegisteredController::class, 'delete'])->name('user.delete');

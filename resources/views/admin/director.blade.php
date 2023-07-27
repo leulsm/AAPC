@@ -5,7 +5,7 @@
             <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h4>Register a Director</h4>
+                        <h4>Register User</h4>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('admin.directorr') }}">
@@ -21,10 +21,7 @@
 
                                 <input id="submitter" type="hidden" class="form-control" name="submitter" value="director"
                                     utofocus>
-                                {{-- <div class="form-group col-6">
-                                    <label for="last_name">Last Name</label>
-                                    <input id="last_name" type="text" class="form-control" name="last_name">
-                                </div> --}}
+
 
                             </div>
                             <div class="form-group">
@@ -40,8 +37,18 @@
                                     <label for="password" class="d-block">Password</label>
                                     <input id="password" type="password" class="form-control pwstrength"
                                         data-indicator="pwindicator" name="password">
-                                    <input id="submitter" type="hidden" class="form-control" name="submitter"
-                                        value="director">
+                                    {{-- <input id="submitter" type="hidden" class="form-control" name="submitter"
+                                        value="director"> --}}
+                                    <div class="form-group">
+                                        <label>Select Roles</label>
+                                        <select class="form-control" id="submitter" name="submitter">
+                                            <option>---Select the roles---</option>
+                                            <option value="user">Employee</option>
+                                            <option value="director">Director</option>
+                                            <option value="expert">Expert</option>
+                                        </select>
+                                    </div>
+
                                     <div id="pwindicator" class="pwindicator">
                                         <div class="bar"></div>
                                         <div class="label"></div>
