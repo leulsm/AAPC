@@ -3,13 +3,12 @@
         <div class="row g-5">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="text-secondary text-uppercase">About Us</h6>
-                <h1 class="mb-4">The Addis Ababa Police Commission is the law enforcement agency.</h1>
-                <p class="mb-4">The Addis Ababa Police Commission is the law enforcement agency responsible for maintaining public safety and security in the capital city of Ethiopia.</p>
+                <h1 class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, doloremque.</h1>
+                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam minima ipsum amet adipisci corporis, accusantium architecto quod facere at exercitationem, tenetur mollitia.</p>
                 <p class="fw-medium text-primary"><i class="fa fa-check text-success me-3"></i>Software</p>
                 <p class="fw-medium text-primary"><i class="fa fa-check text-success me-3"></i>Hardware</p>
                 <p class="fw-medium text-primary"><i class="fa fa-check text-success me-3"></i>Database</p>
                 <div class="bg-primary d-flex align-items-center p-4 mt-5">
-                    
                     {{-- <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
                         <i class="fa fa-phone-alt fa-2x text-primary"></i>
                     </div> --}}

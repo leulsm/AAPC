@@ -24,6 +24,7 @@
                 <h4 class="text-light mb-4">Hardware request</h4>
                 <a class="btn btn-link" href="">Software request</a>
                 <a class="btn btn-link" href="">Database request</a>
+               
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-light mb-4">Newsletter</h4>

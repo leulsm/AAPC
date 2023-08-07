@@ -18,7 +18,7 @@
         content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
     <meta name="author" content="Codedthemes" />
     <!-- Favicon icon -->
-    <link rel="icon" href="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}" type="image/x-icon">
+    <link rel="icon" href="staffuser/assets/images/favicon.ico" type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
     <!-- waves.css -->
@@ -201,7 +201,7 @@
                                         </a>
                                     </li>
                                     <li class="waves-effect waves-light">
-                                        <a href="{{ route('stuffuser.userprofile') }}">
+                                        <a href="user-profile.html">
                                             <i class="ti-user"></i> Profile
                                         </a>
                                     </li>
@@ -254,7 +254,7 @@
                                 <div class="main-menu-content">
                                     <ul>
                                         <li class="more-details">
-                                            <a href="{{ route('stuffuser.userprofile') }}"><i class="ti-user"></i>View Profile</a>
+                                            <a href="user-profile.html"><i class="ti-user"></i>View Profile</a>
                                             <a href="#!"><i class="ti-settings"></i>Settings</a>
                                             {{-- <a href="auth-normal-sign-in.html"><i class="ti-layout-sidebar-left"></i>Logout</a> --}}
                                             <form method="POST" action="{{ route('logout') }}">
