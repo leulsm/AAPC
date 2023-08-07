@@ -12,7 +12,6 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DirectorController;
 use Illuminate\Support\Facades\Route;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -81,8 +80,12 @@ Route::middleware('auth', 'role:admin')->group(function () {
         Route::get('/admin/viewrequests', 'ViewRequest')->name('admin.viewrequest');
         Route::get('/admin/requestsnetwork', 'RequestNetwork')->name('admin.requestsnetwork');
         Route::get('/admin/databaserequests', 'DatabaseRequests')->name('admin.databaserequests');
+        Route::get('/admin/rolePermission', 'RolePermission')->name('admin.rolePermission');
         Route::get('/admin/registered-user', [RegisteredController::class, 'index'])->name('admin.index');
         Route::get('/admin/status', [UserController::class, 'userOnlineStatus'])->name('admin.status');
+        Route::get('role-edit/{id}', [RegisteredController::class, 'edit']);
+        Route::put('role-update/{id}', [RegisteredController::class, 'updaterole']);
+        Route::delete('/user-delete/{id}', [RegisteredController::class, 'delete'])->name('user.delete');
     });
 
     Route::get('role-edit/{id}', [RegisteredController::class, 'edit']);

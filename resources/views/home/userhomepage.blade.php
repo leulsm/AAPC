@@ -115,6 +115,6 @@
 
     <!-- Template Javascript -->
     <script src="home/js/main.js"></script>
-</body>
+    </body>
 
 </html>

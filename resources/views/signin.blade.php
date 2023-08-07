@@ -109,6 +109,19 @@
                                         <h3 class="text-center">Sign In</h3>
                                     </div>
                                 </div>
+
+                                {{-- @if (session('errors'))
+                                    <div class="alert alert-danger">
+                                        {{ session('errors') }}
+                                    </div>
+                                @endif --}}
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        @foreach ($errors->all() as $error)
+                                            <p>{{ $error }}</p>
+                                        @endforeach
+                                    </div>
+                                @endif
                                 @if (session('error'))
                                     <div class="alert alert-danger">
                                         {{ session('error') }}
@@ -144,7 +157,6 @@
                                                 @endif
 
 
-
                                             </div>
                                         </div>
                                     </div>
@@ -152,12 +164,10 @@
                                 <div class="row m-t-30">
 
 
-
                                     <div class="col-md-12 mt-4">
                                         <button type="submit"
                                             class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Login</button>
                                     </div>
-
                                 </div>
                                 <hr />
                                 <div class="row">
