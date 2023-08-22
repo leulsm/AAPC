@@ -48,9 +48,28 @@ class UserController extends Controller
         $users = User::all();
         return view('admin.index', compact('users'));
     }
+
     public function updatepassword()
     {
         // $users = User::all();
         return view('stuffuser.change-password');
+}
+    public function registeredUsers(Request $request)
+    {
+        $query = User::query();
+
+        // Check if a role is provided in the search form
+        if ($request->has('role')) {
+            $role = $request->input('role');
+            // Join the roles table and filter by the role name
+            $query->join('roles', 'users.role_id', '=', 'roles.id')
+                ->where('roles.name', 'LIKE', '%' . $role . '%');
+        }
+
+        // Continue with the existing logic to paginate the users
+
+        $paginatedUsers = $query->paginate(10);
+
+        return view('admin.registered-users', compact('users'));
     }
 }

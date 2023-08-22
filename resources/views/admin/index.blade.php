@@ -1,4 +1,5 @@
 @extends('admin.layouts.template')
+
 @section('content')
     <div class="section-body">
         <div class="row">
@@ -14,7 +15,9 @@
                             </div>
                         @endif
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover" id="tableExport" style="width:100%;">
+                            <input type="text" class="float-right" id="searchInput" placeholder="Search here..."
+                                oninput="filterTable()">
+                            <table class="table table-striped table-hover" id="dataTable" style="width:100%;">
                                 <thead>
                                     <tr>
                                         <th>Id</th>
@@ -29,8 +32,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
-
                                     @foreach ($paginatedUsers as $item)
                                         <tr>
                                             <td>{{ $item->id }}</td>
@@ -56,8 +57,6 @@
                                                 @elseif ($item->isban == '1')
                                                     <label class="py-2 px-3 badge btn-danger"> Banned</label>
                                                 @endif
-
-
                                             </td>
                                             <td>
                                                 <form action="{{ url('user-delete/' . $item->id) }}" method="POST"
@@ -73,11 +72,20 @@
                                         </tr>
                                     @endforeach
                                 </tbody>
-
                             </table>
+                            <style>
+                                .red-text {
+                                    color: red;
+                                }
+                            </style>
+                            <div id="noMatchingRecords" class="red-text" style="display: none; text-align: center;">No more
+                                matching records found
+                            </div>
+
                             <div class="float-left">
                                 <p>
-                                    Showing entries {{ $paginatedUsers->firstItem() }} to {{ $paginatedUsers->lastItem() }}
+                                    Showing entries {{ $paginatedUsers->firstItem() }} to
+                                    {{ $paginatedUsers->lastItem() }}
                                     of {{ $paginatedUsers->total() }}
                                 </p>
                             </div>
@@ -87,16 +95,80 @@
                                         {{ $paginatedUsers->links('pagination::bootstrap-4') }}
                                     </ul>
                                 </nav>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 @endsection
+{{-- <script>
+    function filterTable() {
+        var input, filter, table, tr, td, i, j, txtValue, found;
+        input = document.getElementById("searchInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("dataTable");
+        tr = table.getElementsByTagName("tr");
+        found = false;
+
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td");
+            for (j = 0; j < td.length; j++) {
+                txtValue = td[j].textContent || td[j].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                    found = true;
+                    break;
+                } else {
+                    tr[i].style.display = "none";
+                    found = false;
+                }
+            }
+        }
+
+        if (!found) {
+            document.getElementById("noRecords").style.display = "block";
+        } else {
+            document.getElementById("noRecords").style.display = "none";
+        }
+    }
+</script> --}}
+<script>
+    function filterTable() {
+        var input, filter, table, tr, td, i, j, txtValue, found;
+        input = document.getElementById("searchInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("dataTable");
+        tr = table.getElementsByTagName("tr");
+        found = false;
+
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td");
+            for (j = 0; j < td.length; j++) {
+                txtValue = td[j].textContent || td[j].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                    found = true;
+                    break;
+                } else {
+                    tr[i].style.display = "none";
+                    found = false;
+                }
+            }
+        }
+
+        if (!found) {
+            document.getElementById("noMatchingRecords").style.display = "block";
+        } else {
+            document.getElementById("noMatchingRecords").style.display = "none";
+        }
+    }
+</script>
+
+
+
+
 @if (session('success'))
     <script>
         setTimeout(function() {

@@ -18,7 +18,9 @@
         content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
     <meta name="author" content="Codedthemes" />
     <!-- Favicon icon -->
-    <link rel="icon"  href="{{asset('dashboard_asset/assets/img/Picsart_file.png')}}"  type="image/x-icon">
+
+    <link rel="icon" href="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}" type="image/x-icon">
+
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
     <!-- waves.css -->
@@ -36,6 +38,22 @@
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('staffuser/assets/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('staffuser/assets/css/jquery.mCustomScrollbar.css') }}">
+    {{-- Scrripts here --}}
+    <script>
+        function isPhoneNumber(input) {
+            // Regular expression to match phone number pattern
+            var phoneRegex = /^\d{3}-\d{3}-\d{4}$/;
+
+            if (input.match(phoneRegex)) {
+                console.log('Valid phone number');
+                // Do something when the phone number is valid
+            } else {
+                console.log('Invalid phone number');
+                // Do something when the phone number is invalid
+            }
+        }
+    </script>
+
 
 </head>
 
@@ -78,6 +96,7 @@
                         <div class="circle"></div>
                     </div>
                 </div>
+
 
                 <div class="spinner-layer spinner-green">
                     <div class="circle-clipper left">
@@ -148,10 +167,14 @@
                                     </li>
                                     <li class="waves-effect waves-light">
                                         <div class="media">
-                                            <img class="d-flex align-self-center img-radius" 
+
+                                            <img class="d-flex align-self-center img-radius"
+
                                                 src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}"
                                                 alt="Generic placeholder image">
                                             <div class="media-body">
+
+
                                                 <h5 class="notification-user">John Doe</h5>
                                                 <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
                                                     elit.</p>
@@ -209,6 +232,8 @@
                                         <a href="email-inbox.html">
                                             <i class="ti-email"></i> My Messages
                                         </a>
+
+
                                     </li>
                                     {{-- <li class="waves-effect waves-light">
                                         <a href="auth-lock-screen.html">
@@ -262,6 +287,7 @@
                                                 <a href="route('logout')"
                                                     onclick="event.preventDefault();this.closest('form').submit();"><i
                                                         class="ti-layout-sidebar-left"></i>Logout
+
 
                                                 </a>
                                             </form>
@@ -320,6 +346,8 @@
                                             <li class=" ">
                                                 <a href="{{ route('stuffuser.statustable') }}"
                                                     class="waves-effect waves-dark">
+
+
                                                     <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                     <span class="pcoded-mtext">View Status</span>
                                                     <span class="pcoded-mcaret"></span>
@@ -354,7 +382,9 @@
                                             </li>
                                             {{-- <li class="breadcrumb-item"><a href="#!">Basic Form Inputs</a>
                                             </li> --}}
-                                        {{-- </ul>
+
+                        {{-- </ul>
+
                                     </div>
                                 </div>
                             </div>
@@ -365,9 +395,13 @@
                             <div class="main-body">
                                 <div class="page-wrapper">
 
+
                                     <!-- Page body start -->
                                     <div class="page-body">
-                                        <form action="{{ route('submit-request') }}" method="POST">
+
+                                        <form action="{{ route('storeForm') }}" enctype="multipart/form-data"
+                                            method="POST">
+
                                             @csrf
                                             <div class="card">
                                                 <div class="card-header">
@@ -376,16 +410,30 @@
                                                 <div class="card-block">
                                                     <div class="card-body">
                                                         <div class="row">
-                                                            <div class="col-6">
+
+                                                            <div class="col-1">
                                                                 <div class="form-group">
-                                                                    <label>Name</label>
-                                                                    <input type="text" name="name" class="form-control">
+                                                                    <label class="mt-2">Title</label>
+                                                                    <select name="division" class="form-control">
+                                                                        <option value="Mr.">Mr.</option>
+                                                                        <option value="Mrs.">Mrs.</option>
+                                                                        <option value="Commander">Commander</option>
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                             <div class="col-6">
-                                                                <div class="form-group">
+                                                                <div class="form-group mt-2">
+                                                                    <label>Full Name</label>
+                                                                    <input type="text" name="name"
+                                                                        class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group ">
                                                                     <label>Email</label>
-                                                                    <input type="email" name="email" class="form-control">
+                                                                    <input type="email" name="email"
+                                                                        class="form-control"
+                                                                        value="{{ Auth::user()->email }}" readonly>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -400,26 +448,37 @@
                                                                                 <i class="fa fa-phone"></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input type="number" name="phone_number"
+
+
+                                                                        <input type="tel" id="phoneInput"
+                                                                            pattern="\+\d{10,13}" value="+251"
+                                                                            oninput="isPhoneNumber(this.value)"
+                                                                            maxlength="13" name="phone_number"
                                                                             class="form-control phone-number">
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="form-group">
+
+                                                                {{-- <div class="form-group">
                                                                     <label>Division/Department/city</label>
                                                                     <select name="division" class="form-control">
-                                                                        <option value="">IT/Hardware/bole</option>
+                                                                        <option value="IT/Hardware/bole">IT/Hardware/bole
+                                                                        </option>
                                                                         <option value="">Option 2</option>
                                                                         <option value="">Option 3</option>
                                                                     </select>
-                                                                </div>
+                                                                </div> --}}
+
                                                             </div>
                                                             <div class="col-6 ">
                                                                 <div class="form-group mx-5 my-3 ">
                                                                     <label class="d-block">Request Type</label>
+
+
                                                                     <div class="form-check">
                                                                         <input class="form-check-input"
-                                                                            type="checkbox" id="defaultCheck1">
+                                                                            type="checkbox" name='request_type[]'
+                                                                            value="Network" id="defaultCheck1">
                                                                         <label class="form-check-label"
                                                                             for="defaultCheck1">
                                                                             Network
@@ -427,33 +486,40 @@
                                                                     </div>
                                                                     <div class="form-check">
                                                                         <input class="form-check-input"
-                                                                            type="checkbox" id="defaultCheck2">
+                                                                            type="checkbox" name='request_type[]'
+                                                                            value="Database" id="defaultCheck2">
                                                                         <label class="form-check-label"
-                                                                            for="defaultCheck2">
+                                                                            for="defaultCheck3">
                                                                             Database
                                                                         </label>
                                                                     </div>
                                                                     <div class="form-check">
                                                                         <input class="form-check-input"
-                                                                            type="checkbox" id="defaultCheck4">
+                                                                            type="checkbox" name='request_type[]'
+                                                                            value="Software" id="defaultCheck3">
                                                                         <label class="form-check-label"
-                                                                            for="defaultCheck4">
+                                                                            for="defaultCheck3">
                                                                             Software
                                                                         </label>
                                                                     </div>
-
-                                                                    {{-- <input type="checkbox" id="defaultCheck3" name="defaultCheck3" value="Other" onclick="showTextField()">
-                                                                    <label for="defaultCheck3">Other</label><br> --}}
-                                                                  
                                                                     <div class="form-check">
                                                                         <input class="form-check-input"
-                                                                            type="checkbox" id="defaultCheck5" onclick="showTextField()">
+                                                                            type="checkbox" name='request_type[]'
+                                                                            value="Radio" id="defaultCheck4">
                                                                         <label class="form-check-label"
-                                                                            for="defaultCheck5">
+                                                                            for="defaultCheck4">
+                                                                            Radio
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input"
+                                                                            type="checkbox"name='request_type[]'
+                                                                            value="Others" id="defaultCheck5">
+                                                                        <label class="form-check-label"
+                                                                            for="defaultCheck3">
                                                                             Others
                                                                         </label>
 
-                                                                    <textarea type="text" id="otherTextField" name="otherTextField" style="display: none;"> </textarea>
 
                                                                     </div>
                                                                 </div>
@@ -464,13 +530,47 @@
                                                             <div class="col-6">
                                                                 <div class="form-group">
                                                                     <label class="col">Date</label>
-                                                                    <input type="date" name="date" class="form-control col">
+                                                                    <input type="date" name="date"
+                                                                        class="form-control col">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label class="col">Attach an Image</label>
-                                                                    <input type="file" name="image" class="form-control col">
+                                                                    <input type="file" name="image"
+                                                                        class="form-control col">
                                                                 </div>
                                                             </div>
+
+                                                            <div class="col-6">
+                                                                <div class="form-group mx-5 my-4 ">
+                                                                    <label class="d-block">Urgency</label>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="urgency" value="High"
+                                                                            id="urgency1" checked>
+                                                                        <label class="form-check-label"
+                                                                            for="urgency1">
+                                                                            High
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="urgency" value="Medium"
+                                                                            id="urgency2" checked>
+                                                                        <label class="form-check-label"
+                                                                            for="urgency2">
+                                                                            Medium
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="urgency" value="Low"
+                                                                            id="urgency2" checked>
+                                                                        <label class="form-check-label"
+                                                                            for="urgency2">
+                                                                            Low
+                                                                        </label>
+                                                                    </div>
+
 
                                                             <div class="col-6">
                                                                 <div class="form-group mx-5 my-4 ">

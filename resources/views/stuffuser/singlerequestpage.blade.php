@@ -79,6 +79,7 @@
                     </div>
                 </div>
 
+
                 <div class="spinner-layer spinner-green">
                     <div class="circle-clipper left">
                         <div class="circle"></div>
@@ -152,6 +153,8 @@
                                                 src="{{ asset('staffuser/assets/images/avatar-2.jpg') }}"
                                                 alt="Generic placeholder image">
                                             <div class="media-body">
+
+
                                                 <h5 class="notification-user">John Doe</h5>
                                                 <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
                                                     elit.</p>
@@ -209,6 +212,8 @@
                                         <a href="email-inbox.html">
                                             <i class="ti-email"></i> My Messages
                                         </a>
+
+
                                     </li>
                                     {{-- <li class="waves-effect waves-light">
                                         <a href="auth-lock-screen.html">
@@ -262,6 +267,7 @@
                                                 <a href="route('logout')"
                                                     onclick="event.preventDefault();this.closest('form').submit();"><i
                                                         class="ti-layout-sidebar-left"></i>Logout
+
 
                                                 </a>
                                             </form>
@@ -320,6 +326,8 @@
                                             <li class=" ">
                                                 <a href="{{ route('stuffuser.statustable') }}"
                                                     class="waves-effect waves-dark">
+
+
                                                     <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                     <span class="pcoded-mtext">View Status</span>
                                                     <span class="pcoded-mcaret"></span>
@@ -413,6 +421,8 @@
                                                                                 <div class="col-md-6">
                                                                                     <address>
                                                                                         <strong>Payment
+
+                                                                                            Lula 2, [8/12/2023 6:38 PM]
                                                                                             Method:</strong><br>
                                                                                         Visa ending **** 5687<br>
                                                                                         test@example.com
@@ -452,6 +462,8 @@
                                                                                         <td class="text-center">$10.99
                                                                                         </td>
                                                                                         <td class="text-center">1</td>
+
+                                                                                        Lula 2, [8/12/2023 6:38 PM]
                                                                                         <td class="text-right">$10.99
                                                                                         </td>
                                                                                     </tr>
@@ -490,7 +502,9 @@
                                                                                             alt="visa">
                                                                                         <img src="assets/img/cards/jcb.png"
                                                                                             alt="jcb">
-                                                                                        <img src="assets/img/cards/mastercard.png"
+
+Lula 2, [8/12/2023 6:38 PM]
+<img src="assets/img/cards/mastercard.png"
                                                                                             alt="mastercard">
                                                                                         <img src="assets/img/cards/paypal.png"
                                                                                             alt="paypal">
@@ -529,6 +543,8 @@
                                                                 </div>
                                                                 <hr>
                                                                 <div class="text-md-right">
+
+
                                                                     {{-- <div class="float-lg-left mb-lg-0 mb-3">
                                                                         <button
                                                                             class="btn btn-primary btn-icon icon-left"><i
