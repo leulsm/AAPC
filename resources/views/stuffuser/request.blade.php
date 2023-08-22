@@ -18,7 +18,9 @@
         content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
     <meta name="author" content="Codedthemes" />
     <!-- Favicon icon -->
+
     <link rel="icon" href="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}" type="image/x-icon">
+
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
     <!-- waves.css -->
@@ -165,7 +167,9 @@
                                     </li>
                                     <li class="waves-effect waves-light">
                                         <div class="media">
+
                                             <img class="d-flex align-self-center img-radius"
+
                                                 src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}"
                                                 alt="Generic placeholder image">
                                             <div class="media-body">
@@ -378,7 +382,9 @@
                                             </li>
                                             {{-- <li class="breadcrumb-item"><a href="#!">Basic Form Inputs</a>
                                             </li> --}}
+
                         {{-- </ul>
+
                                     </div>
                                 </div>
                             </div>
@@ -392,8 +398,10 @@
 
                                     <!-- Page body start -->
                                     <div class="page-body">
+
                                         <form action="{{ route('storeForm') }}" enctype="multipart/form-data"
                                             method="POST">
+
                                             @csrf
                                             <div class="card">
                                                 <div class="card-header">
@@ -402,6 +410,7 @@
                                                 <div class="card-block">
                                                     <div class="card-body">
                                                         <div class="row">
+
                                                             <div class="col-1">
                                                                 <div class="form-group">
                                                                     <label class="mt-2">Title</label>
@@ -464,6 +473,7 @@
                                                             <div class="col-6 ">
                                                                 <div class="form-group mx-5 my-3 ">
                                                                     <label class="d-block">Request Type</label>
+
 
                                                                     <div class="form-check">
                                                                         <input class="form-check-input"
@@ -562,6 +572,36 @@
                                                                     </div>
 
 
+                                                            <div class="col-6">
+                                                                <div class="form-group mx-5 my-4 ">
+                                                                    <label class="d-block">Urgency</label>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="urgency" id="urgency1"
+                                                                            checked>
+                                                                        <label class="form-check-label"
+                                                                            for="urgency1">
+                                                                            High
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="urgency" id="urgency2"
+                                                                            checked>
+                                                                        <label class="form-check-label"
+                                                                            for="urgency2">
+                                                                            Medium
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="urgency" id="urgency2"
+                                                                            checked>
+                                                                        <label class="form-check-label"
+                                                                            for="urgency2">
+                                                                            Low
+                                                                        </label>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -603,7 +643,18 @@
         </div>
     </div>
 
-
+    <script>
+        function showTextField() {
+          var checkbox = document.getElementById("defaultCheck5");
+          var textField = document.getElementById("otherTextField");
+    
+          if (checkbox.checked) {
+            textField.style.display = "block";
+          } else {
+            textField.style.display = "none";
+          }
+        }
+      </script>
     <!-- Required Jquery -->
     <script type="text/javascript" src="{{ asset('staffuser/assets/js/jquery/jquery.min.js') }} "></script>
     <script type="text/javascript" src="{{ asset('staffuser/assets/js/jquery-ui/jquery-ui.min.js') }} "></script>

@@ -14,7 +14,6 @@ use App\Http\Controllers\DirectorController;
 use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,7 +45,11 @@ Route::middleware('auth', 'role:user')->group(function () {
     Route::get('/stuffuser/editrequest', [UserController::class, 'editrequest'])->name('stuffuser.editrequest');
     Route::get('/stuffuser/userprofile', [UserController::class, 'userprofile'])->name('stuffuser.userprofile');
     Route::get('/stuffuser/setting', [UserController::class, 'setting'])->name('stuffuser.setting');
+
+    Route::get('/stuffuser/change-password', [UserController::class, 'updatepassword'])->name('change-password');
+
     Route::post('/formSubmit', [FormController::class, 'storeForm'])->name('storeForm');
+
 });
 Route::middleware('auth', 'role:expert')->group(function () {
     Route::get('/expertuser/index', [ExpertController::class, 'expertuserindex'])->name('expertuser');
@@ -85,8 +88,12 @@ Route::middleware('auth', 'role:admin')->group(function () {
         Route::get('/admin/viewrequests', 'ViewRequest')->name('admin.viewrequest');
         Route::get('/admin/requestsnetwork', 'RequestNetwork')->name('admin.requestsnetwork');
         Route::get('/admin/databaserequests', 'DatabaseRequests')->name('admin.databaserequests');
+        Route::get('/admin/rolePermission', 'RolePermission')->name('admin.rolePermission');
         Route::get('/admin/registered-user', [RegisteredController::class, 'index'])->name('admin.index');
         Route::get('/admin/status', [UserController::class, 'userOnlineStatus'])->name('admin.status');
+        Route::get('role-edit/{id}', [RegisteredController::class, 'edit']);
+        Route::put('role-update/{id}', [RegisteredController::class, 'updaterole']);
+        Route::delete('/user-delete/{id}', [RegisteredController::class, 'delete'])->name('user.delete');
     });
 
 
