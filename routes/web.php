@@ -43,6 +43,10 @@ Route::middleware('auth', 'role:user')->group(function () {
     Route::get('/stuffuser/editrequest', [UserController::class, 'editrequest'])->name('stuffuser.editrequest');
     Route::get('/stuffuser/userprofile', [UserController::class, 'userprofile'])->name('stuffuser.userprofile');
     Route::get('/stuffuser/setting', [UserController::class, 'setting'])->name('stuffuser.setting');
+    Route::post('/submit-request', 'MaintenanceRequestController@store')->name('submit-request');
+    Route::get('/stuffuser/change-password', [UserController::class, 'updatepassword'])->name('change-password');
+
+
 });
 Route::middleware('auth', 'role:expert')->group(function () {
     Route::get('/expertuser/index', [ExpertController::class, 'expertuserindex'])->name('expertuser');

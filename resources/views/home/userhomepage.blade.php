@@ -43,22 +43,22 @@
 
 
     <!-- Topbar Start -->
- @include('home.topheader');
+ @include('home.topheader')
     <!-- Topbar End -->
 
 
     <!-- Navbar Start -->
-@include('home.header');
+@include('home.header')
     <!-- Navbar End -->
 
 
     <!-- Carousel Start -->
- @include('home.carousel');
+ @include('home.carousel')
     <!-- Carousel End -->
 
 
     <!-- Service Start -->
- @include('home.service');
+ @include('home.service')
     <!-- Service End -->
 
 

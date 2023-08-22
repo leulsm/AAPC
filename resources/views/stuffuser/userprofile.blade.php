@@ -435,7 +435,8 @@
                                                     <div class="card-block">
                                                         <h4 class="mb-4">Update Password</h4>
                                                         <form class="form-horizontal form-material" method="post"
-                                                            action="{{ route('password.update') }}">
+                                                            {{-- action="{{ route('password.update') }}"> --}}
+                                                            action="">
                                                             @csrf
                                                             @method('put')
                                                             <div class="form-group">

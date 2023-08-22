@@ -18,7 +18,7 @@
         content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
     <meta name="author" content="Codedthemes" />
     <!-- Favicon icon -->
-    <link rel="icon" href="staffuser/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon"  href="{{asset('dashboard_asset/assets/img/Picsart_file.png')}}"  type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
     <!-- waves.css -->
@@ -148,8 +148,8 @@
                                     </li>
                                     <li class="waves-effect waves-light">
                                         <div class="media">
-                                            <img class="d-flex align-self-center img-radius"
-                                                src="{{ asset('staffuser/assets/images/avatar-2.jpg') }}"
+                                            <img class="d-flex align-self-center img-radius" 
+                                                src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}"
                                                 alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">John Doe</h5>
@@ -162,7 +162,7 @@
                                     <li class="waves-effect waves-light">
                                         <div class="media">
                                             <img class="d-flex align-self-center img-radius"
-                                                src="{{ asset('staffuser/assets/images/avatar-4.jpg') }}"
+                                                src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}"
                                                 alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">Joseph William</h5>
@@ -175,7 +175,7 @@
                                     <li class="waves-effect waves-light">
                                         <div class="media">
                                             <img class="d-flex align-self-center img-radius"
-                                                src="{{ asset('staffuser/assets/images/avatar-3.jpg') }}"
+                                                src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}"
                                                 alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">Sara Soudein</h5>
@@ -189,7 +189,7 @@
                             </li>
                             <li class="user-profile header-notification">
                                 <a href="#!" class="waves-effect waves-light">
-                                    <img src="{{ asset('staffuser/assets/images/profile-avatar-account-male.png') }}"
+                                    <img src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}"
                                         class="img-radius" alt="User-Profile-Image">
                                     <span>{{ Auth::user()->name }}</span>
                                     <i class="ti-angle-down"></i>
@@ -244,7 +244,7 @@
                             <div class="">
                                 <div class="main-menu-header">
                                     <img class="img-80 img-radius"
-                                        src="{{ asset('staffuser/assets/images/profile-avatar-account-male.png') }}"
+                                        src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}"
                                         alt="User-Profile-Image">
                                     <div class="user-details">
                                         <span id="more-details">{{ Auth::user()->name }}<i
@@ -335,7 +335,7 @@
                     </nav>
                     <div class="pcoded-content">
                         <!-- Page-header start -->
-                        <div class="page-header">
+                        {{-- <div class="page-header">
                             <div class="page-block">
                                 <div class="row align-items-center">
                                     <div class="col-md-8">
@@ -346,7 +346,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <ul class="breadcrumb">
-                                            <li class="breadcrumb-item">
+                                            <li class=  "breadcrumb-item">
                                                 <a href="{{ route('stuffuser') }}"> <i class="fa fa-home"></i> </a>
                                             </li>
                                             <li class="breadcrumb-item"><a
@@ -354,11 +354,11 @@
                                             </li>
                                             {{-- <li class="breadcrumb-item"><a href="#!">Basic Form Inputs</a>
                                             </li> --}}
-                                        </ul>
+                                        {{-- </ul>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>  --}}
                         <!-- Page-header end -->
                         <div class="pcoded-inner-content">
                             <!-- Main-body start -->
@@ -367,186 +367,175 @@
 
                                     <!-- Page body start -->
                                     <div class="page-body">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5>Perfonal Information</h5>
-                                                        <!--<span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>-->
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <form class="form-material">
-                                                            <div class="form-group form-default">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control" disabled>
-                                                                <span class="form-bar"></span>
-                                                                <label
-                                                                    class="float-label">{{ Auth::user()->name }}</label>
-                                                            </div>
-
-                                                            <div class="form-group form-default">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control">
-                                                                <span class="form-bar"></span>
-                                                                <label class="float-label">Email
-                                                                    (exa@gmail.com)</label>
-                                                            </div>
-                                                            <div class="form-group form-default">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control">
-                                                                <span class="form-bar"></span>
-                                                                <label class="float-label">Phone</label>
-                                                            </div>
-
-                                                        </form>
-                                                    </div>
+                                        <form action="{{ route('submit-request') }}" method="POST">
+                                            @csrf
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5>Maintenance Request Form</h5>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5>Work Information</h5>
-                                                        <!--<span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>-->
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <form class="form-material">
-                                                            <div class="form-group form-default form-static-label">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control" placeholder="Position">
-                                                                <span class="form-bar"></span>
-                                                                <label class="float-label">Position</label>
+                                                <div class="card-block">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label>Name</label>
+                                                                    <input type="text" name="name" class="form-control">
+                                                                </div>
                                                             </div>
-                                                            <div class="form-group form-default form-static-label">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control" placeholder="Department">
-                                                                <span class="form-bar"></span>
-                                                                <label class="float-label">Department</label>
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label>Email</label>
+                                                                    <input type="email" name="email" class="form-control">
+                                                                </div>
                                                             </div>
-                                                            <div class="form-group form-default form-static-label">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control" placeholder="Office No.">
-                                                                <span class="form-bar"></span>
-                                                                <label class="float-label">Office No.</label>
-                                                            </div>
+                                                        </div>
 
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label>Phone Number</label>
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <div class="input-group-text">
+                                                                                <i class="fa fa-phone"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                        <input type="number" name="phone_number"
+                                                                            class="form-control phone-number">
+                                                                    </div>
+                                                                </div>
 
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <!-- Basic Form Inputs card start -->
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5>Maintenance Request Form</h5>
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <h4 class="sub-title">Pleas Complite the Form</h4>
-                                                        <form>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Simple
-                                                                    Input</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label
-                                                                    class="col-sm-2 col-form-label">Placeholder</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control"
-                                                                        placeholder="Type your title in Placeholder">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Read
-                                                                    only</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control"
-                                                                        placeholder="You can't change me" readonly>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Disable
-                                                                    Input</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control"
-                                                                        placeholder="Disabled text" disabled>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Predefine
-                                                                    Input</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control"
-                                                                        value="Enter yout content after me">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Select
-                                                                    Box</label>
-                                                                <div class="col-sm-4">
-                                                                    <select name="select" class="form-control">
-                                                                        <option value="opt1">Select One Value Only
-                                                                        </option>
-                                                                        <option value="opt2">Type 2</option>
-                                                                        <option value="opt3">Type 3</option>
-                                                                        <option value="opt4">Type 4</option>
-                                                                        <option value="opt5">Type 5</option>
-                                                                        <option value="opt6">Type 6</option>
-                                                                        <option value="opt7">Type 7</option>
-                                                                        <option value="opt8">Type 8</option>
+                                                                <div class="form-group">
+                                                                    <label>Division/Department/city</label>
+                                                                    <select name="division" class="form-control">
+                                                                        <option value="">IT/Hardware/bole</option>
+                                                                        <option value="">Option 2</option>
+                                                                        <option value="">Option 3</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
+                                                            <div class="col-6 ">
+                                                                <div class="form-group mx-5 my-3 ">
+                                                                    <label class="d-block">Request Type</label>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input"
+                                                                            type="checkbox" id="defaultCheck1">
+                                                                        <label class="form-check-label"
+                                                                            for="defaultCheck1">
+                                                                            Network
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input"
+                                                                            type="checkbox" id="defaultCheck2">
+                                                                        <label class="form-check-label"
+                                                                            for="defaultCheck2">
+                                                                            Database
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input"
+                                                                            type="checkbox" id="defaultCheck4">
+                                                                        <label class="form-check-label"
+                                                                            for="defaultCheck4">
+                                                                            Software
+                                                                        </label>
+                                                                    </div>
 
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Upload
-                                                                    File</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="file" class="form-control">
+                                                                    {{-- <input type="checkbox" id="defaultCheck3" name="defaultCheck3" value="Other" onclick="showTextField()">
+                                                                    <label for="defaultCheck3">Other</label><br> --}}
+                                                                  
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input"
+                                                                            type="checkbox" id="defaultCheck5" onclick="showTextField()">
+                                                                        <label class="form-check-label"
+                                                                            for="defaultCheck5">
+                                                                            Others
+                                                                        </label>
+
+                                                                    <textarea type="text" id="otherTextField" name="otherTextField" style="display: none;"> </textarea>
+
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Additional
-                                                                    Information</label>
-                                                                <div class="col-sm-10">
-                                                                    <textarea rows="5" cols="5" class="form-control" placeholder="Default textarea"></textarea>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label class="col">Date</label>
+                                                                    <input type="date" name="date" class="form-control col">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="col">Attach an Image</label>
+                                                                    <input type="file" name="image" class="form-control col">
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group row">
-                                                                <div class="col-sm-10">
 
+                                                            <div class="col-6">
+                                                                <div class="form-group mx-5 my-4 ">
+                                                                    <label class="d-block">Urgency</label>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="urgency" id="urgency1"
+                                                                            checked>
+                                                                        <label class="form-check-label"
+                                                                            for="urgency1">
+                                                                            High
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="urgency" id="urgency2"
+                                                                            checked>
+                                                                        <label class="form-check-label"
+                                                                            for="urgency2">
+                                                                            Medium
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="urgency" id="urgency2"
+                                                                            checked>
+                                                                        <label class="form-check-label"
+                                                                            for="urgency2">
+                                                                            Low
+                                                                        </label>
+                                                                    </div>
                                                                 </div>
-                                                                <div class="col-sm-2 col-form-label text-end">
-                                                                    <button
-                                                                        class="btn waves-effect waves-light btn-success btn-outline-success"><i
-                                                                            class="icofont icofont-check-circled"></i>SUBMIT</button>
-
-                                                                </div>
-                                                                {{-- <div class="col-sm-10">
-                                                                    <textarea rows="5" cols="5" class="form-control" placeholder="Default textarea"></textarea>
-                                                                </div> --}}
                                                             </div>
-                                                        </form>
+                                                        </div>
 
+                                                        <div class="form-group">
+                                                            <label>Description of the problem</label>
+                                                            <textarea name="description" class="form-control"></textarea>
+                                                        </div>
                                                     </div>
+                                                    <div class="card-footer text-right">
+                                                        <button class="btn btn-primary mr-1"
+                                                            type="submit">Submit</button>
+                                                        <button class="btn btn-secondary"
+                                                            type="reset">Reset</button>
+                                                    </div>
+
+                                                    {{-- </form> --}} -
+
                                                 </div>
-                                                <!-- Basic Form Inputs card end -->
                                             </div>
-                                        </div>
+                                        </form>
+
+
+                                        <!-- Basic Form Inputs card end -->
+                                        {{-- </div>
+                                        </div> --}}
                                     </div>
                                     <!-- Page body end -->
                                 </div>
                             </div>
                             <!-- Main-body end -->
-                            <div id="styleSelector">
+                            {{-- <div id="styleSelector">
 
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -554,7 +543,18 @@
         </div>
     </div>
 
-
+    <script>
+        function showTextField() {
+          var checkbox = document.getElementById("defaultCheck5");
+          var textField = document.getElementById("otherTextField");
+    
+          if (checkbox.checked) {
+            textField.style.display = "block";
+          } else {
+            textField.style.display = "none";
+          }
+        }
+      </script>
     <!-- Required Jquery -->
     <script type="text/javascript" src="{{ asset('staffuser/assets/js/jquery/jquery.min.js') }} "></script>
     <script type="text/javascript" src="{{ asset('staffuser/assets/js/jquery-ui/jquery-ui.min.js') }} "></script>

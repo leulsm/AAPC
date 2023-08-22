@@ -28,6 +28,7 @@ class RegisteredController extends Controller
 
         return view('admin.users.edit', compact('user', 'user_roles'));
     }
+    
     public function updaterole(Request $request, $id)
     {
         $user = User::findOrFail($id);

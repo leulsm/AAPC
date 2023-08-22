@@ -187,7 +187,7 @@
                             </li>
                             <li class="user-profile header-notification">
                                 <a href="#!" class="waves-effect waves-light">
-                                    <img src="{{ asset('staffuser/assets/images/avatar-4.jpg') }}" class="img-radius"
+                                    <img src="{{asset('dashboard_asset/assets/img/Picsart_file.png')}}" class="img-radius"
                                         alt="User-Profile-Image">
                                     <span>{{ Auth::user()->name }}</span>
                                     <i class="ti-angle-down"></i>
@@ -244,7 +244,7 @@
                             <div class="">
                                 <div class="main-menu-header">
                                     <img class="img-80 img-radius"
-                                        src="{{ asset('staffuser/assets/images/avatar-4.jpg') }}"
+                                        src="{{asset('dashboard_asset/assets/img/Picsart_file.png')}}"
                                         alt="User-Profile-Image">
                                     <div class="user-details">
                                         <span id="more-details">{{ Auth::user()->name }}<i
@@ -420,7 +420,7 @@
                                                                         </td>
                                                                         <td>User 1</td>
                                                                         <td class="align-middle">
-                                                                            dddd
+                                                                            lastname1
                                                                             {{-- <div class="progress progress-xs">
                                                                                 <div class="progress-bar width-per-70"></div>
                                                                             </div> --}}
@@ -438,7 +438,7 @@
                                                                                 class="btn btn-success">Approve</a>
                                                                         </td>
                                                                         <td><a href="#"
-                                                                                class="btn btn-danger">Delete</a></td>
+                                                                                class="btn btn-danger">Decline</a></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="text-center pt-2">
@@ -454,7 +454,7 @@
                                                                         </td>
                                                                         <td>User 2</td>
                                                                         <td class="align-middle">
-                                                                            eeee
+                                                                            lastname2
                                                                             {{-- <div class="progress progress-xs">
                                                                                 <div class="progress-bar width-per-60"></div>
                                                                             </div> --}}
@@ -474,7 +474,7 @@
                                                                                 class="btn btn-success">Approve</a>
                                                                         </td>
                                                                         <td><a href="#"
-                                                                                class="btn btn-danger">Delete</a></td>
+                                                                                class="btn btn-danger">Decline</a></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="text-center pt-2">
@@ -490,7 +490,7 @@
                                                                         </td>
                                                                         <td>User 3</td>
                                                                         <td class="align-middle">
-                                                                            fffff
+                                                                            lastname3
                                                                             {{-- <div class="progress progress-xs">
                                                                                 <div class="progress-bar bg-warning width-per-70"></div>
                                                                             </div> --}}
@@ -509,7 +509,7 @@
                                                                                 class="btn btn-success">Approve</a>
                                                                         </td>
                                                                         <td><a href="#"
-                                                                                class="btn btn-danger">Delete</a></td>
+                                                                                class="btn btn-danger">Decline</a></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="text-center pt-2">
@@ -525,7 +525,7 @@
                                                                         </td>
                                                                         <td>User 4</td>
                                                                         <td class="align-middle">
-                                                                            gggg
+                                                                            lastname4
                                                                             {{-- <div class="progress progress-xs">
                                                                                 <div class="progress-bar bg-success width-per-40"></div>
                                                                             </div> --}}
@@ -546,7 +546,7 @@
                                                                                 class="btn btn-success">Approve</a>
                                                                         </td>
                                                                         <td><a href="#"
-                                                                                class="btn btn-danger">Delete</a></td>
+                                                                                class="btn btn-danger">Decline</a></td>
                                                                     </tr>
                                                                 </tbody>
                                                             </table>

@@ -187,7 +187,7 @@
                             </li>
                             <li class="user-profile header-notification">
                                 <a href="#!" class="waves-effect waves-light">
-                                    <img src="{{ asset('staffuser/assets/images/avatar-4.jpg') }}" class="img-radius"
+                                    <img src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}" class="img-radius"
                                         alt="User-Profile-Image">
                                     <span>{{ Auth::user()->name }}</span>
                                     <i class="ti-angle-down"></i>
@@ -244,7 +244,7 @@
                             <div class="">
                                 <div class="main-menu-header">
                                     <img class="img-80 img-radius"
-                                        src="{{ asset('staffuser/assets/images/avatar-4.jpg') }}"
+                                        src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}"
                                         alt="User-Profile-Image">
                                     <div class="user-details">
                                         <span id="more-details">{{ Auth::user()->name }}<i

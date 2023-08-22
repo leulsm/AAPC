@@ -29,7 +29,16 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        // if (Auth::check()) {
+        $actor = Auth::user();
+
+        if (!$actor->password_changed && !Auth::user()->hasRole('admin')) {
+            // Display the change password pop-up card
+            return redirect()->route('change-password');
+        } else {
+            return redirect()->intended(RouteServiceProvider::HOME);
+        }
+        // }
     }
 
     /**
