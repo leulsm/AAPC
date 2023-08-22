@@ -18,7 +18,7 @@
         content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
     <meta name="author" content="Codedthemes" />
     <!-- Favicon icon -->
-    <link rel="icon" href="staffuser/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}" type="image/x-icon">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
     <!-- waves.css -->
@@ -36,6 +36,22 @@
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('staffuser/assets/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('staffuser/assets/css/jquery.mCustomScrollbar.css') }}">
+    {{-- Scrripts here --}}
+    <script>
+        function isPhoneNumber(input) {
+            // Regular expression to match phone number pattern
+            var phoneRegex = /^\d{3}-\d{3}-\d{4}$/;
+
+            if (input.match(phoneRegex)) {
+                console.log('Valid phone number');
+                // Do something when the phone number is valid
+            } else {
+                console.log('Invalid phone number');
+                // Do something when the phone number is invalid
+            }
+        }
+    </script>
+
 
 </head>
 
@@ -78,6 +94,7 @@
                         <div class="circle"></div>
                     </div>
                 </div>
+
 
                 <div class="spinner-layer spinner-green">
                     <div class="circle-clipper left">
@@ -149,9 +166,11 @@
                                     <li class="waves-effect waves-light">
                                         <div class="media">
                                             <img class="d-flex align-self-center img-radius"
-                                                src="{{ asset('staffuser/assets/images/avatar-2.jpg') }}"
+                                                src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}"
                                                 alt="Generic placeholder image">
                                             <div class="media-body">
+
+
                                                 <h5 class="notification-user">John Doe</h5>
                                                 <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
                                                     elit.</p>
@@ -162,7 +181,7 @@
                                     <li class="waves-effect waves-light">
                                         <div class="media">
                                             <img class="d-flex align-self-center img-radius"
-                                                src="{{ asset('staffuser/assets/images/avatar-4.jpg') }}"
+                                                src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}"
                                                 alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">Joseph William</h5>
@@ -175,7 +194,7 @@
                                     <li class="waves-effect waves-light">
                                         <div class="media">
                                             <img class="d-flex align-self-center img-radius"
-                                                src="{{ asset('staffuser/assets/images/avatar-3.jpg') }}"
+                                                src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}"
                                                 alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">Sara Soudein</h5>
@@ -189,7 +208,7 @@
                             </li>
                             <li class="user-profile header-notification">
                                 <a href="#!" class="waves-effect waves-light">
-                                    <img src="{{ asset('staffuser/assets/images/profile-avatar-account-male.png') }}"
+                                    <img src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}"
                                         class="img-radius" alt="User-Profile-Image">
                                     <span>{{ Auth::user()->name }}</span>
                                     <i class="ti-angle-down"></i>
@@ -209,6 +228,8 @@
                                         <a href="email-inbox.html">
                                             <i class="ti-email"></i> My Messages
                                         </a>
+
+
                                     </li>
                                     {{-- <li class="waves-effect waves-light">
                                         <a href="auth-lock-screen.html">
@@ -244,7 +265,7 @@
                             <div class="">
                                 <div class="main-menu-header">
                                     <img class="img-80 img-radius"
-                                        src="{{ asset('staffuser/assets/images/profile-avatar-account-male.png') }}"
+                                        src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}"
                                         alt="User-Profile-Image">
                                     <div class="user-details">
                                         <span id="more-details">{{ Auth::user()->name }}<i
@@ -262,6 +283,7 @@
                                                 <a href="route('logout')"
                                                     onclick="event.preventDefault();this.closest('form').submit();"><i
                                                         class="ti-layout-sidebar-left"></i>Logout
+
 
                                                 </a>
                                             </form>
@@ -320,6 +342,8 @@
                                             <li class=" ">
                                                 <a href="{{ route('stuffuser.statustable') }}"
                                                     class="waves-effect waves-dark">
+
+
                                                     <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                     <span class="pcoded-mtext">View Status</span>
                                                     <span class="pcoded-mcaret"></span>
@@ -335,7 +359,7 @@
                     </nav>
                     <div class="pcoded-content">
                         <!-- Page-header start -->
-                        <div class="page-header">
+                        {{-- <div class="page-header">
                             <div class="page-block">
                                 <div class="row align-items-center">
                                     <div class="col-md-8">
@@ -346,7 +370,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <ul class="breadcrumb">
-                                            <li class="breadcrumb-item">
+                                            <li class=  "breadcrumb-item">
                                                 <a href="{{ route('stuffuser') }}"> <i class="fa fa-home"></i> </a>
                                             </li>
                                             <li class="breadcrumb-item"><a
@@ -354,199 +378,224 @@
                                             </li>
                                             {{-- <li class="breadcrumb-item"><a href="#!">Basic Form Inputs</a>
                                             </li> --}}
-                                        </ul>
+                        {{-- </ul>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>  --}}
                         <!-- Page-header end -->
                         <div class="pcoded-inner-content">
                             <!-- Main-body start -->
                             <div class="main-body">
                                 <div class="page-wrapper">
 
+
                                     <!-- Page body start -->
                                     <div class="page-body">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5>Perfonal Information</h5>
-                                                        <!--<span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>-->
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <form class="form-material">
-                                                            <div class="form-group form-default">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control" disabled>
-                                                                <span class="form-bar"></span>
-                                                                <label
-                                                                    class="float-label">{{ Auth::user()->name }}</label>
-                                                            </div>
-
-                                                            <div class="form-group form-default">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control">
-                                                                <span class="form-bar"></span>
-                                                                <label class="float-label">Email
-                                                                    (exa@gmail.com)</label>
-                                                            </div>
-                                                            <div class="form-group form-default">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control">
-                                                                <span class="form-bar"></span>
-                                                                <label class="float-label">Phone</label>
-                                                            </div>
-
-                                                        </form>
-                                                    </div>
+                                        <form action="{{ route('storeForm') }}" enctype="multipart/form-data"
+                                            method="POST">
+                                            @csrf
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5>Maintenance Request Form</h5>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5>Work Information</h5>
-                                                        <!--<span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>-->
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <form class="form-material">
-                                                            <div class="form-group form-default form-static-label">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control" placeholder="Position">
-                                                                <span class="form-bar"></span>
-                                                                <label class="float-label">Position</label>
-                                                            </div>
-                                                            <div class="form-group form-default form-static-label">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control" placeholder="Department">
-                                                                <span class="form-bar"></span>
-                                                                <label class="float-label">Department</label>
-                                                            </div>
-                                                            <div class="form-group form-default form-static-label">
-                                                                <input type="text" name="footer-email"
-                                                                    class="form-control" placeholder="Office No.">
-                                                                <span class="form-bar"></span>
-                                                                <label class="float-label">Office No.</label>
-                                                            </div>
-
-
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <!-- Basic Form Inputs card start -->
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5>Maintenance Request Form</h5>
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <h4 class="sub-title">Pleas Complite the Form</h4>
-                                                        <form>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Simple
-                                                                    Input</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label
-                                                                    class="col-sm-2 col-form-label">Placeholder</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control"
-                                                                        placeholder="Type your title in Placeholder">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Read
-                                                                    only</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control"
-                                                                        placeholder="You can't change me" readonly>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Disable
-                                                                    Input</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control"
-                                                                        placeholder="Disabled text" disabled>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Predefine
-                                                                    Input</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="text" class="form-control"
-                                                                        value="Enter yout content after me">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Select
-                                                                    Box</label>
-                                                                <div class="col-sm-4">
-                                                                    <select name="select" class="form-control">
-                                                                        <option value="opt1">Select One Value Only
-                                                                        </option>
-                                                                        <option value="opt2">Type 2</option>
-                                                                        <option value="opt3">Type 3</option>
-                                                                        <option value="opt4">Type 4</option>
-                                                                        <option value="opt5">Type 5</option>
-                                                                        <option value="opt6">Type 6</option>
-                                                                        <option value="opt7">Type 7</option>
-                                                                        <option value="opt8">Type 8</option>
+                                                <div class="card-block">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-1">
+                                                                <div class="form-group">
+                                                                    <label class="mt-2">Title</label>
+                                                                    <select name="division" class="form-control">
+                                                                        <option value="Mr.">Mr.</option>
+                                                                        <option value="Mrs.">Mrs.</option>
+                                                                        <option value="Commander">Commander</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
-
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Upload
-                                                                    File</label>
-                                                                <div class="col-sm-10">
-                                                                    <input type="file" class="form-control">
+                                                            <div class="col-6">
+                                                                <div class="form-group mt-2">
+                                                                    <label>Full Name</label>
+                                                                    <input type="text" name="name"
+                                                                        class="form-control">
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Additional
-                                                                    Information</label>
-                                                                <div class="col-sm-10">
-                                                                    <textarea rows="5" cols="5" class="form-control" placeholder="Default textarea"></textarea>
+                                                            <div class="col-6">
+                                                                <div class="form-group ">
+                                                                    <label>Email</label>
+                                                                    <input type="email" name="email"
+                                                                        class="form-control"
+                                                                        value="{{ Auth::user()->email }}" readonly>
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group row">
-                                                                <div class="col-sm-10">
+                                                        </div>
 
-                                                                </div>
-                                                                <div class="col-sm-2 col-form-label text-end">
-                                                                    <button
-                                                                        class="btn waves-effect waves-light btn-success btn-outline-success"><i
-                                                                            class="icofont icofont-check-circled"></i>SUBMIT</button>
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label>Phone Number</label>
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <div class="input-group-text">
+                                                                                <i class="fa fa-phone"></i>
+                                                                            </div>
+                                                                        </div>
 
+
+                                                                        <input type="tel" id="phoneInput"
+                                                                            pattern="\+\d{10,13}" value="+251"
+                                                                            oninput="isPhoneNumber(this.value)"
+                                                                            maxlength="13" name="phone_number"
+                                                                            class="form-control phone-number">
+                                                                    </div>
                                                                 </div>
-                                                                {{-- <div class="col-sm-10">
-                                                                    <textarea rows="5" cols="5" class="form-control" placeholder="Default textarea"></textarea>
+
+
+                                                                {{-- <div class="form-group">
+                                                                    <label>Division/Department/city</label>
+                                                                    <select name="division" class="form-control">
+                                                                        <option value="IT/Hardware/bole">IT/Hardware/bole
+                                                                        </option>
+                                                                        <option value="">Option 2</option>
+                                                                        <option value="">Option 3</option>
+                                                                    </select>
                                                                 </div> --}}
-                                                            </div>
-                                                        </form>
 
+                                                            </div>
+                                                            <div class="col-6 ">
+                                                                <div class="form-group mx-5 my-3 ">
+                                                                    <label class="d-block">Request Type</label>
+
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input"
+                                                                            type="checkbox" name='request_type[]'
+                                                                            value="Network" id="defaultCheck1">
+                                                                        <label class="form-check-label"
+                                                                            for="defaultCheck1">
+                                                                            Network
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input"
+                                                                            type="checkbox" name='request_type[]'
+                                                                            value="Database" id="defaultCheck2">
+                                                                        <label class="form-check-label"
+                                                                            for="defaultCheck3">
+                                                                            Database
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input"
+                                                                            type="checkbox" name='request_type[]'
+                                                                            value="Software" id="defaultCheck3">
+                                                                        <label class="form-check-label"
+                                                                            for="defaultCheck3">
+                                                                            Software
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input"
+                                                                            type="checkbox" name='request_type[]'
+                                                                            value="Radio" id="defaultCheck4">
+                                                                        <label class="form-check-label"
+                                                                            for="defaultCheck4">
+                                                                            Radio
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input"
+                                                                            type="checkbox"name='request_type[]'
+                                                                            value="Others" id="defaultCheck5">
+                                                                        <label class="form-check-label"
+                                                                            for="defaultCheck3">
+                                                                            Others
+                                                                        </label>
+
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label class="col">Date</label>
+                                                                    <input type="date" name="date"
+                                                                        class="form-control col">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="col">Attach an Image</label>
+                                                                    <input type="file" name="image"
+                                                                        class="form-control col">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-6">
+                                                                <div class="form-group mx-5 my-4 ">
+                                                                    <label class="d-block">Urgency</label>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="urgency" value="High"
+                                                                            id="urgency1" checked>
+                                                                        <label class="form-check-label"
+                                                                            for="urgency1">
+                                                                            High
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="urgency" value="Medium"
+                                                                            id="urgency2" checked>
+                                                                        <label class="form-check-label"
+                                                                            for="urgency2">
+                                                                            Medium
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio"
+                                                                            name="urgency" value="Low"
+                                                                            id="urgency2" checked>
+                                                                        <label class="form-check-label"
+                                                                            for="urgency2">
+                                                                            Low
+                                                                        </label>
+                                                                    </div>
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Description of the problem</label>
+                                                            <textarea name="description" class="form-control"></textarea>
+                                                        </div>
                                                     </div>
+                                                    <div class="card-footer text-right">
+                                                        <button class="btn btn-primary mr-1"
+                                                            type="submit">Submit</button>
+                                                        <button class="btn btn-secondary"
+                                                            type="reset">Reset</button>
+                                                    </div>
+
+                                                    {{-- </form> --}} -
+
                                                 </div>
-                                                <!-- Basic Form Inputs card end -->
                                             </div>
-                                        </div>
+                                        </form>
+
+
+                                        <!-- Basic Form Inputs card end -->
+                                        {{-- </div>
+                                        </div> --}}
                                     </div>
                                     <!-- Page body end -->
                                 </div>
                             </div>
                             <!-- Main-body end -->
-                            <div id="styleSelector">
+                            {{-- <div id="styleSelector">
 
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

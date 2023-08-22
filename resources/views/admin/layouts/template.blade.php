@@ -61,10 +61,9 @@
                                 <a href="#" class="dropdown-item"> <span
                                         class="dropdown-item-avatar
 											text-white"> <img alt="image"
-                                            src="{{ asset('dashboard_asset/assets/img/users/user-1.png') }}"
+                                            src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}"
                                             class="rounded-circle">
-                                    </span> <span class="dropdown-item-desc"> <span class="message-user">John
-                                            Deo</span>
+                                    </span> <span class="dropdown-item-desc"> <span class="message-user">Director</span>
                                         <span class="time messege-text">Please check your mail !!</span>
                                         <span class="time">2 Min Ago</span>
                                     </span>
@@ -141,8 +140,8 @@
                                         class="dropdown-item-icon bg-primary text-white"> <i
                                             class="fas
 												fa-code"></i>
-                                    </span> <span class="dropdown-item-desc"> Template update is
-                                        available now! <span class="time">2 Min
+                                    </span> <span class="dropdown-item-desc"> Report has been submitted <span
+                                            class="time">2 Min
                                             Ago</span>
                                     </span>
                                 </a> <a href="#" class="dropdown-item"> <span
@@ -184,10 +183,10 @@
                     </li>
                     <li class="dropdown"><a href="#" data-toggle="dropdown"
                             class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image"
-                                src="{{ asset('dashboard_asset/assets/img/user.png') }}"
+                                src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}"
                                 class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
                         <div class="dropdown-menu dropdown-menu-right pullDown">
-                            <div class="dropdown-title">Hello Admin</div>
+                            <div class="dropdown-title">{{ Auth::user()->name }}</div>
                             <a href="{{ route('admin.profile') }}" class="dropdown-item has-icon"> <i
                                     class="far
 										fa-user"></i> Profile
@@ -251,8 +250,8 @@
                                     {{-- <li><a href="subscribe.html">Subscribe</a></li> --}}
                                     {{-- </ul>  --}}
                                 </li>
-                                <li><a href="{{ route('admin.forgotpassword') }}">Forgot Password</a></li>
-                                <li><a href="{{ route('admin.resetpassword') }}">Reset Password</a></li>
+                                {{-- <li><a href="{{ route('admin.forgotpassword') }}">Forgot Password</a></li>
+                                <li><a href="{{ route('admin.resetpassword') }}">Reset Password</a></li> --}}
                                 {{-- <li><a href="subscribe.html">Subscribe</a></li> --}}
                             </ul>
                         </li>
@@ -436,8 +435,7 @@
                         </li>
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                    data-feather="anchor"></i><span>Other
-                                    Pages</span></a>
+                                    data-feather="anchor"></i><span>Reports</span></a>
                             <ul class="dropdown-menu">
                                 {{-- <li><a class="nav-link" href="create-post.html">Create Post</a></li>
                                 <li><a class="nav-link" href="posts.html">Posts</a></li>

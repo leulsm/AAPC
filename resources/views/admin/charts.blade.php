@@ -1,4 +1,5 @@
 @extends('admin.layouts.template')
+
 @section('content')
     <div class="section-body">
         <div class="row clearfix">
@@ -9,9 +10,47 @@
                     </div>
                     <div class="card-body">
                         <div class="recent-report__chart">
-                            {{-- <div id="lineChart"></div> --}}
+                            <canvas id="doughnutChart"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
-        @endsection
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var data = @json($roleCounts);
+
+            // Calculate the total number of users
+            var totalUsers = Object.values(data).reduce((a, b) => a + b, 0);
+
+            // Add the label and value for total users
+            data['Total Users'] = totalUsers;
+
+            var ctx = document.getElementById('doughnutChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(data),
+                    datasets: [{
+                        data: Object.values(data),
+                        backgroundColor: [
+                            '#007bff', // blue
+                            '#36a2eb',
+                            '#cc65fe',
+                            '#ffce56',
+                            '#45c490',
+                            '#ffa726',
+                        ],
+                    }],
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                },
+            });
+        });
+    </script>
+@endsection

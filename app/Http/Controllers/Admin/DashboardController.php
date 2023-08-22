@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
 {
     public function Dashboard()
     {
+
         return view('admin.dashboard');
     }
 
@@ -70,7 +72,16 @@ class DashboardController extends Controller
     }
     public function Charts()
     {
-        return view('admin.charts');
+        $users = User::all();
+        $roles = $users->pluck('role')->unique();
+
+        // Count the number of users per role
+        $roleCounts = [];
+        foreach ($roles as $role) {
+            $roleCounts[$role] = $users->where('role', $role)->count();
+        }
+
+        return view('admin.charts', compact('roleCounts'));
     }
     public function register()
     {

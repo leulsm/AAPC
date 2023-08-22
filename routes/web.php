@@ -4,12 +4,14 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\RegisteredController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\ChartController;
 use App\Http\Controllers\ExpertController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StuffController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DirectorController;
+use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -44,6 +46,7 @@ Route::middleware('auth', 'role:user')->group(function () {
     Route::get('/stuffuser/editrequest', [UserController::class, 'editrequest'])->name('stuffuser.editrequest');
     Route::get('/stuffuser/userprofile', [UserController::class, 'userprofile'])->name('stuffuser.userprofile');
     Route::get('/stuffuser/setting', [UserController::class, 'setting'])->name('stuffuser.setting');
+    Route::post('/formSubmit', [FormController::class, 'storeForm'])->name('storeForm');
 });
 Route::middleware('auth', 'role:expert')->group(function () {
     Route::get('/expertuser/index', [ExpertController::class, 'expertuserindex'])->name('expertuser');
@@ -63,7 +66,7 @@ Route::middleware('auth', 'role:admin')->group(function () {
         Route::get('/admin/dashboard', 'Dashboard')->name('admin.dashboard');
         Route::get('/admin/messages', 'ContactMessage')->name('admin.message');
         Route::get('/admin/director', 'Director')->name('admin.director');
-        Route::post('/admin/director', [RegisteredUserController::class, 'store'])->name('admin.directorr');
+        Route::post('/admin/register', [RegisteredUserController::class, 'store'])->name('admin.directorr');
         Route::get('/admin/employee', 'Employee')->name('admin.employee');
         Route::post('/admin/employee', [RegisteredUserController::class, 'store'])->name('admin.employeee');
         Route::get('/admin/expert', 'Expert')->name('admin.expert');
@@ -76,6 +79,7 @@ Route::middleware('auth', 'role:admin')->group(function () {
         Route::get('/admin/report', 'Report')->name('admin.report');
         Route::get('/admin/profile', 'Profile')->name('admin.profile');
         Route::get('/admin/charts', 'Charts')->name('admin.charts');
+        // Route::get('/admin/charts', [ChartController::class, 'index'])->name('admin.charts');
         Route::get('/admin/timeline', 'Timeline')->name('admin.timeline');
         Route::get('/admin/chats', 'Chats')->name('admin.chats');
         Route::get('/admin/viewrequests', 'ViewRequest')->name('admin.viewrequest');
@@ -84,6 +88,7 @@ Route::middleware('auth', 'role:admin')->group(function () {
         Route::get('/admin/registered-user', [RegisteredController::class, 'index'])->name('admin.index');
         Route::get('/admin/status', [UserController::class, 'userOnlineStatus'])->name('admin.status');
     });
+
 
     Route::get('role-edit/{id}', [RegisteredController::class, 'edit']);
     Route::put('role-update/{id}', [RegisteredController::class, 'updaterole']);
