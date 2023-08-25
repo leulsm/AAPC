@@ -47,6 +47,6 @@ class FormController extends Controller
 
         ModelsRequest::create($data);
 
-        return redirect()->back()->with('session', 'form submitted successfully!');
+        return redirect()->back()->with('stat', 'form submitted successfully!');
     }
 }

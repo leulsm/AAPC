@@ -38,20 +38,44 @@
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('staffuser/assets/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('staffuser/assets/css/jquery.mCustomScrollbar.css') }}">
-    {{-- Scrripts here --}}
+    {{-- Scripts here --}}
     <script>
-        function isPhoneNumber(input) {
-            // Regular expression to match phone number pattern
-            var phoneRegex = /^\d{3}-\d{3}-\d{4}$/;
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the form element
+            var form = document.querySelector('form');
 
-            if (input.match(phoneRegex)) {
-                console.log('Valid phone number');
-                // Do something when the phone number is valid
-            } else {
-                console.log('Invalid phone number');
-                // Do something when the phone number is invalid
-            }
-        }
+            // Get the reset button element
+            var resetButton = document.querySelector('button[type="reset"]');
+
+            // Get the success message element
+            var successMessage = document.getElementById('successMessage');
+
+            // Hide the success message initially
+            successMessage.style.display = 'none';
+
+            // Add an event listener for form submission
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the form from submitting normally
+
+                // Display the success message with the desired content
+                successMessage.textContent = 'Form submitted successfully!';
+
+                // Show the success message
+                successMessage.style.display = 'block';
+
+                // Reset the form
+                form.reset();
+            });
+
+            // Add an event listener for reset button click
+            resetButton.addEventListener('click', function(event) {
+                // Hide the success message
+                successMessage.style.display = 'none';
+
+                // Reset the form
+                form.reset();
+            });
+        });
     </script>
 
 
@@ -169,7 +193,6 @@
                                         <div class="media">
 
                                             <img class="d-flex align-self-center img-radius"
-
                                                 src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}"
                                                 alt="Generic placeholder image">
                                             <div class="media-body">
@@ -398,11 +421,17 @@
 
                                     <!-- Page body start -->
                                     <div class="page-body">
+                                        @if (session('stat'))
+                                            <div class="alert alert-success mt-3">
+                                                {{ session('stat') }}
+                                            </div>
+                                        @endif
 
                                         <form action="{{ route('storeForm') }}" enctype="multipart/form-data"
                                             method="POST">
 
                                             @csrf
+
                                             <div class="card">
                                                 <div class="card-header">
                                                     <h5>Maintenance Request Form</h5>
@@ -411,7 +440,7 @@
                                                     <div class="card-body">
                                                         <div class="row">
 
-                                                            <div class="col-1">
+                                                            <div class="col-2">
                                                                 <div class="form-group">
                                                                     <label class="mt-2">Title</label>
                                                                     <select name="division" class="form-control">
@@ -425,6 +454,7 @@
                                                                 <div class="form-group mt-2">
                                                                     <label>Full Name</label>
                                                                     <input type="text" name="name"
+                                                                    value="{{Auth::user()->name}}"
                                                                         class="form-control">
                                                                 </div>
                                                             </div>
@@ -457,17 +487,6 @@
                                                                             class="form-control phone-number">
                                                                     </div>
                                                                 </div>
-
-
-                                                                {{-- <div class="form-group">
-                                                                    <label>Division/Department/city</label>
-                                                                    <select name="division" class="form-control">
-                                                                        <option value="IT/Hardware/bole">IT/Hardware/bole
-                                                                        </option>
-                                                                        <option value="">Option 2</option>
-                                                                        <option value="">Option 3</option>
-                                                                    </select>
-                                                                </div> --}}
 
                                                             </div>
                                                             <div class="col-6 ">
@@ -519,6 +538,7 @@
                                                                             for="defaultCheck3">
                                                                             Others
                                                                         </label>
+                                                                        
 
 
                                                                     </div>
@@ -572,57 +592,36 @@
                                                                     </div>
 
 
-                                                            <div class="col-6">
-                                                                <div class="form-group mx-5 my-4 ">
-                                                                    <label class="d-block">Urgency</label>
-                                                                    <div class="form-check">
-                                                                        <input class="form-check-input" type="radio"
-                                                                            name="urgency" id="urgency1"
-                                                                            checked>
-                                                                        <label class="form-check-label"
-                                                                            for="urgency1">
-                                                                            High
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="form-check">
-                                                                        <input class="form-check-input" type="radio"
-                                                                            name="urgency" id="urgency2"
-                                                                            checked>
-                                                                        <label class="form-check-label"
-                                                                            for="urgency2">
-                                                                            Medium
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="form-check">
-                                                                        <input class="form-check-input" type="radio"
-                                                                            name="urgency" id="urgency2"
-                                                                            checked>
-                                                                        <label class="form-check-label"
-                                                                            for="urgency2">
-                                                                            Low
-                                                                        </label>
-                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
+
+
+
+
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="form-group">
+                                                                    <label>Description of the problem</label>
+                                                                    <textarea name="description" class="form-control"></textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
-
-                                                        <div class="form-group">
-                                                            <label>Description of the problem</label>
-                                                            <textarea name="description" class="form-control"></textarea>
+                                                        <div class="card-footer text-right">
+                                                            <button class="btn btn-primary mr-1"
+                                                                type="submit">Submit</button>
+                                                            <button class="btn btn-secondary"
+                                                                type="reset">Reset</button>
                                                         </div>
-                                                    </div>
-                                                    <div class="card-footer text-right">
-                                                        <button class="btn btn-primary mr-1"
-                                                            type="submit">Submit</button>
-                                                        <button class="btn btn-secondary"
-                                                            type="reset">Reset</button>
+
+
                                                     </div>
 
-                                                    {{-- </form> --}} -
-
-                                                </div>
-                                            </div>
                                         </form>
+
+
 
 
                                         <!-- Basic Form Inputs card end -->
@@ -642,19 +641,28 @@
             </div>
         </div>
     </div>
+    @if (session('stat'))
+        <script>
+            setTimeout(function() {
+                $('.alert-success').fadeOut('slow');
+            }, 3000); // 5000 milliseconds = 5 seconds
+        </script>
+    @endif
+
+
 
     <script>
         function showTextField() {
-          var checkbox = document.getElementById("defaultCheck5");
-          var textField = document.getElementById("otherTextField");
-    
-          if (checkbox.checked) {
-            textField.style.display = "block";
-          } else {
-            textField.style.display = "none";
-          }
+            var checkbox = document.getElementById("defaultCheck5");
+            var textField = document.getElementById("otherTextField");
+
+            if (checkbox.checked) {
+                textField.style.display = "block";
+            } else {
+                textField.style.display = "none";
+            }
         }
-      </script>
+    </script>
     <!-- Required Jquery -->
     <script type="text/javascript" src="{{ asset('staffuser/assets/js/jquery/jquery.min.js') }} "></script>
     <script type="text/javascript" src="{{ asset('staffuser/assets/js/jquery-ui/jquery-ui.min.js') }} "></script>

@@ -12,7 +12,7 @@
                             @csrf
                             <div class="row">
                                 <div class="form-group col-6">
-                                    <label for="frist_name">Name</label>
+                                    <label for="frist_name">Full Name</label>
 
                                     <input id="name" type="text" class="form-control" name="name" autofocus>
                                     <x-input-error :messages="$errors->get('name')" class="mt-2" />
