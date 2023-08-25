@@ -1,676 +1,173 @@
-<!DOCTYPE html>
-<html lang="en">
+<div class="pcoded-content">
+    <!-- Page-header end -->
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page body start -->
+                <div class="page-body">
+                    <form action="{{ route('storeForm') }}" enctype="multipart/form-data" method="POST">
+                        @csrf
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Maintenance Request Form</h5>
+                            </div>
 
-<head>
-    <title>Request</title>
-    <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 10]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <meta name="keywords"
-        content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
-    <meta name="author" content="Codedthemes" />
-    <!-- Favicon icon -->
-
-    <link rel="icon" href="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}" type="image/x-icon">
-
-    <!-- Google font-->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
-    <!-- waves.css -->
-    <link rel="stylesheet" href="{{ asset('staffuser/assets/pages/waves/css/waves.min.css') }}" type="text/css"
-        media="all">
-    <!-- Required Fremwork -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('staffuser/assets/css/bootstrap/css/bootstrap.min.css') }}">
-    <!-- themify-icons line icon -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('staffuser/assets/icon/themify-icons/themify-icons.css') }}">
-    <!-- ico font -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('staffuser/assets/icon/icofont/css/icofont.css') }}">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('staffuser/assets/icon/font-awesome/css/font-awesome.min.css') }}">
-    <!-- Style.css -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('staffuser/assets/css/style.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('staffuser/assets/css/jquery.mCustomScrollbar.css') }}">
-    {{-- Scrripts here --}}
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-1">
+                                        <div class="form-group">
+                                            <label class="mt-2">Title</label>
+                                            <select name="division" class="form-control">
+                                                <option value="Mr.">Mr.</option>
+                                                <option value="Mrs.">Mrs.</option>
+                                                <option value="Commander">Commander</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group mt-2">
+                                            <label>Full Name</label>
+                                            <input type="text" name="name" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group ">
+                                            <label>Email</label>
+                                            <input type="email" name="email" class="form-control"
+                                                value="{{ Auth::user()->email }}" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Phone Number</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">
+                                                        <i class="fa fa-phone"></i>
+                                                    </div>
+                                                </div>
+                                                <input type="tel" id="phoneInput" pattern="\+\d{10,13}"
+                                                    value="+251" oninput="isPhoneNumber(this.value)" maxlength="13"
+                                                    name="phone_number" class="form-control phone-number">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col">Date</label>
+                                            <input type="date" name="date" class="form-control col">
+                                        </div>
+                                    </div>
+                                    <div class="col-6 ">
+                                        <div class="form-group mx-5 my-3 ">
+                                            <div class="form-group mx-5 my-4 ">
+                                                <label class="d-block">Request Type</label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        name='request_type[]' value="Network" id="defaultCheck1">
+                                                    <label class="form-check-label" for="defaultCheck1">
+                                                        Network
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        name='request_type[]' value="Database" id="defaultCheck2">
+                                                    <label class="form-check-label" for="defaultCheck2">
+                                                        Database
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        name='request_type[]' value="Software" id="defaultCheck3">
+                                                    <label class="form-check-label" for="defaultCheck3">
+                                                        Software
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        name='request_type[]' value="Radio" id="defaultCheck4">
+                                                    <label class="form-check-label" for="defaultCheck4">
+                                                        Radio
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox"name='request_type[]'
+                                                        value="Others" id="defaultCheck5" onclick="showTextField()">
+                                                    <label class="form-check-label" for="defaultCheck5">
+                                                        Others
+                                                    </label>
+                                                    <textarea id="otherTextField" style="display: none"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label class="col">Attach an Image</label>
+                                            <input type="file" name="image" class="form-control col">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group mx-5 my-4 ">
+                                            <div class="form-group mx-5 my-4 ">
+                                                <label class="d-block">Urgency</label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="urgency"
+                                                        id="urgency1" checked>
+                                                    <label class="form-check-label" for="urgency1">
+                                                        High
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="urgency"
+                                                        id="urgency2" >
+                                                    <label class="form-check-label" for="urgency2">
+                                                        Medium
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="urgency"
+                                                        id="urgency3">
+                                                    <label class="form-check-label" for="urgency3">
+                                                        Low
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Description of the problem</label>
+                                            <textarea name="description" class="form-control"></textarea>
+                                        </div>
+                                        <div class="text-left">
+                                            <button class="btn btn-primary " type="submit">Submit</button>
+                                            <button class="btn btn-secondary" type="reset">Reset</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
-        function isPhoneNumber(input) {
-            // Regular expression to match phone number pattern
-            var phoneRegex = /^\d{3}-\d{3}-\d{4}$/;
+        function showTextField() {
+            var checkbox = document.getElementById("defaultCheck5");
+            var textField = document.getElementById("otherTextField");
 
-            if (input.match(phoneRegex)) {
-                console.log('Valid phone number');
-                // Do something when the phone number is valid
+            if (checkbox.checked) {
+                textField.style.display = "block";
             } else {
-                console.log('Invalid phone number');
-                // Do something when the phone number is invalid
+                textField.style.display = "none";
             }
         }
     </script>
-
-
-</head>
-
-<body>
-    <!-- Pre-loader start -->
-    <div class="theme-loader">
-        <div class="loader-track">
-            <div class="preloader-wrapper">
-                <div class="spinner-layer spinner-blue">
-                    <div class="circle-clipper left">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="gap-patch">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper right">
-                        <div class="circle"></div>
-                    </div>
-                </div>
-                <div class="spinner-layer spinner-red">
-                    <div class="circle-clipper left">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="gap-patch">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper right">
-                        <div class="circle"></div>
-                    </div>
-                </div>
-
-                <div class="spinner-layer spinner-yellow">
-                    <div class="circle-clipper left">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="gap-patch">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper right">
-                        <div class="circle"></div>
-                    </div>
-                </div>
-
-
-                <div class="spinner-layer spinner-green">
-                    <div class="circle-clipper left">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="gap-patch">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper right">
-                        <div class="circle"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Pre-loader end -->
-    <div id="pcoded" class="pcoded">
-        <div class="pcoded-overlay-box"></div>
-        <div class="pcoded-container navbar-wrapper">
-            <nav class="navbar header-navbar pcoded-header">
-                <div class="navbar-wrapper">
-                    <div class="navbar-logo">
-                        <a class="mobile-menu waves-effect waves-light" id="mobile-collapse" href="#!">
-                            <i class="ti-menu"></i>
-                        </a>
-                        <div class="mobile-search waves-effect waves-light">
-                            <div class="header-search">
-                                <div class="main-search morphsearch-search">
-                                    <div class="input-group">
-                                        <span class="input-group-prepend search-close"><i
-                                                class="ti-close input-group-text"></i></span>
-                                        <input type="text" class="form-control" placeholder="Enter Keyword">
-                                        <span class="input-group-append search-btn"><i
-                                                class="ti-search input-group-text"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=""><a href="#" class="h5 ml-5 ">AAPC
-                            </a></div>
-                        <a class="mobile-options waves-effect waves-light">
-                            <i class="ti-more"></i>
-                        </a>
-                    </div>
-                    <div class="navbar-container container-fluid">
-                        <ul class="nav-left">
-                            <li>
-                                <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#!" onclick="javascript:toggleFullScreen()"
-                                    class="waves-effect waves-light">
-                                    <i class="ti-fullscreen"></i>
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="nav-right">
-                            <li class="header-notification">
-                                <a href="#!" class="waves-effect waves-light">
-                                    <i class="ti-bell"></i>
-                                    <span class="badge bg-c-red"></span>
-                                </a>
-                                <ul class="show-notification">
-                                    <li>
-                                        <h6>Notifications</h6>
-                                        <label class="label label-danger">New</label>
-                                    </li>
-                                    <li class="waves-effect waves-light">
-                                        <div class="media">
-
-                                            <img class="d-flex align-self-center img-radius"
-
-                                                src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}"
-                                                alt="Generic placeholder image">
-                                            <div class="media-body">
-
-
-                                                <h5 class="notification-user">John Doe</h5>
-                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
-                                                    elit.</p>
-                                                <span class="notification-time">30 minutes ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="waves-effect waves-light">
-                                        <div class="media">
-                                            <img class="d-flex align-self-center img-radius"
-                                                src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}"
-                                                alt="Generic placeholder image">
-                                            <div class="media-body">
-                                                <h5 class="notification-user">Joseph William</h5>
-                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
-                                                    elit.</p>
-                                                <span class="notification-time">30 minutes ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="waves-effect waves-light">
-                                        <div class="media">
-                                            <img class="d-flex align-self-center img-radius"
-                                                src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}"
-                                                alt="Generic placeholder image">
-                                            <div class="media-body">
-                                                <h5 class="notification-user">Sara Soudein</h5>
-                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer
-                                                    elit.</p>
-                                                <span class="notification-time">30 minutes ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="user-profile header-notification">
-                                <a href="#!" class="waves-effect waves-light">
-                                    <img src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}"
-                                        class="img-radius" alt="User-Profile-Image">
-                                    <span>{{ Auth::user()->name }}</span>
-                                    <i class="ti-angle-down"></i>
-                                </a>
-                                <ul class="show-notification profile-notification">
-                                    <li class="waves-effect waves-light">
-                                        <a href="#!">
-                                            <i class="ti-settings"></i> Settings
-                                        </a>
-                                    </li>
-                                    <li class="waves-effect waves-light">
-                                        <a href="user-profile.html">
-                                            <i class="ti-user"></i> Profile
-                                        </a>
-                                    </li>
-                                    <li class="waves-effect waves-light">
-                                        <a href="email-inbox.html">
-                                            <i class="ti-email"></i> My Messages
-                                        </a>
-
-
-                                    </li>
-                                    {{-- <li class="waves-effect waves-light">
-                                        <a href="auth-lock-screen.html">
-                                            <i class="ti-lock"></i> Lock Screen
-                                        </a>
-                                    </li> --}}
-                                    <li class="waves-effect waves-light">
-                                        <a href="auth-normal-sign-in.html">
-                                            <i class="ti-layout-sidebar-left"></i> Logout
-                                            <form method="POST" action="{{ route('logout') }}">
-                                                @csrf
-
-                                                <x-dropdown-link :href="route('logout')"
-                                                    onclick="event.preventDefault();
-                                                                    this.closest('form').submit();">
-
-                                                </x-dropdown-link>
-                                            </form>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
-            <div class="pcoded-main-container">
-                <div class="pcoded-wrapper">
-                    <nav class="pcoded-navbar">
-                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
-                        <div class="pcoded-inner-navbar main-menu">
-                            <div class="">
-                                <div class="main-menu-header">
-                                    <img class="img-80 img-radius"
-                                        src="{{ asset('dashboard_asset/assets/img/Picsart_file.png') }}"
-                                        alt="User-Profile-Image">
-                                    <div class="user-details">
-                                        <span id="more-details">{{ Auth::user()->name }}<i
-                                                class="fa fa-caret-down"></i></span>
-                                    </div>
-                                </div>
-                                <div class="main-menu-content">
-                                    <ul>
-                                        <li class="more-details">
-                                            <a href="user-profile.html"><i class="ti-user"></i>View Profile</a>
-                                            <a href="#!"><i class="ti-settings"></i>Settings</a>
-                                            {{-- <a href="auth-normal-sign-in.html"><i class="ti-layout-sidebar-left"></i>Logout</a> --}}
-                                            <form method="POST" action="{{ route('logout') }}">
-                                                @csrf
-                                                <a href="route('logout')"
-                                                    onclick="event.preventDefault();this.closest('form').submit();"><i
-                                                        class="ti-layout-sidebar-left"></i>Logout
-
-
-                                                </a>
-                                            </form>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="p-15 p-b-0">
-                                {{-- <form class="form-material">
-                                    <div class="form-group form-primary">
-                                        <input type="text" name="footer-email" class="form-control">
-                                        <span class="form-bar"></span>
-                                        <label class="float-label"><i class="fa fa-search m-r-10"></i>Search Friend</label>
-                                    </div>
-                                </form>
-                            </div> --}}
-                                <div class="pcoded-navigation-label">Navigation</div>
-                                <ul class="pcoded-item pcoded-left-item">
-                                    <li class="">
-                                        <a href="{{ route('stuffuser') }}" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
-                                            <span class="pcoded-mtext">Home</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-
-                                <div class="pcoded-navigation-label">Request</div>
-                                <ul class="pcoded-item pcoded-left-item">
-                                    <li class="active">
-                                        <a href="{{ route('stuffuser.request') }}" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                                            <span class="pcoded-mtext">Request Form</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="pcoded-navigation-label">Sent Request</div>
-                                <ul class="pcoded-item pcoded-left-item">
-                                    <li class="pcoded-hasmenu">
-                                        <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i
-                                                    class="ti-layout-grid2-alt"></i><b>BC</b></span>
-                                            <span class="pcoded-mtext">Requests</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li class=" ">
-                                                <a href="{{ route('stuffuser.viewrequest') }}"
-                                                    class="waves-effect waves-dark">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">View Requests</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-                                            <li class=" ">
-                                                <a href="{{ route('stuffuser.statustable') }}"
-                                                    class="waves-effect waves-dark">
-
-
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext">View Status</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                            </li>
-
-                                        </ul>
-                                    </li>
-                                </ul>
-
-
-                            </div>
-                    </nav>
-                    <div class="pcoded-content">
-                        <!-- Page-header start -->
-                        {{-- <div class="page-header">
-                            <div class="page-block">
-                                <div class="row align-items-center">
-                                    <div class="col-md-8">
-                                        <div class="page-header-title">
-                                            <h5 class="m-b-10">Request Form Inputs</h5>
-                                            <p class="m-b-0">Fill the form carfully.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <ul class="breadcrumb">
-                                            <li class=  "breadcrumb-item">
-                                                <a href="{{ route('stuffuser') }}"> <i class="fa fa-home"></i> </a>
-                                            </li>
-                                            <li class="breadcrumb-item"><a
-                                                    href="{{ route('stuffuser.request') }}">Request Form</a>
-                                            </li>
-                                            {{-- <li class="breadcrumb-item"><a href="#!">Basic Form Inputs</a>
-                                            </li> --}}
-
-                        {{-- </ul>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>  --}}
-                        <!-- Page-header end -->
-                        <div class="pcoded-inner-content">
-                            <!-- Main-body start -->
-                            <div class="main-body">
-                                <div class="page-wrapper">
-
-
-                                    <!-- Page body start -->
-                                    <div class="page-body">
-
-                                        <form action="{{ route('storeForm') }}" enctype="multipart/form-data"
-                                            method="POST">
-
-                                            @csrf
-                                            <div class="card">
-                                                <div class="card-header">
-                                                    <h5>Maintenance Request Form</h5>
-                                                </div>
-                                                <div class="card-block">
-                                                    <div class="card-body">
-                                                        <div class="row">
-
-                                                            <div class="col-1">
-                                                                <div class="form-group">
-                                                                    <label class="mt-2">Title</label>
-                                                                    <select name="division" class="form-control">
-                                                                        <option value="Mr.">Mr.</option>
-                                                                        <option value="Mrs.">Mrs.</option>
-                                                                        <option value="Commander">Commander</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6">
-                                                                <div class="form-group mt-2">
-                                                                    <label>Full Name</label>
-                                                                    <input type="text" name="name"
-                                                                        class="form-control">
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6">
-                                                                <div class="form-group ">
-                                                                    <label>Email</label>
-                                                                    <input type="email" name="email"
-                                                                        class="form-control"
-                                                                        value="{{ Auth::user()->email }}" readonly>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="row">
-                                                            <div class="col-6">
-                                                                <div class="form-group">
-                                                                    <label>Phone Number</label>
-                                                                    <div class="input-group">
-                                                                        <div class="input-group-prepend">
-                                                                            <div class="input-group-text">
-                                                                                <i class="fa fa-phone"></i>
-                                                                            </div>
-                                                                        </div>
-
-
-                                                                        <input type="tel" id="phoneInput"
-                                                                            pattern="\+\d{10,13}" value="+251"
-                                                                            oninput="isPhoneNumber(this.value)"
-                                                                            maxlength="13" name="phone_number"
-                                                                            class="form-control phone-number">
-                                                                    </div>
-                                                                </div>
-
-
-                                                                {{-- <div class="form-group">
-                                                                    <label>Division/Department/city</label>
-                                                                    <select name="division" class="form-control">
-                                                                        <option value="IT/Hardware/bole">IT/Hardware/bole
-                                                                        </option>
-                                                                        <option value="">Option 2</option>
-                                                                        <option value="">Option 3</option>
-                                                                    </select>
-                                                                </div> --}}
-
-                                                            </div>
-                                                            <div class="col-6 ">
-                                                                <div class="form-group mx-5 my-3 ">
-                                                                    <label class="d-block">Request Type</label>
-
-
-                                                                    <div class="form-check">
-                                                                        <input class="form-check-input"
-                                                                            type="checkbox" name='request_type[]'
-                                                                            value="Network" id="defaultCheck1">
-                                                                        <label class="form-check-label"
-                                                                            for="defaultCheck1">
-                                                                            Network
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="form-check">
-                                                                        <input class="form-check-input"
-                                                                            type="checkbox" name='request_type[]'
-                                                                            value="Database" id="defaultCheck2">
-                                                                        <label class="form-check-label"
-                                                                            for="defaultCheck3">
-                                                                            Database
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="form-check">
-                                                                        <input class="form-check-input"
-                                                                            type="checkbox" name='request_type[]'
-                                                                            value="Software" id="defaultCheck3">
-                                                                        <label class="form-check-label"
-                                                                            for="defaultCheck3">
-                                                                            Software
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="form-check">
-                                                                        <input class="form-check-input"
-                                                                            type="checkbox" name='request_type[]'
-                                                                            value="Radio" id="defaultCheck4">
-                                                                        <label class="form-check-label"
-                                                                            for="defaultCheck4">
-                                                                            Radio
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="form-check">
-                                                                        <input class="form-check-input"
-                                                                            type="checkbox"name='request_type[]'
-                                                                            value="Others" id="defaultCheck5">
-                                                                        <label class="form-check-label"
-                                                                            for="defaultCheck3">
-                                                                            Others
-                                                                        </label>
-
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="row">
-                                                            <div class="col-6">
-                                                                <div class="form-group">
-                                                                    <label class="col">Date</label>
-                                                                    <input type="date" name="date"
-                                                                        class="form-control col">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label class="col">Attach an Image</label>
-                                                                    <input type="file" name="image"
-                                                                        class="form-control col">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="col-6">
-                                                                <div class="form-group mx-5 my-4 ">
-                                                                    <label class="d-block">Urgency</label>
-                                                                    <div class="form-check">
-                                                                        <input class="form-check-input" type="radio"
-                                                                            name="urgency" value="High"
-                                                                            id="urgency1" checked>
-                                                                        <label class="form-check-label"
-                                                                            for="urgency1">
-                                                                            High
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="form-check">
-                                                                        <input class="form-check-input" type="radio"
-                                                                            name="urgency" value="Medium"
-                                                                            id="urgency2" checked>
-                                                                        <label class="form-check-label"
-                                                                            for="urgency2">
-                                                                            Medium
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="form-check">
-                                                                        <input class="form-check-input" type="radio"
-                                                                            name="urgency" value="Low"
-                                                                            id="urgency2" checked>
-                                                                        <label class="form-check-label"
-                                                                            for="urgency2">
-                                                                            Low
-                                                                        </label>
-                                                                    </div>
-
-
-                                                            <div class="col-6">
-                                                                <div class="form-group mx-5 my-4 ">
-                                                                    <label class="d-block">Urgency</label>
-                                                                    <div class="form-check">
-                                                                        <input class="form-check-input" type="radio"
-                                                                            name="urgency" id="urgency1"
-                                                                            checked>
-                                                                        <label class="form-check-label"
-                                                                            for="urgency1">
-                                                                            High
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="form-check">
-                                                                        <input class="form-check-input" type="radio"
-                                                                            name="urgency" id="urgency2"
-                                                                            checked>
-                                                                        <label class="form-check-label"
-                                                                            for="urgency2">
-                                                                            Medium
-                                                                        </label>
-                                                                    </div>
-                                                                    <div class="form-check">
-                                                                        <input class="form-check-input" type="radio"
-                                                                            name="urgency" id="urgency2"
-                                                                            checked>
-                                                                        <label class="form-check-label"
-                                                                            for="urgency2">
-                                                                            Low
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label>Description of the problem</label>
-                                                            <textarea name="description" class="form-control"></textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-footer text-right">
-                                                        <button class="btn btn-primary mr-1"
-                                                            type="submit">Submit</button>
-                                                        <button class="btn btn-secondary"
-                                                            type="reset">Reset</button>
-                                                    </div>
-
-                                                    {{-- </form> --}} -
-
-                                                </div>
-                                            </div>
-                                        </form>
-
-
-                                        <!-- Basic Form Inputs card end -->
-                                        {{-- </div>
-                                        </div> --}}
-                                    </div>
-                                    <!-- Page body end -->
-                                </div>
-                            </div>
-                            <!-- Main-body end -->
-                            {{-- <div id="styleSelector">
-
-                            </div> --}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function showTextField() {
-          var checkbox = document.getElementById("defaultCheck5");
-          var textField = document.getElementById("otherTextField");
-    
-          if (checkbox.checked) {
-            textField.style.display = "block";
-          } else {
-            textField.style.display = "none";
-          }
-        }
-      </script>
-    <!-- Required Jquery -->
-    <script type="text/javascript" src="{{ asset('staffuser/assets/js/jquery/jquery.min.js') }} "></script>
-    <script type="text/javascript" src="{{ asset('staffuser/assets/js/jquery-ui/jquery-ui.min.js') }} "></script>
-    <script type="text/javascript" src="{{ asset('staffuser/assets/js/popper.js/popper.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('staffuser/assets/js/bootstrap/js/bootstrap.min.js') }} "></script>
-    <!-- waves js -->
-    <script src="{{ asset('staffuser/assets/pages/waves/js/waves.min.js') }}"></script>
-    <!-- jquery slimscroll js -->
-    <script type="text/javascript" src="{{ asset('staffuser/assets/js/jquery-slimscroll/jquery.slimscroll.js') }}">
-    </script>
-
-    <!-- Custom js -->
-    <script src="{{ asset('staffuser/assets/js/pcoded.min.js') }}"></script>
-    <script src="{{ asset('staffuser/assets/js/vertical/vertical-layout.min.js') }}"></script>
-    <script src="{{ asset('staffuser/assets/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('staffuser/assets/js/script.js') }}"></script>
-</body>
-
-</html>
+</div>

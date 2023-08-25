@@ -1,4 +1,4 @@
-<div class="pcoded-content">
+{{-- <div class="pcoded-content">
     <!-- Page-header start -->
     <div class="page-header">
         <div class="page-block">
@@ -20,9 +20,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Page-header end -->
-    <div class="pcoded-inner-content">
+    {{-- <div class="pcoded-inner-content">
         <!-- Main-body start -->
         <div class="main-body">
             <div class="page-wrapper">
@@ -83,8 +83,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-4 col-md-12">
+                        </div> --}}
+                        {{-- <div class="col-xl-4 col-md-12">
                             <div class="card mat-stat-card">
                                 <div class="card-block">
                                     <div class="row align-items-center b-b-default">
@@ -165,7 +165,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- Material statustic card end -->
                         <!-- order-visitor start -->
 
@@ -254,7 +254,7 @@
                                 </div>
                             </div>
                         </div> --}}
-                        <div class="col-xl-12 col-md-12">
+                        {{-- <div class="col-xl-12 col-md-12">
                             <div class="row">
                                 <!-- sale card start -->
                                 <div class="col-md-3">
@@ -350,4 +350,4 @@
             <div id="styleSelector"> </div>
         </div>
     </div>
-</div>
+</div> --}}

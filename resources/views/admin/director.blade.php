@@ -58,6 +58,8 @@
                                         <option value="user">Employee</option>
                                         <option value="director">Director</option>
                                         <option value="expert">Expert</option>
+                                        <option value="division">Division Head</option>
+                                        <option value="teamleader">Team Leader</option>
                                     </select>
                                     {{-- <x-input-error :messages="$errors->get('submitter')" class="mt-2" /> --}}
                                 </div>

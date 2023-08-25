@@ -129,7 +129,7 @@
                                     </div>
                                 @endif
                                 <div class="form-group">
-                                    <label class="col-md-12">Old Password</label>
+                                    <label class="col-md-12">Current Password</label>
                                     <div class="col-md-12">
                                         <input type="password" name="current_password" id="current_password"
                                             placeholder="old password" class="form-control form-control-line">
@@ -147,7 +147,7 @@
                                     <label class="col-md-12">Confirm New Password</label>
                                     <div class="col-md-12">
                                         <input type="password" id="password_confirmation"
-                                            name="password_confirmation" value="password"
+                                            name="password_confirmation" placeholder="confirm password"
                                             class="form-control form-control-line">
                                     </div>
                                 </div>

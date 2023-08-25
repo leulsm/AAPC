@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('phone_number');
             $table->string('request_type');
             $table->date('date');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('urgency');
             $table->longText('description');
             $table->timestamps();

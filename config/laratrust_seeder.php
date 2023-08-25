@@ -28,6 +28,14 @@ return [
         'director' => [
             'users' => 'c,r,u,d',
             'profile' => 'r,u',
+        ],
+        'teamleader' => [
+            'users' => 'c,r,u,d',
+            'profile' => 'r,u',
+        ],  
+        'division' => [
+            'users' => 'c,r,u,d',
+            'profile' => 'r,u',
         ]
     ],
 

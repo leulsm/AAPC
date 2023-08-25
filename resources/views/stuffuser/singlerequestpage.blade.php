@@ -284,21 +284,12 @@
                                     </div>
                                 </form>
                             </div> --}}
-                                <div class="pcoded-navigation-label">Navigation</div>
-                                <ul class="pcoded-item pcoded-left-item">
-                                    <li class="">
-                                        <a href="{{ route('stuffuser') }}" class="waves-effect waves-dark">
-                                            <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
-                                            <span class="pcoded-mtext">Home</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                    </li>
-                                </ul>
+                               
 
                                 <div class="pcoded-navigation-label">Request</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li class="">
-                                        <a href="{{ route('stuffuser.request') }}" class="waves-effect waves-dark">
+                                        <a href="{{ route('stuffuser') }}" class="waves-effect waves-dark">
                                             <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                             <span class="pcoded-mtext">Request Form</span>
                                             <span class="pcoded-mcaret"></span>
